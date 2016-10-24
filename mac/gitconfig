@@ -3,7 +3,7 @@
 	editor = micro
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -43,6 +43,8 @@
 	type = cat-file -t
 	unstage = reset HEAD --
 	visual = !gitup
+	#
+	cloc-haskell = !cloc . --exclude-dir=.stack-work --use-sloccount
 
 [color]
 	ui = auto
