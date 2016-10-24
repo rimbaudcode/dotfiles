@@ -22,6 +22,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "install-mint-soft"
  "symlinks-mint"
  ".zshrc"
  "Greet.hs"
@@ -34,7 +35,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/dfhe/github/scripts/" (22541 50450 0 0) "VERSION.md" "update-tools" "update-mint" "update-apps" "symlinks-mint" "symlinks-mac" "skeleton" "scatter.gp" "scatter" "README.md" "mkhaskell" "LICENSE.md" ".git/" ".DS_Store" "../" "./")
+ ("/Users/dfhe/github/scripts/" (22542 2213 0 0) "VERSION.md" "update-tools" "update-mint" "update-apps" "symlinks-mint" "symlinks-mac" "skeleton" "scatter.gp" "scatter" "README.md" "mkhaskell" "LICENSE.md" "install-mint-soft" ".git/" ".DS_Store" "../" "./")
 
  ("/Users/dfhe/" (22541 11355 0 0) "VirtualBox VMs/" "Ten Thumbs Students/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "github/" "Downloads/" "Documents/" "Desktop/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-rmbd-5.2" ".wget-hsts" ".w3m/" ".Trash/" ".subversion/" ".stack/" ".ssh/" ".rbenv/" ".oh-my-zsh/" ".newsbeuter/" ".nanorc" ".mplayer/" ".local/" ".iterm2_shell_integration.zsh" ".iterm2/" ".iStats/" ".irssi/" ".hgignore_global" ".gnupg/" ".gitignore_global" ".gitconfig" ".ghci" ".ghc-mod/" ".ghc/" ".gem/" ".emacs.d/" ".emacs" ".DS_Store" ".cpan/" ".config/" ".codeintel/" ".calc_history" ".cache/" ".cabal/" ".bundle/" ".aspell.en.pws" ".aspell.en.prepl" ".archey-ip" ".ansiweatherrc" "../" "./")
 
