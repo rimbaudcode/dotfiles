@@ -307,9 +307,7 @@ alias workspace="cd $WORKSPACE_PATH"
 #
 alias ascii-list='man 7 ascii'
 #
-alias emacs-haskell='emacs *.cabal **/*.hs *.md'
-#
-alias cloc-haskell='cloc . --exclude-dir=.stack-work --use-sloccount'
+alias emacs-haskell='emacs *.md **/*.hs *.cabal'
 #
 # readers
 #
