@@ -40,6 +40,7 @@
  '(haskell-tags-on-save t)
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(linum-format "%d ")
  '(make-backup-files nil)
