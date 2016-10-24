@@ -1,40 +1,40 @@
-((("emacs" .
-   [1 0 0 0 0])
-  ("file" .
-   [1 0 0 0])
-  ("toName" .
-   [0 0 0 1 0 0])
-  ("pattern" .
-   [2 0 0 0 0 0 0])
-  ("files" .
-   [2 0 0 0 0])
-  ("seek-and-destroy" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("WORKSPACE_PATH" .
-   [0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("SHARED_DIR_PATH/workspace" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("SHARED_DIR_PATH" .
-   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("DATA_FILES_PATH" .
-   [0 0 0 0 3 0 0 0 0 0 0 0 0 0 0])
-  ("~/workspace/data" .
-   [0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0])
-  ("putStrLn" .
-   [0 0 0 1 0 0 0 0])
-  ("git" .
-   [2 0 0])
-  ("Data" .
-   [1 0 0 0])
-  ("Name" .
-   [1 0 0 0])
-  ("String" .
-   [0 0 0 1 0 0])
-  ("toTitle" .
-   [0 0 0 2 0 0 0])
-  ("cap" .
-   [2 0 0])
+((("toLower" .
+   [0 0 0 1 0 0 0])
   ("toUpper" .
    [0 0 0 1 0 0 0])
-  ("toLower" .
-   [0 0 0 1 0 0 0])))
+  ("cap" .
+   [2 0 0])
+  ("toTitle" .
+   [0 0 0 2 0 0 0])
+  ("String" .
+   [0 0 0 1 0 0])
+  ("Name" .
+   [1 0 0 0])
+  ("Data" .
+   [1 0 0 0])
+  ("git" .
+   [2 0 0])
+  ("putStrLn" .
+   [0 0 0 1 0 0 0 0])
+  ("~/workspace/data" .
+   [0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0])
+  ("DATA_FILES_PATH" .
+   [0 0 0 0 3 0 0 0 0 0 0 0 0 0 0])
+  ("SHARED_DIR_PATH" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("SHARED_DIR_PATH/workspace" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("WORKSPACE_PATH" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("seek-and-destroy" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("files" .
+   [2 0 0 0 0])
+  ("pattern" .
+   [2 0 0 0 0 0 0])
+  ("toName" .
+   [0 0 0 1 0 0])
+  ("file" .
+   [1 0 0 0])
+  ("emacs" .
+   [1 0 0 0 0])))
