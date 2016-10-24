@@ -1,5 +1,5 @@
 (defun hlint ()
-  "`hlint' on the current file and revert the buffer"
+  "`hlint' the current file"
   (interactive)
   (shell-command 
    (format "hlint %s"

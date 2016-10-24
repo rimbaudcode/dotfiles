@@ -1,5 +1,5 @@
 (defun stylish-haskell ()
-  "`hlint' on the current file and revert the buffer"
+  "`stylish-haskell' on the current file"
   (interactive)
   (shell-command 
    (format "stylish-haskell -i %s"
