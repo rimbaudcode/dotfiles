@@ -54,6 +54,7 @@
     (swift3-mode markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
+ '(show-paren-mode t)
  '(show-trailing-whitespace t)
  '(transient-mark-mode t)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
