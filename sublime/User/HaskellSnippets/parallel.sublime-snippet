@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+{-|
+ghc -O2 -threaded -rtsopts -o $1 Main.hs &&
+time ./$1 ${2:args} +RTS -N4 -RTS 10000 > /dev/null
+-}
+]]></content>
+  <tabTrigger>parallel</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

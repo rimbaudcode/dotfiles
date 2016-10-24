@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+\begin{figure}[bt]
+  %
+  \capstart\centering
+  %
+  % Resize the figure to ?cm wide.
+  %
+  \resizebox{0.9\textwidth}{!}{
+    \begin{tikzpicture}[
+        scale=0.5
+      , level/.style={thick}
+      , change/.style={thick, dashed, ->, >=stealth}
+      ]
+      %
+      % tikz pic here
+      %
+    \end{tikzpicture}
+  }
+  %
+  \caption{$1}
+  \label{fig:$2}
+\end{figure}
+]]></content>
+  <tabTrigger>tikz</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

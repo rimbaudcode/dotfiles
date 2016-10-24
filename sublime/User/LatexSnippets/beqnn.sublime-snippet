@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+\begin{equation*}
+  $0
+\end{equation*}
+]]></content>
+  <tabTrigger>beqnn</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

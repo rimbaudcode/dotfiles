@@ -1,0 +1,32 @@
+<snippet>
+  <content><![CDATA[
+\begin{guess}
+  Order-of-magnitude estimation:
+  \begin{description}
+    \item [Quantity to estimate] $0
+    \item [Dimensions] 
+    \item [Units] 
+    \item [Absolute known order-of-magnitude] 
+    \item [Relative known order-of-magnitude] 
+    \item [Raw lower bound] 
+    \item [Raw upper bound] 
+    \item [Geometric mean] 
+    \item [Idea] 
+    \item [Factors affecting quantity] 
+    \item [Scaling] 
+    \item [Ratios] 
+    \item [Equation] 
+    \item [Dimensional analysis] 
+    \item [Sanity check] 
+    \item [Bounding box] 
+    \item [Likely box] 
+    \item [\href{https://en.wikipedia.org/w/index.php?titile=Category:Orders_of_magnitude}{Order-of-magnitude size}] 
+    \item [Intensive value] 
+    \item [Reference data] 
+    \item [Interpretation] 
+  \end{description}
+\end{guess}
+]]></content>
+  <tabTrigger>guess</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

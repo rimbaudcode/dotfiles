@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+% ---------------------------------------------------------------------- Example
+%
+\horline\
+%
+\begin{example}
+  $0
+\end{example}
+]]></content>
+  <tabTrigger>example</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

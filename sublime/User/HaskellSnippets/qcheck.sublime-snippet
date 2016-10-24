@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+quickCheck ($1 == $2)
+]]></content>
+  <tabTrigger>qcheck</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

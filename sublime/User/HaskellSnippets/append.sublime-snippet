@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+-- | append Text
+(<>) :: Text -> Text -> Text
+(<>) = append
+infixr 5 <>
+]]></content>
+  <tabTrigger>append</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

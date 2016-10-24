@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+$1 = $2.new $3
+]]></content>
+  <tabTrigger>ob</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

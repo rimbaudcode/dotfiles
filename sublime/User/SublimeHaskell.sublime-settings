@@ -1,0 +1,11 @@
+{
+	"add_to_PATH":
+	[
+		"/Users/dfhe/.local/bin/"
+	],
+	"enable_ghc_mod": true,
+	"enable_hdevtools": false,
+	"enable_hsdev": false,
+  "auto_completion_popup": true,
+  "lint_check_fly_idle": 60
+}

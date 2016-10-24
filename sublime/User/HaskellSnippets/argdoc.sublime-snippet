@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+-- ^ ${1:brief documentation of the argument}
+]]></content>
+  <tabTrigger>adoc</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

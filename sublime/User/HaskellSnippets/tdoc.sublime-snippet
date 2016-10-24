@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+-- | ${1:brief documentation of the type}
+]]></content>
+  <tabTrigger>tdoc</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

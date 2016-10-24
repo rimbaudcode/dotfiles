@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+/*
+swiftc -warnings-as-errors -sdk \$(xcrun --show-sdk-path --sdk macosx) -g -o \
+ $1 $TM_FILENAME ./lib/$1.swift
+*/
+]]></content>
+  <tabTrigger>comp</tabTrigger>
+  <scope>source.swift</scope>
+</snippet>

@@ -1,0 +1,60 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Advanced CSV",
+		"Alignment",
+		"All Autocomplete",
+		"AutoFileName",
+		"AutoSpell",
+		"Better CoffeeScript",
+		"Boxy Theme",
+		"BracketHighlighter",
+		"C Improved",
+		"Colorsublime",
+		"Delete Current File",
+		"Elixir",
+		"ElixirSublime",
+		"File Rename",
+		"Fix Mac Path",
+		"Fortran",
+		"Git",
+		"GitGutter",
+		"GitGutter-Edge",
+		"Gnuplot",
+		"Highlight",
+		"iOpener",
+		"iTunes",
+		"LaTeX Word Count",
+		"LaTeXTools",
+		"LoremIpsum",
+		"Lucario Color Scheme",
+		"Monokai - Spacegray",
+		"Monokai Extended",
+		"Package Control",
+		"Prolog",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeGit",
+		"SublimeHaskell",
+		"SublimeLinter",
+		"SublimeLinter-contrib-swiftlint",
+		"SublimeLinter-hlint",
+		"SublimeREPL",
+		"SummitLinter",
+		"Swift",
+		"Swift for F*ing Sublime",
+		"Swift Foundation Completions",
+		"Theme - Soda",
+		"Theme - Spacegray",
+		"Trimmer",
+		"Yesod"
+	],
+	"repositories":
+	[
+		"https://github.com/SublimeHaskell/SublimeHaskell/tree/hsdev"
+	]
+}

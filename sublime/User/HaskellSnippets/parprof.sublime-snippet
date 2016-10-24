@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+{- |
+ghc -prof -fprof-auto -O2 -threaded -rtsopts -o $1 Main.hs &&
+time ./$1 ${2:args} +RTS -N4 -p > /dev/null
+-}
+]]></content>
+  <tabTrigger>parprof</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

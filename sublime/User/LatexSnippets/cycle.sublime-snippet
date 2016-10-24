@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+\begin{assuming}
+  $0
+\end{assuming}
+%
+\begin{deriving}
+  
+\end{deriving}
+%
+\begin{calculating}
+  
+\end{calculating}
+%
+\begin{checking}
+  
+\end{checking}
+]]></content>
+  <tabTrigger>cycle</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+\sbtxt{$1}
+]]></content>
+  <tabTrigger>\sb</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

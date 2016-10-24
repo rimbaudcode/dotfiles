@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+putStrLn \$ show \$ $0
+]]></content>
+  <tabTrigger>putsh</tabTrigger>
+  <scope>source.haskell</scope> 
+</snippet>
+

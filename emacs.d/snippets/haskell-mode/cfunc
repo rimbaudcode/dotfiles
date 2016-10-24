@@ -1,0 +1,7 @@
+import Foreign.C.Types (CDouble (..))
+
+foreign import ccall unsafe "${1:math.h} ${2:sin}"
+  c_${3:sin} :: CDouble -> CDouble
+
+fast$3 :: (Real a, Fractional b) => a -> b
+fast$3 x = realToFrac (c_$3 (realToFrac x))

@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+{-# OPTIONS_GHC -funbox-strict-fields            #-}
+{-# OPTIONS_GHC -fwarn-implicit-prelude          #-}
+{-# OPTIONS_GHC -fwarn-incomplete-patterns       #-}
+{-# OPTIONS_GHC -fwarn-incomplete-record-updates #-}
+{-# OPTIONS_GHC -fwarn-monomorphism-restriction  #-}
+{-# OPTIONS_GHC -fwarn-tabs                      #-}
+{-# OPTIONS_GHC -fwarn-unused-do-bind            #-}
+{-# OPTIONS_GHC -Wall                            #-}
+{-# OPTIONS_GHC -Werror                          #-}
+
+]]></content>
+  <tabTrigger>opt</tabTrigger>
+  <scope>source.haskell</scope> 
+</snippet>

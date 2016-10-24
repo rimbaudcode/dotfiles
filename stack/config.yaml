@@ -1,0 +1,11 @@
+# This file contains default non-project-specific settings for 'stack', used
+# in all projects.  For more information about stack's configuration, see
+# http://docs.haskellstack.org/en/stable/yaml_configuration/
+#
+templates:
+  params:
+    author-email: rimbaudcode[at]gmail(DoT)com
+    author-name: art rimbaud
+    category: System
+    copyright: '(c) 2016 rimbaudcode'
+    github-username: rimbaudcode

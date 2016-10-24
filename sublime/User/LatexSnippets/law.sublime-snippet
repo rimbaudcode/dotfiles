@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+\begin{law}
+  $0
+\end{law}
+]]></content>
+  <tabTrigger>law</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

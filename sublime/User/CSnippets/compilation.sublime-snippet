@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+/*
+clang -pedantic -Wshadow -Wpointer-arith -Wwrite-strings -Wall \
+-Wextra -Weverything -Werror -g -o $1 $TM_FILENAME ./lib/$1.c -Ilib
+*/
+]]></content>
+  <tabTrigger>comp</tabTrigger>
+  <scope>source.c</scope>
+</snippet>

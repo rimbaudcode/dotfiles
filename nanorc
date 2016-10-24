@@ -1,0 +1,6 @@
+set nowrap
+set smooth
+set speller "aspell -x -c"
+set tabsize 2
+set tabstospaces
+set tempfile

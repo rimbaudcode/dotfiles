@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+\txpd{$1}{$2}{$3}\,\dx$2
+]]></content>
+  <tabTrigger>tdif</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

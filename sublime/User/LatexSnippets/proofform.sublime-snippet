@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+\begin{proofform}
+  ${1:some notes here}.
+  \begin{itemize}[label={}]
+    \item $0
+  \end{itemize}
+\end{proofform}
+]]></content>
+  <tabTrigger>pform</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

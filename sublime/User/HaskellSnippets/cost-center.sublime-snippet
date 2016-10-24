@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+{-# SCC "$1" #-}
+]]></content>
+  <tabTrigger>costcenter</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

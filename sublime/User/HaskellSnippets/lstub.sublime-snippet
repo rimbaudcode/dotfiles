@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+-- Purpose-Signature-Definition-Examples
+-- Pretend haskell provides all the code (functions, types, ...)
+-- Then, fill out all the details by using std lib, 3rd party libs,
+-- and lastly by writing own code :)
+--
+-- | $1
+${2:identifier} :: ${3:ins-types} -> ${4:out-type}
+$2 ${5:args} = undefined
+--
+-- quickCheck ($2 $6 == $7)
+-- quickCheck ($2 $6 /= $8)
+
+]]></content>
+  <tabTrigger>lstub</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

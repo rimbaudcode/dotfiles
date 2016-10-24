@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+(<&>) :: Functor f => f a -> (a -> b) -> f b
+(<&>) = flip fmap
+infixl 4 <&>
+]]></content>
+  <tabTrigger>flipfmap</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

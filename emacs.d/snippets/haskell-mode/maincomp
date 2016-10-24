@@ -1,0 +1,7 @@
+{- |
+ghc -fwarn-incomplete-patterns -fwarn-tabs \
+ -fwarn-incomplete-record-updates \
+ -fwarn-monomorphism-restriction -fwarn-unused-do-bind \
+ -fwarn-implicit-prelude -Wall -Werror -o \
+ `(file-name-sans-extension (buffer-file-name))` `(buffer-file-name)`
+-}

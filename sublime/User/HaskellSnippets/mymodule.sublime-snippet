@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+module ${TM_FILENAME/(.*)[.](.*)/$1/g}
+  () where
+
+$0
+]]></content>
+  <tabTrigger>mymod</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

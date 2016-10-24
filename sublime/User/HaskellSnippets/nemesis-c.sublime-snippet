@@ -1,0 +1,35 @@
+<snippet>
+  <content><![CDATA[
+import System.Nemesis.Env
+
+src = "main.c"
+exe = "$1"
+
+lib = "$1.c"
+
+comp   = "clang"
+flags  = "-Wall -Wextra -Weverything -Werror -g -o"
+
+libdir   = "lib"
+libflags = "-Ilib"
+
+main = run \$ do
+
+  desc "Build executable"
+  task "build" \$ do
+    sh \$ unwords [comp, flags, exe, src]
+    -- sh \$ unwords [comp, flags, exe, src, "./" ++ libdir ++ "/" ++ lib, libflags]
+
+  desc "Run executable"
+  task "run" \$ do
+    sh \$ unwords ["./" ++ exe, "&& echo 'Exit status:' \$?"]
+
+
+  clean [ exe
+        , exe ++ ".dSYM"
+        ]
+
+]]></content>
+  <tabTrigger>nemesis-c</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

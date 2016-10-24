@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+{-
+ghc -c -fwarn-incomplete-patterns -fwarn-tabs \
+ -fwarn-incomplete-record-updates \
+ -fwarn-monomorphism-restriction -fwarn-unused-do-bind \
+ -fwarn-implicit-prelude -Wall -Werror $TM_FILENAME
+-}
+]]></content>
+  <tabTrigger>comp</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+--
+{-# OPTIONS_GHC -fno-warn-unused-binds   #-}
+{-# OPTIONS_GHC -fno-warn-unused-imports #-}
+{-# OPTIONS_GHC -fno-warn-unused-matches #-}
+--
+
+]]></content>
+  <tabTrigger>nowarns</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>
