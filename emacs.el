@@ -138,6 +138,7 @@
 ;;(global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-r") 'mc/mark-all-like-this)
 ;;
+(load-file "~/github/dotfiles/emacs.d/rmbd/hlint.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/pointfree.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/shell-region.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/stylish-haskell.el")
