@@ -12,16 +12,17 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/dfhe/github/scripts/"
  "/Users/dfhe/"
  "/var/folders/ql/wm7xsf6d0_57l4lys16tvwdh0000gn/T/sandbox/hello/src/"
  "/var/folders/ql/wm7xsf6d0_57l4lys16tvwdh0000gn/T/sandbox/hello/"
  "/var/folders/ql/wm7xsf6d0_57l4lys16tvwdh0000gn/T/sandbox/hello/data/"
  "/Users/dfhe/github/dotfiles/mac/"
- "/Users/dfhe/github/scripts/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "symlinks-mint"
  ".zshrc"
  "Greet.hs"
  ".emacs"
@@ -33,6 +34,8 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/dfhe/github/scripts/" (22541 50450 0 0) "VERSION.md" "update-tools" "update-mint" "update-apps" "symlinks-mint" "symlinks-mac" "skeleton" "scatter.gp" "scatter" "README.md" "mkhaskell" "LICENSE.md" ".git/" ".DS_Store" "../" "./")
+
  ("/Users/dfhe/" (22541 11355 0 0) "VirtualBox VMs/" "Ten Thumbs Students/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "github/" "Downloads/" "Documents/" "Desktop/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-rmbd-5.2" ".wget-hsts" ".w3m/" ".Trash/" ".subversion/" ".stack/" ".ssh/" ".rbenv/" ".oh-my-zsh/" ".newsbeuter/" ".nanorc" ".mplayer/" ".local/" ".iterm2_shell_integration.zsh" ".iterm2/" ".iStats/" ".irssi/" ".hgignore_global" ".gnupg/" ".gitignore_global" ".gitconfig" ".ghci" ".ghc-mod/" ".ghc/" ".gem/" ".emacs.d/" ".emacs" ".DS_Store" ".cpan/" ".config/" ".codeintel/" ".calc_history" ".cache/" ".cabal/" ".bundle/" ".aspell.en.pws" ".aspell.en.prepl" ".archey-ip" ".ansiweatherrc" "../" "./")
 
  ("/Users/dfhe/Desktop/" (22541 1804 0 0) "thesis/" "rent/" "pointfree.lsp" "manu/" "hannes/" "curriculum/" "camiseta/" ".localized" ".DS_Store" "../" "./")
@@ -50,8 +53,6 @@
  ("/Users/dfhe/github/dotfiles/mac/" (22540 48310 0 0) "zshrc" "gitconfig" "emacs" "../" "./")
 
  ("/Users/dfhe/github/dotfiles/" (22540 37695 0 0) "VERSION.md" "sublime/" "stack/" "README_RANGER.md" "README.md" "newsbeuter/" "nanorc" "mint/" "micro/" "mac/" "LICENSE.md" "iterm2/" "irssi/" "gitignore_global" "ghci" "emacs.d/" "ansiweatherrc" ".gitignore" ".git/" ".DS_Store" "../" "./")
-
- ("/Users/dfhe/github/scripts/" (22540 49972 0 0) "VERSION.md" "update-tools" "update-mint" "update-apps" "symlinks" "skeleton" "scatter.gp" "scatter" "README.md" "mkhaskell" "LICENSE.md" ".git/" "../" "./")
 
  ("/Users/dfhe/github/" (22540 37695 0 0) "wifi/" "tonato/" "tao/" "scripts/" "Rdatasets/" "MLTextReader/" "dotfiles/" "data/" "BlackBackground/" ".DS_Store" "../" "./")
 
