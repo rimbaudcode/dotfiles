@@ -1,0 +1,3 @@
+newtype $1 = $1 Double
+            deriving (Eq, Fractional, Num, Ord, Show)
+$0

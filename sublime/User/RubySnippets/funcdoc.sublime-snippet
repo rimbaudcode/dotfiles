@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+# ${1:Adds two numbers together, returning their sum.}
+#
+# @param  ${2:var_one [Fixnum] First number to add}
+# @param  ${3:var_two [Fixnum] Second number to add}
+# @return ${4:[Fixnum] Sum of the two arguments}
+#
+]]></content>
+  <tabTrigger>fdoc</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

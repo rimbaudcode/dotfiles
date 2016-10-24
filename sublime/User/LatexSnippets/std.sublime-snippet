@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+\std{$1}
+]]></content>
+  <tabTrigger>std</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

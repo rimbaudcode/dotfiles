@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+\ce{$1}
+]]></content>
+  <tabTrigger>ce</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

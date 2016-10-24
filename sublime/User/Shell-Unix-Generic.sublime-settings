@@ -1,0 +1,9 @@
+{
+	"extensions":
+	[
+		"bash_profile",
+		"bashrc",
+		".zshrc",
+		"zshrc"
+	]
+}

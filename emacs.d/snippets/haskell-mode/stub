@@ -1,0 +1,7 @@
+-- Design by assumption
+-- | ${1:purpose}
+${2:identifier} :: ${3:ins-types} -> ${4:out-type}
+$2 ${5:args} = undefined
+--
+-- quickCheck ($2 $6 == $7)
+-- quickCheck ($2 $6 /= $8)

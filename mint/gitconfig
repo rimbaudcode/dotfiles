@@ -1,0 +1,44 @@
+[core]
+	excludesfile = /home/art/.gitignore_global
+	editor = nano
+[user]
+	name = art rimbaud
+	email = rimbaudcode@gmail.com
+[commit]
+	template = /home/art/.stCommitMsg
+[alias]
+	ac = !git add . && git commit -am
+	alias = config --get-regexp alias
+	br = branch
+	#
+	# bump: pass the version number as 0.1.0.0
+	bump = "!f() { git commit -am \"version number bumped to "$1"\"; }; f"
+	ci = commit
+	co = checkout
+	dump = cat-file -p
+	history = log --pretty=format:\"%h - %an, %ad : %s\"
+	last = log -1 HEAD
+	#
+	# listing commands
+	# ld: relative dates
+	# lds: dates
+	# ll: changed files
+	# lnc: no colors (nice for piping)
+	# ls: listing as shell `ls`
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	#
+	logtree = log --graph --oneline --decorate --all
+	report = log --author=art --pretty=format:\"%h - %ad : %s\" --no-merges
+	st = status
+	type = cat-file -t
+	unstage = reset HEAD --
+	visual = !gitk
+
+[color]
+	ui = auto
+[credential]
+	helper = cache

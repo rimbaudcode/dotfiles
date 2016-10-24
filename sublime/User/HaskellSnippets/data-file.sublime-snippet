@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+import Paths_$1 (getDataFileName)
+-- getDataFileName :: FilePath -> IO FilePath
+-- getDataFileName "data/$1.txt"
+
+]]></content>
+  <tabTrigger>datafile</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

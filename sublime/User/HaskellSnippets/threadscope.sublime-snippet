@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+{- | 
+ghc -O2 -rtsopts -eventlog -threaded -o $1 Main.hs &&
+./$1 ${2:args} +RTS -N2 -l &&
+threadscope $1.eventlog
+-}
+]]></content>
+  <tabTrigger>threadscope</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

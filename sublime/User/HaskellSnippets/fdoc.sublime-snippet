@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+{- | ${1: identifier}: ${2: one-line description}
+$3
+lazy?   : $4
+pure?   : $5
+transp.?: $6
+side-eff.?: $7
+partial?  : $8
+tested?   : $9
+-}
+
+]]></content>
+  <tabTrigger>fdoc</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

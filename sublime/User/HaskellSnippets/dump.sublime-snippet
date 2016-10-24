@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+{- |
+ghc -O2 -with-rtsopts=-s -ddump-simpl -ddump-stg -ddump-to-file -o $1 ${2:args} Main.hs
+-}
+]]></content>
+  <tabTrigger>dumpcoreinfo</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

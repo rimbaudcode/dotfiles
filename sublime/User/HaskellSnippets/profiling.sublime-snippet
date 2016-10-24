@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+{- |
+ghc -prof -fprof-auto -rtsopts -o $1 Main.hs && \
+./$1 ${2:args} +RTS -p > /dev/null
+-}
+]]></content>
+  <tabTrigger>profiling</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

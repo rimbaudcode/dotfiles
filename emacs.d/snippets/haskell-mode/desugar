@@ -1,0 +1,1 @@
+-- ghc -c `(buffer-file-name)` -ddump-ds

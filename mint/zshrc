@@ -1,0 +1,228 @@
+# name:                .zshrc
+# version:             see VERSION.md
+# synopsis:            configuration file for `Mint` OS zsh
+# license:             BSD3
+# license-file:        LICENSE.md
+# author:              art rimbaud
+# maintainer:          rimbaud1854(dot)91[At]gmail(DOT)com
+# copyright:           (c) 2016 rimbaudcode
+# category:            System
+
+export ZSH=~/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+HYPHEN_INSENSITIVE="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+plugins=(apt colored-man-pages git git-flow stack)
+
+source $ZSH/oh-my-zsh.sh
+export LANG=en_US.UTF-8
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=0
+
+### Paths
+#
+export EDITOR=`which nano`
+export VISUAL=`which nano`
+#
+export LESSOPEN="| source-highlight-esc.sh %s"
+export LESS=' -R '
+#
+HASKELL_STACK_PATH=$HOME/.local/bin
+export PATH=$HASKELL_STACK_PATH:$PATH
+#
+SCRIPTS_PATH=$HOME/github/scripts
+export PATH=$SCRIPTS_PATH:$PATH
+#
+SHARED_DIR_PATH=/media/sf_Shared
+export PATH=$SHARED_DIR_PATH:$PATH
+#
+RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+export PATH=$RBENV_GEMS_PATH:$PATH
+#
+TMPDIR_PATH=/tmp
+export TMPDIR_PATH
+#
+TRASH_PATH=$HOME/.local/share/Trash/files
+export TRASH_PATH
+#
+WORKSPACE_PATH=$HOME/github
+export PATH=$WORKSPACE_PATH:$PATH
+
+### Functions
+#
+# function dependencies
+# prints out a png of the current Haskell project dependencies
+function dependencies () {
+  local png_name=$(basename `pwd`)
+  stack dot --no-include-base --external --depth 1 | dot -Tpng -o "$png_name"_dep.png
+}
+#
+# function extract
+# extract the contents of various compressed files
+function extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)  tar xjf $1      ;;
+      *.tar.gz)   tar xzf $1      ;;
+      *.bz2)      bunzip2 $1      ;;
+      *.rar)      rar x $1        ;;
+      *.gz)       gunzip $1       ;;
+      *.tar)      tar xf $1       ;;
+      *.tbz2)     tar xjf $1      ;;
+      *.tgz)      tar xzf $1      ;;
+      *.zip)      unzip $1        ;;
+      *.Z)        uncompress $1   ;;
+      *)          echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+      echo "'$1' is not a valid file"
+  fi
+}
+#
+# function fixpermissions
+# fix file and dir permissions in pwd!
+function fixpermissions() {
+  find . -type d -exec chmod 755 {} \;
+  find . -type f -exec chmod 644 {} \;
+}
+#
+# function mkcd
+# mkdir and cd
+function mkcd () {
+  mkdir $1 && cd "$_"
+}
+#
+# function mkdata
+# symlink to data
+function mkdata () {
+  ln -s $HOME/github/data `pwd`/
+}
+#
+# function mkswift
+# create a swift package
+function mkswift () {
+  local package=$1
+  mkdir $package && cd $package
+  swift package init --type executable
+  git flow init -d
+}
+#
+# function sandbox
+# creates a sandbox in the system's temp folder
+function sandbox () {
+  cd $TMPDIR_PATH
+  mkdir -p sandbox
+  cd sandbox
+}
+#
+# function search
+# search for files given a pattern
+function search () {
+  local word=$1
+  find ./ -iname "$word" | more
+}
+#
+# function starwars
+# watch starwars in ASCII
+function starwars () {
+  echo 'exit: CTRL + ] > CTRL + d'
+  sleep 3
+  telnet towel.blinkenlights.nl
+}
+#
+# function vscan
+# scan a dir or file for virus
+function vscan () {
+  local filename=$1
+  freshclam
+  clamscan -r -z "$filename"
+}
+#
+# function web
+# web browse with w3m
+function web () {
+  local site=$1
+  w3m -N -no-cookie "$1"
+  command rm -f ~/.w3m/history
+}
+#
+# function workspace
+# mk and cd to a workspace
+function workspace () {
+  cd ~
+  mkdir -p ~/workspace
+  chmod 700 ~/workspace
+  cd ~/workspace
+}
+
+### Bindings
+# '\e' stands for meta: ESC or Alt
+#
+bindkey -s '\e1' "!:0 "
+bindkey -s '\e2' "!:0-1 "
+bindkey -s '\e3' "!:0-2 "
+bindkey -s '\e4' "!:0-3 "
+
+### Aliases
+#
+alias cp='cp -i'
+alias ln='ln -i'
+alias mv='mv -i'
+alias rm='rm -i'
+#
+alias ls='ls --color'
+alias ll='ls -al | less'
+#
+alias cal='cal | grep --color -EC6 "\b"$(date +%e | sed "s/ //g")'
+alias clamscan='clamscan --quiet -rz'
+alias encrypt='gpg -e -r Art'
+alias get-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
+alias ghci='ghci -W'
+alias hoogle='hoogle --color --count=100'
+alias irb='irb --readline --simple-prompt'
+alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
+alias mkdir='mkdir -p'
+alias open='xdg-open'
+alias py='python3 -tt -O -q -b -d'
+alias rbprof='ruby -w -r profile'
+alias reload='source ~/.zshrc'
+alias sq3='sqlite3'
+alias unzip='unzip -qq'
+alias w3m='w3m -N -no-cookie'
+alias wget='wget -c'
+alias yt='youtube-dl -citk -f'
+alias zip='zip -qrT'
+#
+### Folders
+#
+alias apps=$MY_APPS_PATH
+alias data="cd $HOME/github/data"
+alias desktop="cd $HOME/Desktop"
+alias documents="cd $HOME/Documents"
+alias downloads="cd $HOME/Downloads"
+alias github="cd $HOME/github"
+alias movies="cd $HOME/Movies"
+alias pictures="cd $HOME/Pictures"
+alias shared="cd $SHARED_DIR_PATH"
+alias workspace="cd $WORKSPACE_PATH"
+#
+### Sub-menus
+#
+alias ascii-list='man 7 ascii'
+alias emacs-haskell='emacs *.cabal **/*.hs *.md'
+#
+# web links
+#
+alias web-duck='web www.duckduckgo.com'
+alias web-google='web https://www.google.com'
+
+### Fish syntax highlightning
+#
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

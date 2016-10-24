@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+module Main (main) where
+
+main :: IO ()
+main = undefined
+
+]]></content>
+  <tabTrigger>mymain</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

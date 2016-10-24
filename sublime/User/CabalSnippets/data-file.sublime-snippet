@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+data-files: data/$1
+--
+other-modules:       Paths_${TM_FILENAME/(.*)[.](.*)/$1/g}
+]]></content>
+  <tabTrigger>datafile</tabTrigger>
+  <scope>source.cabal</scope>
+</snippet>

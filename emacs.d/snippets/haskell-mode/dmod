@@ -1,0 +1,11 @@
+-- |
+-- Module      :  `(file-name-base (buffer-file-name))`
+-- Description :  $1
+-- Copyright   :  (c) 2015 rimbaudcode
+-- License     :  BSD3. No warranty provided.
+--
+-- Maintainer  :  rimbaudcode {at} gmail [dot] com
+-- Stability   :  unstable | experimental | provisional | stable | frozen
+-- Portability :  portable | non-portable (<reason>)
+
+$0

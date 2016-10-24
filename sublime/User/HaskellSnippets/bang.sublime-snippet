@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+#!/usr/bin/env runhaskell
+]]></content>
+  <tabTrigger>bang</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

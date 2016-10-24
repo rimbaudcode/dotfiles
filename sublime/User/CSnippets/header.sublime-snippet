@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+// Lasciate ogne speranza, voi ch'intrate.
+/*
+  Tool        :  $TM_FILENAME
+  Description :  ${1:short}
+  Copyright   :  (c) 2015 rimbaudcode
+  License     :  GPLv3+. No warranty provided.
+
+  Maintainer  :  rimbaud1854_91 {at} hotmail [dot] com
+  Stability   :  unstable | experimental | provisional | stable | frozen
+  Portability :  portable | non-portable (<reason>)
+
+  ${2:longer description}
+*/
+
+// \$ clang -g -o ${TM_FILENAME/(.*)[.](.*)/$1/g} $TM_FILENAME -Wall -Wextra -Weverything -Werror
+
+$0
+]]></content>
+  <tabTrigger>header</tabTrigger>
+  <scope>source.c</scope>
+</snippet>

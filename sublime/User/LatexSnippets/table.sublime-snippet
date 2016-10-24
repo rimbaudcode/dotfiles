@@ -1,0 +1,24 @@
+<snippet>
+  <content><![CDATA[
+%\begin{sidewaystable}
+\begin{table}[bt]
+  \centering\capstart%\small\center
+  \caption[$1]
+    {$2}
+    \label{tab:$3}
+  \begin{tabular}{ccc}
+    \toprule
+    %
+    \midrule
+    %
+    $0
+    %
+    \bottomrule
+    %
+  \end{tabular}
+\end{table}
+%\end{sidewaystable}
+]]></content>
+  <tabTrigger>ta</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+newtype $1 = $1 Double
+            deriving (Eq, Fractional, Num, Ord, Show)
+$0
+]]></content>
+  <tabTrigger>phq</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

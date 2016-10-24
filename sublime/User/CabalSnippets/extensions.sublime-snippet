@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+default-extensions:  OverloadedStrings
+]]></content>
+  <tabTrigger>extensions</tabTrigger>
+  <scope>source.cabal</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+#!/usr/bin/env swift
+
+// Lasciate ogne speranza, voi ch'intrate.
+
+/*
+File        :  $TM_FILENAME
+Description :  $1
+Copyright   :  (c) 2015 rimbaudcode
+License     :  BSD3. No warranty provided.
+
+Maintainer  :  rimbaudcode {at} gmail [dot] com
+Stability   :  unstable | experimental | provisional | stable | frozen
+*/
+
+$0
+]]></content>
+  <tabTrigger>header</tabTrigger>
+  <scope>source.swift</scope>
+</snippet>

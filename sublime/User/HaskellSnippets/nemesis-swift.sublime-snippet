@@ -1,0 +1,35 @@
+<snippet>
+  <content><![CDATA[
+import System.Nemesis.Env
+
+src = "main.swift"
+exe = "$1"
+
+lib = "$1.swift"
+
+comp  = "swiftc"
+flags = "-warnings-as-errors -sdk \$(xcrun --show-sdk-path --sdk macosx) -g -o"
+
+libdir   = "lib"
+libflags = ""
+
+main = run \$ do
+
+  desc "Build executable"
+  task "build" \$ do
+    -- sh \$ unwords [comp, flags, exe, src]
+    sh \$ unwords [comp, flags, exe, src, "./" ++ libdir ++ "/" ++ lib, libflags]
+
+  desc "Run executable"
+  task "run" \$ do
+    sh \$ unwords ["./" ++ exe, "&& echo 'Exit status:' \$?"]
+
+
+  clean [ exe
+        , exe ++ ".dSYM"
+        ]
+
+]]></content>
+  <tabTrigger>swift-compiled</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

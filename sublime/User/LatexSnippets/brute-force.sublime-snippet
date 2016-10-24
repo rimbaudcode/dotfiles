@@ -1,0 +1,29 @@
+<snippet>
+  <content><![CDATA[
+\begin{guess}
+  Order-of-magnitude estimation:
+  \begin{description}
+    \item [Quantity to estimate] $0
+    \item [Dimensions] 
+    \item [Units] 
+    \item [Known estimate] (absolute, relative)
+    \item [Lower bound] 
+    \item [Upper bound] 
+    \item [Geom. mean] 
+    \item [Equation] 
+    \item [Dim. analysis] 
+    \item [Brute-force] 
+    \item [Scaling] 
+    \item [Successive approx.] 
+    \item [Bounding box] 
+    \item [Likely box] 
+    \item [Intensive value] 
+    \item [\href{https://en.wikipedia.org/w/index.php?titile=Category:Orders_of_magnitude}{Order-of-magnitude size}] 
+    \item [Reference] 
+    \item [Interpretation] 
+  \end{description}
+\end{guess}
+]]></content>
+  <tabTrigger>bforce</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+-- ghc -c $TM_FILENAME -ddump-ds
+]]></content>
+  <tabTrigger>desugar</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

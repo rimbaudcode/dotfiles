@@ -1,0 +1,36 @@
+<snippet>
+  <content><![CDATA[
+\begin{dimensions}
+  We solve the problem by dimensional analysis (cycle: assume, derive, calculate, check):
+  \begin{description}
+    \item [Science branch] $0
+    \item [Subbranch]
+    \item [Fundamental dim.]
+    \item [Some physics?]
+    \item [Independent]
+    \item [Dependent]
+    \item [Constants]
+    \item [Parameters]
+    \item [Equivalent dim.] (which constant, parameter brings what fund. dim.?)
+    \item [Equivalent quantity dims.]
+    \item [No. of quantities]
+    \item [No. of dimensions]
+    \item [No. of Pi's] (Buckingham theorem)
+    \item [Pi's] Dimensionless quantities: one for dep. quant., the rest for the indep. quantities. Construct the Pi's using the constants and parameters.
+    \begin{itemize}
+      \item 
+    \end{itemize}
+    \item [Nondim. model]
+    \item [Dim. model] (solved for the ind. quant.)
+    \item [Scaling]
+    \item [Assumptions] (physics arguments, easy cases, extreme cases)
+    \item [Reduced nondim. model]
+    \item [Value of dimless quantity?] (if known from honest physics)
+    \item [Numerics]
+    \item [Solution]
+  \end{description}
+\end{dimensions}
+]]></content>
+  <tabTrigger>da</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

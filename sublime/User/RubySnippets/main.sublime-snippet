@@ -1,0 +1,32 @@
+<snippet>
+  <content><![CDATA[
+
+\$LOAD_PATH << File.expand_path(File.join(__dir__, '../lib'))
+
+# reqs here
+$0
+
+def main args
+  # tool logic here
+  exit
+end
+
+# helper methods here
+
+
+if \$0 == __FILE__
+  begin
+    exit main \$*
+  rescue
+    \$stderr.puts "#{\$!}"
+    \$@.each do |item| \$stderr.puts item end
+    abort
+  ensure
+    #
+  end
+end
+
+]]></content>
+  <tabTrigger>main</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

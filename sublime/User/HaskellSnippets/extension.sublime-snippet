@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+{-# LANGUAGE DeriveGeneric              #-}
+{-# LANGUAGE ExistentialQuantification  #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE FlexibleContexts           #-}
+{-# LANGUAGE FlexibleInstances          #-}
+{-# LANGUAGE NoImplicitPrelude          #-}
+{-# LANGUAGE OverloadedStrings          #-}
+{-# LANGUAGE PackageImports             #-}
+{-# LANGUAGE RebindableSyntax           #-}
+{-# LANGUAGE RecordWildCards            #-}
+{-# LANGUAGE TypeSynonymInstances       #-}
+]]></content>
+  <tabTrigger>ext</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

@@ -1,0 +1,7 @@
+module `(file-name-base (buffer-file-name))`
+  (
+  ) where
+
+import Prelude
+
+$0

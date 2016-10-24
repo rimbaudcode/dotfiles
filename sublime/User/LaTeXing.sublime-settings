@@ -1,0 +1,17 @@
+{
+  "quick_build": [
+        {
+            "name": "Primary Quick Build: latexmk",
+            "primary": true,
+            "cmds": ["latexmk"]
+        },
+        {
+            "name": "Quick Build 1: latexmk + bibtex + latexmk (2x)",
+            "cmds": ["latexmk", "bibtex", "latexmk", "latexmk"]
+        },
+        {
+            "name": "Quick Build 2: latexmk + biber + latexmk (2x)",
+            "cmds": ["latexmk", "biber", "latexmk", "latexmk"]
+        }
+    ],
+}

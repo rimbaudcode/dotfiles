@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+-- | source:
+--
+-- * <http://example.com label>
+-- * <http://example.com label>
+]]></content>
+  <tabTrigger>source</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>

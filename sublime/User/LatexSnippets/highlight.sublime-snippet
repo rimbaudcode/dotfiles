@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+\begin{highlight}
+  $0
+\end{highlight}
+]]></content>
+  <tabTrigger>high</tabTrigger>
+  <scope>text.tex.latex</scope>
+</snippet>

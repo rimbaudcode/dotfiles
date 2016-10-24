@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+import System.Nemesis.Env
+
+exe  = "$0.swift"
+comp = "swift"
+
+main = run \$ do
+
+  desc "Build and run executable"
+  task "build" \$ do
+    sh \$ unwords [comp, "./" ++ exe, "&& echo 'Exit status:' \$?"]
+
+]]></content>
+  <tabTrigger>swift-interpreted</tabTrigger>
+  <scope>source.haskell</scope>
+</snippet>
