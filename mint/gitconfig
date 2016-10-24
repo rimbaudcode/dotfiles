@@ -38,7 +38,7 @@
 	unstage = reset HEAD --
 	visual = !gitk
 	#
-	cloc-haskell = !cloc . --exclude-dir=.stack-work --use-sloccount
+	cloc-stack = !cloc . --exclude-dir=.stack-work --use-sloccount
 
 [color]
 	ui = auto
