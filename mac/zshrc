@@ -308,6 +308,7 @@ alias workspace="cd $WORKSPACE_PATH"
 alias ascii-list='man 7 ascii'
 #
 alias emacs-haskell='emacs *.md **/*.hs *.cabal'
+alias emacs-tex='emacs **/*.tex'
 #
 # readers
 #
