@@ -103,9 +103,6 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 ;;
-(package-install 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
-;;
 ;; 80-line column indicator
 ;;
 (require 'fill-column-indicator)
