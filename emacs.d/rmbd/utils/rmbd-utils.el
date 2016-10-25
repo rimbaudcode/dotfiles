@@ -1,8 +1,8 @@
-;;; package --- emacs wrappers to run utils
+;;; rmbd-utils.el --- functions to run `cli' utils
 
-;;; Commentary:
+;;; commentary:
 
-;;; Code:
+;;; code:
 
 (defun shell-region (start end)
   "Execute a `shell-command' against region from START to END in an inferior shell."

@@ -1,8 +1,8 @@
-;;; package --- emacs wrappers to run `Haskell` utils
+;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' src files
 
-;;; Commentary:
+;;; commentary:
 
-;;; Code:
+;;; code:
 
 (defun hlint ()
   "`hlint' the current file."
