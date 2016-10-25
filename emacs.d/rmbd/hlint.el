@@ -11,4 +11,6 @@
   (revert-buffer t t t)
   )
 
+(provide 'hlint)
+
 ;;; hlint.el ends here

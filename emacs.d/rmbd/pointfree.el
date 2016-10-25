@@ -31,4 +31,6 @@
     )
   )
 
+(provide 'pointfree)
+
 ;;; pointfree.el ends here

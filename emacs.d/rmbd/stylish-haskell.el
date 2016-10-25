@@ -10,6 +10,7 @@
    (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
   (revert-buffer t t t)
   )
+
 (provide 'stylish-haskell)
 
 ;;; stylish-haskell.el ends here

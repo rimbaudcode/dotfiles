@@ -9,4 +9,6 @@
   (shell-command (buffer-substring-no-properties start end))
   )
 
+(provide 'shell-region)
+
 ;;; shell-region.el ends here
