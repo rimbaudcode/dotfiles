@@ -14,7 +14,7 @@
 
 
 (defun pointfree ()
-  "Run `pointfree` against the current selected region."
+  "Run `pointfree' against the current selected region."
   (interactive)
   (when (region-active-p)
     (shell-command-on-region

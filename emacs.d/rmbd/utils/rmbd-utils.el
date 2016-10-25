@@ -5,7 +5,7 @@
 ;;; Code:
 
 (defun shell-region (start end)
-  "Execute region from START to END in an inferior shell."
+  "Execute a `shell-command' against region from START to END in an inferior shell."
   (interactive "r")
   (shell-command (buffer-substring-no-properties start end))
   )
