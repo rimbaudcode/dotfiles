@@ -1,4 +1,4 @@
-;;; package --- run shell command on current region
+;;; package --- emacs wrappers to run utils
 
 ;;; Commentary:
 
@@ -10,6 +10,6 @@
   (shell-command (buffer-substring-no-properties start end))
   )
 
-(provide 'shell-region)
-
-;;; shell-region.el ends here
+(provide 'rmbd-utils.el)
+;;;
+;;; rmbd-utils.el ends here
