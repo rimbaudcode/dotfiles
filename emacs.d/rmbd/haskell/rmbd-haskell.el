@@ -1,4 +1,4 @@
-;;; package --- emacs wrappers to `haskell` utils to run on current buffer (file)
+;;; package --- emacs wrappers to run `Haskell` utils
 
 ;;; Commentary:
 
@@ -50,7 +50,6 @@
   (revert-buffer t t t)
   )
 
-
 (provide 'rmbd-haskell.el)
-
+;;;
 ;;; rmbd-haskell.el ends here
