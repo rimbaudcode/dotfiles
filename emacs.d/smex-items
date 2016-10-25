@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ sort-lines
+ count-words
+ load-file
+ upcase-region
  haskell-compile
  haskell-hoogle
  stylish-haskell
- hlint
- cd
- 5x5
- arp
 )
 
 ;; ----- smex-data -----
@@ -16,4 +16,8 @@
  (hlint . 1)
  (haskell-hoogle . 1)
  (haskell-compile . 1)
+ (upcase-region . 1)
+ (load-file . 1)
+ (count-words . 3)
+ (sort-lines . 1)
 )
