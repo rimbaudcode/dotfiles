@@ -27,6 +27,7 @@
  '(electric-pair-mode t)
  '(fci-rule-color "#343d46")
  '(fci-rule-column nil)
+ '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
  '(global-hl-line-mode nil)
@@ -97,6 +98,13 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;
+;; flycheck haskell
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+;;
+(package-install 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 ;;
 ;; 80-line column indicator
 ;;
