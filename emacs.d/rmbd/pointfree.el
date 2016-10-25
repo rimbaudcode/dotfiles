@@ -1,5 +1,10 @@
+;;; package --- run pointfree on current buffer
+;;; Commentary:
+;;;
+;;; Code:
+
 (defun pointfree ()
-  "run `pointfree` against the current selected region"
+  "Run `pointfree` against the current selected region."
   (interactive)
   (when (region-active-p)
     (shell-command-on-region
@@ -25,3 +30,5 @@
     t
     )
   )
+
+;;; pointfree.el ends here
