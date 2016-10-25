@@ -1,6 +1,7 @@
 ;;; package --- run shell command on current region
+
 ;;; Commentary:
-;;;
+
 ;;; Code:
 
 (defun shell-region (start end)

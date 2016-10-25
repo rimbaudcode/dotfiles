@@ -1,7 +1,17 @@
-;;; package --- run pointfree on current buffer
+;;; package --- emacs wrappers to `haskell` utils to run on current buffer (file)
+
 ;;; Commentary:
-;;;
+
 ;;; Code:
+
+(defun hlint ()
+  "`hlint' the current file."
+  (interactive)
+  (shell-command
+   (format "hlint %s" (shell-quote-argument (buffer-file-name))))
+  (revert-buffer t t t)
+  )
+(provide 'hlint)
 
 (defun pointfree ()
   "Run `pointfree` against the current selected region."
@@ -30,7 +40,15 @@
     t
     )
   )
-
 (provide 'pointfree)
 
-;;; pointfree.el ends here
+(defun stylish-haskell ()
+  "`stylish-haskell' on the current file."
+  (interactive)
+  (shell-command
+   (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
+  (revert-buffer t t t)
+  )
+(provide 'stylish-haskell)
+
+;;; rmbd-haskell.el ends here
