@@ -1,16 +1,19 @@
 
 ;; ----- smex-history -----
 (
+ haskell-compile
+ haskell-hoogle
+ stylish-haskell
+ hlint
  cd
  5x5
  arp
- dbx
- dig
- erc
- ert
 )
 
 ;; ----- smex-data -----
 (
- 
+ (stylish-haskell . 3)
+ (hlint . 1)
+ (haskell-hoogle . 1)
+ (haskell-compile . 1)
 )
