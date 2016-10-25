@@ -30,6 +30,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
+ '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
  '(global-linum-mode t)
  '(global-whitespace-mode nil)
