@@ -320,7 +320,7 @@ alias emacs-tex='emacs **/*.tex'
 #
 # folders
 #
-alias rmbd-emacs='cd ~/github/dotfiles/emacs.d/rmbd'
+alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # readers
 #
