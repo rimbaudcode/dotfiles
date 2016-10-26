@@ -265,7 +265,6 @@ alias eject='hdiutil detach'
 alias encrypt='gpg -e -r Art'
 alias get-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias ghci='ghci -W'
-alias hoogle='hoogle --color --count=100'
 alias imgls='imgls -size 25,25'
 alias irb='irb --readline --simple-prompt'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
@@ -321,6 +320,9 @@ alias emacs-tex='emacs **/*.tex'
 # folders
 #
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
+#
+alias hoogle='hoogle --color --count=100'
+alias hoogle-info='hoogle --info'
 #
 # readers
 #
