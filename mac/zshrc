@@ -35,7 +35,7 @@ export EDITOR=$MICRO_EDITOR_PATH
 export VISUAL=$MICRO_EDITOR_PATH
 
 # brew install `lesspipe`
-LESSOPEN="|lesspipe.sh %s"
+LESSOPEN="|src-hilite-lesspipe.sh %s"
 export LESSOPEN
 #
 HASKELL_STACK_PATH=$HOME/.local/bin
