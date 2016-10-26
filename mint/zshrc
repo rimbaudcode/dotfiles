@@ -33,7 +33,7 @@ SAVEHIST=0
 export EDITOR=`which nano`
 export VISUAL=`which nano`
 #
-export LESSOPEN="| source-highlight-esc.sh %s"
+export LESSOPEN="| lesspipe.sh %s"
 export LESS=' -R '
 #
 HASKELL_STACK_PATH=$HOME/.local/bin
