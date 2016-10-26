@@ -48,6 +48,26 @@
   (revert-buffer t t t)
   )
 
+(defun sort-words (reverse beg end)
+  "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
+  (interactive "*P\nr")
+  (sort-regexp-fields reverse "\\w+" "\\&" beg end)
+  )
+
+(defun transparency (value)
+  "Set the transparency of the frame window.  VALUE 0 = transparent/100 = opaque."
+  (interactive "nTransparency Value 0 - 100 opaque:")
+  (set-frame-parameter (selected-frame) 'alpha value)
+  ((setq )et-background-color "ARGBBB000000")
+  )
+;;
+(transparency 100)
+
+(defun reload-buffer ()
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer :ignore-auto :noconfirm)
+  )
+
 (provide 'rmbd-utils.el)
-;;;
 ;;; rmbd-utils.el ends here

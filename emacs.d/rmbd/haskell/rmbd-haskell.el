@@ -51,5 +51,4 @@
   )
 
 (provide 'rmbd-haskell.el)
-;;;
 ;;; rmbd-haskell.el ends here
