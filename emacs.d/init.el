@@ -45,6 +45,7 @@
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(initial-scratch-message "")
  '(ispell-personal-dictionary nil)
  '(linum-format "%d ")
  '(make-backup-files nil)
