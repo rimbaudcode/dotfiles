@@ -1,4 +1,4 @@
-;;; package --- Emacs config file
+;;; init.el --- Emacs config file
 ;;; Commentary:
 ;;; Code:
 (package-initialize)
@@ -148,4 +148,4 @@
 (transparency 100)
 ;;
 (provide 'emacs)
-;;; emacs.el ends here
+;;; init.el ends here
