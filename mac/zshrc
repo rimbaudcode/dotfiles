@@ -278,6 +278,7 @@ alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
 alias rbprof='ruby -w -r profile'
 alias reload='source ~/.zshrc'
+alias safari='open /Applications/Safari.app'
 alias soffice='/Applications/LibreOffice.app/Contents/MacOS/soffice'
 alias sq3='sqlite3'
 alias tree='tree -C'
@@ -307,8 +308,19 @@ alias workspace="cd $WORKSPACE_PATH"
 #
 alias ascii-list='man 7 ascii'
 #
+# cleaners
+#
+alias remove-ds-store='find . -name .DS_Store -delete'
+alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
+#
+# emacs
+#
 alias emacs-haskell='emacs *.md **/*.hs *.cabal'
 alias emacs-tex='emacs **/*.tex'
+#
+# folders
+#
+alias rmbd-emacs='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # readers
 #
@@ -316,12 +328,7 @@ alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
-alias remove-ds-store='find . -name .DS_Store -delete'
-alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
-#
 # web links
-#
-alias safari='open /Applications/Safari.app'
 #
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
@@ -334,8 +341,8 @@ alias web-youtube='open https://www.youtube.com'
 alias mail-gmail='open https://studmail.unileoben.ac.at'
 alias mail-hotmail='open https://studmail.unileoben.ac.at'
 alias mail-uni='open https://studmail.unileoben.ac.at'
-#
-# suffix aliases
+
+### Suffix aliases
 #
 alias -s sublime-project='sublime --project'
 alias -s xcodeproj='open'
