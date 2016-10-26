@@ -155,4 +155,4 @@
 (load-file "~/github/dotfiles/emacs.d/rmbd/utils/rmbd-utils.el")
 ;;
 (provide 'emacs)
-;;; .emacs ends here
+;;; emacs.el ends here
