@@ -29,22 +29,22 @@
   )
 
 (defun pandoc-md-to-pdf ()
-  "Convert the current MD buffer file into `PDF'."
+  "Convert the current `MD' buffer file into `PDF' using `pandoc'."
   (interactive)
   (pandoc-infile-to-outfile
-    (buffer-file-name)
-    (replace-current-buffer-file-extension-to ".pdf")
-    )
+   (buffer-file-name)
+   (replace-current-buffer-file-extension-to ".pdf")
+   )
   (revert-buffer t t t)
   )
 
 (defun pandoc-md-to-docx ()
-  "Convert the current MD buffer file into `docx'."
+  "Convert the current `MD' buffer file into `docx' using `pandoc'."
   (interactive)
   (pandoc-infile-to-outfile
-    (buffer-file-name)
-    (replace-current-buffer-file-extension-to ".docx")
-    )
+   (buffer-file-name)
+   (replace-current-buffer-file-extension-to ".docx")
+   )
   (revert-buffer t t t)
   )
 
