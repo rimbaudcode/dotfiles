@@ -316,6 +316,9 @@ alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
+alias remove-ds-store='find . -name .DS_Store -delete'
+alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
+#
 # web links
 #
 alias safari='open /Applications/Safari.app'
