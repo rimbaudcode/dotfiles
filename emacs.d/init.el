@@ -42,6 +42,7 @@
  '(haskell-process-type (quote cabal-repl))
  '(haskell-tags-on-save t)
  '(ido-enable-flex-matching t)
+ '(ido-enable-last-directory-history nil)
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
