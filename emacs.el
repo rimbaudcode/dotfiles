@@ -123,10 +123,6 @@
 ;;
 (fset 'yes-or-no-p 'y-or-n-p)
 ;;
-(setq kill-buffer-query-functions
-  (remq 'process-kill-buffer-query-function
-         kill-buffer-query-functions))
-;;
 ;; multiple-cursors
 ;;
 ;; active region
@@ -139,6 +135,17 @@
 ;;
 (load-file "~/github/dotfiles/emacs.d/rmbd/haskell/rmbd-haskell.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/utils/rmbd-utils.el")
+;;
+;; transparent frame
+;;
+(defun transparency (value)
+  "Set the transparency of the frame window.  VALUE 0 = transparent/100 = opaque."
+  (interactive "nTransparency Value 0 - 100 opaque:")
+  (set-frame-parameter (selected-frame) 'alpha value)
+  (set-background-color "ARGBBB000000")
+  )
+;;
+(transparency 100)
 ;;
 (provide 'emacs)
 ;;; emacs.el ends here

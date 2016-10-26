@@ -54,15 +54,6 @@
   (sort-regexp-fields reverse "\\w+" "\\&" beg end)
   )
 
-(defun transparency (value)
-  "Set the transparency of the frame window.  VALUE 0 = transparent/100 = opaque."
-  (interactive "nTransparency Value 0 - 100 opaque:")
-  (set-frame-parameter (selected-frame) 'alpha value)
-  ((setq )et-background-color "ARGBBB000000")
-  )
-;;
-(transparency 100)
-
 (defun reload-buffer ()
   "Revert buffer without confirmation."
   (interactive)
