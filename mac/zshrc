@@ -151,7 +151,7 @@ function man2pdf()
 # function mkcd
 # mkdir and cd
 function mkcd () {
-  mkdir $1 && cd "$_"
+  mkdir -p $1 && cd "$_"
 }
 #
 # function mkdata
