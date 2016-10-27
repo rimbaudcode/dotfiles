@@ -1,11 +1,11 @@
 ;;; flycheck-haskell-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "flycheck-haskell" "flycheck-haskell.el" (22543
-;;;;;;  5502 90852 388000))
-;;; Generated autoloads from flycheck-haskell.el
+;;;### (autoloads nil "flycheck-haskell" "../../../../../.emacs.d/elpa/flycheck-haskell-20160524.117/flycheck-haskell.el"
+;;;;;;  "340f04c2f3ab891278eb1e79d72dce5f")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-haskell-20160524.117/flycheck-haskell.el
 
 (autoload 'flycheck-haskell-setup "flycheck-haskell" "\
 Setup Haskell support for Flycheck.
@@ -21,8 +21,10 @@ path as well.
 
 ;;;***
 
-;;;### (autoloads nil nil ("flycheck-haskell-pkg.el") (22543 5502
-;;;;;;  124979 509000))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/flycheck-haskell-20160524.117/flycheck-haskell-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flycheck-haskell-20160524.117/flycheck-haskell-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flycheck-haskell-20160524.117/flycheck-haskell.el")
+;;;;;;  (22546 2592 0 0))
 
 ;;;***
 
