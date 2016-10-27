@@ -37,6 +37,8 @@
 	type = cat-file -t
 	unstage = reset HEAD --
 	visual = !gitk
+	#
+	cloc-stack = !cloc . --exclude-dir=.stack-work --use-sloccount
 
 [color]
 	ui = auto

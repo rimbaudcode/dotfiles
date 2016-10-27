@@ -1,12 +1,14 @@
-# name:                .zshrc
-# version:             see VERSION.md
-# synopsis:            configuration file for `Mint` OS zsh
-# license:             BSD3
-# license-file:        LICENSE.md
-# author:              art rimbaud
-# maintainer:          rimbaud1854(dot)91[At]gmail(DOT)com
-# copyright:           (c) 2016 rimbaudcode
-# category:            System
+#!/usr/local/bin/zsh
+#
+# name:          .zshrc
+# version:       see VERSION.md
+# synopsis:      configuration file for `Mint` OS zsh
+# license:       BSD3
+# license-file:  LICENSE.md
+# author:        art rimbaud
+# maintainer:    rimbaud1854(dot)91[At]gmail(DOT)com
+# copyright:     (c) 2016 rimbaudcode
+# category:      System
 
 export ZSH=~/.oh-my-zsh
 
@@ -31,7 +33,7 @@ SAVEHIST=0
 export EDITOR=`which nano`
 export VISUAL=`which nano`
 #
-export LESSOPEN="| source-highlight-esc.sh %s"
+export LESSOPEN="| lesspipe.sh %s"
 export LESS=' -R '
 #
 HASKELL_STACK_PATH=$HOME/.local/bin
@@ -216,7 +218,7 @@ alias workspace="cd $WORKSPACE_PATH"
 ### Sub-menus
 #
 alias ascii-list='man 7 ascii'
-alias emacs-haskell='emacs *.cabal **/*.hs *.md'
+alias emacs-haskell='emacs *.md **/*.hs *.cabal'
 #
 # web links
 #

@@ -37,16 +37,23 @@
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	#
-	logtree = log --graph --oneline --decorate --all
-	report = log --author=art --pretty=format:\"%h - %ad : %s\" --no-merges
 	st = status
 	type = cat-file -t
 	unstage = reset HEAD --
 	visual = !gitup
+	#
+        cloc-stack = !cloc . --exclude-dir=.stack-work --use-sloccount --quiet
+        cloc-stack-log = !git cloc-stack > cloc_`date "+%Y-%m-%d"`.log
+        #
+        logtree = log --graph --oneline --decorate --all
+        logtree-log = !git logtree > logtree_`date "+%Y-%m-%d"`.log
+        #
+        report = log --author=art --pretty=format:\"%h - %ad : %s\" --no-merges
+        report-log = !git report > report_`date "+%Y-%m-%d"`.log
 
 [color]
 	ui = auto
 [filter "lfs"]
+	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-	required = true
