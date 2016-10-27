@@ -35,7 +35,7 @@ export EDITOR=$MICRO_EDITOR_PATH
 export VISUAL=$MICRO_EDITOR_PATH
 
 # brew install `lesspipe`
-LESSOPEN="|src-hilite-lesspipe.sh %s"
+LESSOPEN="|lesspipe.sh %s"
 export LESSOPEN
 #
 HASKELL_STACK_PATH=$HOME/.local/bin
@@ -140,6 +140,12 @@ function image() {
   imgcat -w $1 $2
 }
 #
+# function lc
+# `less` for source code
+function lc () {
+  local file=$1
+  src-hilite-lesspipe.sh $file | less
+}
 # function man2pdf
 # print man pages as pdf
 function man2pdf()
