@@ -256,13 +256,13 @@ bindkey -s '\e4' "!:0-3 "
 
 ### Aliases
 #
+# 'dangerous' commands made interactive
 alias cp='cp -i'
 alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
 #
-alias ll='less .'
-#
+alias ascii-list='man 7 ascii'
 alias cal='cal | grep --color -EC6 "\b"$(date +%e | sed "s/ //g")'
 alias clamscan='clamscan --quiet -rz'
 alias cmus='media && cmus'
@@ -273,6 +273,7 @@ alias get-gitignore='wget https://raw.githubusercontent.com/github/gitignore/mas
 alias ghci='ghci -W'
 alias imgls='imgls -size 25,25'
 alias irb='irb --readline --simple-prompt'
+alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
@@ -286,13 +287,12 @@ alias reload='source ~/.zshrc'
 alias safari='open /Applications/Safari.app'
 alias soffice='/Applications/LibreOffice.app/Contents/MacOS/soffice'
 alias sq3='sqlite3'
-alias tree='tree -C'
 alias topdf='soffice --headless --convert-to pdf'
+alias tree='tree -C'
 alias unzip='unzip -qq'
 alias w3m='w3m -N -no-cookie'
 alias wget='wget -c'
 alias wolfram='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
-alias yt='youtube-dl -citk -f'
 alias zip='zip -qrT'
 #
 ### Folders
@@ -311,33 +311,32 @@ alias workspace="cd $WORKSPACE_PATH"
 #
 ### Sub-menus
 #
-alias ascii-list='man 7 ascii'
-#
 # cleaners
-#
 alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
 # emacs
-#
 alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
 alias emacs-tex='emacs **/*.tex'
 #
 # folders
-#
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
+# hoogle
 alias hoogle='hoogle --color --count=100'
 alias hoogle-info='hoogle --info'
 #
-# readers
+# mail
+alias mail-gmail='open https://studmail.unileoben.ac.at'
+alias mail-hotmail='open https://studmail.unileoben.ac.at'
+alias mail-uni='open https://studmail.unileoben.ac.at'
 #
+# readers
 alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
 # web links
-#
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
 alias web-google='open https://www.google.com'
@@ -346,9 +345,9 @@ alias web-muonline='open https://online.unileoben.ac.at/mu_online/webnav.ini'
 alias web-wolfram='open http://www.wolframalpha.com'
 alias web-youtube='open https://www.youtube.com'
 #
-alias mail-gmail='open https://studmail.unileoben.ac.at'
-alias mail-hotmail='open https://studmail.unileoben.ac.at'
-alias mail-uni='open https://studmail.unileoben.ac.at'
+# youtube-dl
+alias yt-audio='youtube-dl -citk -f m4a'
+alias yt-video='youtube-dl -citk -f mp4'
 
 ### Suffix aliases
 #
