@@ -122,6 +122,9 @@
 ;;
 ;; *** MINE ***
 ;;
+(require 'magit-gitflow)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+;;
 ;; simpler prompts
 ;;
 (fset 'yes-or-no-p 'y-or-n-p)
