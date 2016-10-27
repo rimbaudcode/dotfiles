@@ -3,8 +3,8 @@
 ;;; Code:
 (package-initialize)
 ;;
-; (auto-package-update-maybe)
-; (setq auto-package-update-delete-old-versions t)
+(auto-package-update-maybe)
+(setq auto-package-update-delete-old-versions t)
 ;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -59,7 +59,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ido-grid-mode yasnippet swift3-mode markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (magit ido-grid-mode yasnippet swift3-mode markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
  '(show-paren-mode t)
