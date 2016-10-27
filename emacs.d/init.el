@@ -90,7 +90,7 @@
  '(vc-annotate-very-old-color nil)
  '(vc-follow-symlinks t)
  '(yas-also-auto-indent-first-line t)
- '(yas-global-mode t)
+ '(yas-global-mode nil)
  '(yas-indent-line (quote nothing)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
