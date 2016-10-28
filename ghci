@@ -5,3 +5,5 @@
 :def hg \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
 :def pointful \str -> return $ ":! pointful \"" ++ str ++ "\""
+:def stack-build \x -> return $ ":! stack build" ++ x
+:def stack-exec \x -> return $ ":! stack exec" ++ " " ++ x
