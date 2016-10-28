@@ -12,7 +12,6 @@
   (revert-buffer t t t)
   )
 
-
 (defun pointfree ()
   "Run `pointfree' against the current selected region."
   (interactive)
@@ -40,7 +39,6 @@
     t
     )
   )
-
 
 (defun stylish-haskell ()
   "`stylish-haskell' on the current file."
