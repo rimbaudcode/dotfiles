@@ -1,7 +1,7 @@
 :set editor emacs
 :set prompt "\ESC[1;36m%s\n\ESC[0;36m\\> \ESC[m"
-:def doc \x -> return $ ":!hoogle --color --count=100 --info \"" ++ x ++ "\""
+:def doc \x -> return $ ":!hoogle --color --count=40 --info \"" ++ x ++ "\""
 :def g \x -> return $ ":!googler " ++ x ++ ""
-:def hg \x -> return $ ":!hoogle --color --count=100 \"" ++ x ++ "\""
+:def hg \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
 :def pointful \str -> return $ ":! pointful \"" ++ str ++ "\""
