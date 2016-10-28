@@ -12,7 +12,6 @@
   (revert-buffer t t t)
   )
 
-
 (defun pointfree ()
   "Run `pointfree' against the current selected region."
   (interactive)
@@ -35,12 +34,11 @@
     ;; replace?
     t
     ;; name of the error buffer
-    "*Tidy Error Buffer*"
+    "*Pointfree Error Buffer*"
     ;; show error buffer?
     t
     )
   )
-
 
 (defun stylish-haskell ()
   "`stylish-haskell' on the current file."
