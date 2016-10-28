@@ -2,6 +2,8 @@
 :set prompt "\ESC[1;36m%s\n\ESC[0;36m\\> \ESC[m"
 :def doc \x -> return $ ":!hoogle --color --count=40 --info \"" ++ x ++ "\""
 :def g \x -> return $ ":!googler " ++ x ++ ""
+:def git-branch ":! git branch"
+:def git-status ":! git status"
 :def hg \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
 :def pointful \str -> return $ ":! pointful \"" ++ str ++ "\""
