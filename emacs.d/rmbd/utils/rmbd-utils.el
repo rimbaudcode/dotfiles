@@ -54,25 +54,22 @@
   (revert-buffer :ignore-auto :noconfirm)
   )
 
+(defun reload-emacs-init ()
+  "Reloads Emacs .init (config file)."
+  (load-file "~/.emacs.d/init.el")
+  )
+
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end)
   )
 
-(defun shell-region (start end)
-  "Execute a `shell-command' against region from START to END in an inferior shell."
-  (interactive "r")
-  (shell-command (buffer-substring-no-properties start end))
-  )
-
 (defun wiki-search-region (start end)
   "Search the current string from START to END using `wiki'."
   (interactive "r")
   (shell-command
-   (format "wiki -n %s"
-           (buffer-substring-no-properties start end)
-           )
+   (format "wiki -n %s" (buffer-substring-no-properties start end))
    )
   )
 
@@ -80,9 +77,7 @@
   "Search the current string from START to END using `wiki' simple output."
   (interactive "r")
   (shell-command
-   (format "wiki -ns %s"
-           (buffer-substring-no-properties start end)
-           )
+   (format "wiki -s %s" (buffer-substring-no-properties start end))
    )
   )
 
@@ -90,19 +85,15 @@
   "Search the current string from START to END using `wiki' short output."
   (interactive "r")
   (shell-command
-   (format "wiki -n -short %s"
-           (buffer-substring-no-properties start end)
-           )
+   (format "wiki -short %s" (buffer-substring-no-properties start end))
    )
   )
 
 (defun wiki-search-region-url (start end)
-  "Search the current string from START to END using `wiki' and returns the `wiki' URL."
+  "Search the current string from START to END using `wiki'.  Return the `wiki' URL."
   (interactive "r")
   (shell-command
-   (format "wiki -n -url %s"
-           (buffer-substring-no-properties start end)
-           )
+   (format "wiki -u %s" (buffer-substring-no-properties start end))
    )
   )
 
