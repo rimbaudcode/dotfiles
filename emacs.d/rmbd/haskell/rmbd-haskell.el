@@ -34,7 +34,7 @@
     ;; replace?
     t
     ;; name of the error buffer
-    "*Tidy Error Buffer*"
+    "*Pointfree Error Buffer*"
     ;; show error buffer?
     t
     )
