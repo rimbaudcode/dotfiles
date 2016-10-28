@@ -73,27 +73,11 @@
    )
   )
 
-(defun wiki-search-region-simple (start end)
-  "Search the current string from START to END using `wiki' simple output."
-  (interactive "r")
-  (shell-command
-   (format "wiki -s %s" (buffer-substring-no-properties start end))
-   )
-  )
-
 (defun wiki-search-region-short (start end)
   "Search the current string from START to END using `wiki' short output."
   (interactive "r")
   (shell-command
    (format "wiki -short %s" (buffer-substring-no-properties start end))
-   )
-  )
-
-(defun wiki-search-region-url (start end)
-  "Search the current string from START to END using `wiki'.  Return the `wiki' URL."
-  (interactive "r")
-  (shell-command
-   (format "wiki -u %s" (buffer-substring-no-properties start end))
    )
   )
 
