@@ -69,7 +69,7 @@
   "Search the current string from START to END using `wiki'."
   (interactive "r")
   (shell-command
-   (format "wiki -n %s" (buffer-substring-no-properties start end))
+   (format "wiki -n '%s'" (buffer-substring-no-properties start end))
    )
   )
 
@@ -77,7 +77,7 @@
   "Search the current string from START to END using `wiki' short output."
   (interactive "r")
   (shell-command
-   (format "wiki -short %s" (buffer-substring-no-properties start end))
+   (format "wiki -short '%s'" (buffer-substring-no-properties start end))
    )
   )
 
