@@ -269,7 +269,6 @@ alias cmus='media && cmus'
 alias compress='compress -v'
 alias eject='hdiutil detach'
 alias encrypt='gpg -e -r Art'
-alias get-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias ghci='ghci -W'
 alias imgls='imgls -size 25,25'
 alias irb='irb --readline --simple-prompt'
@@ -321,6 +320,10 @@ alias emacs-tex='emacs **/*.tex'
 #
 # folders
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
+#
+# get-gitignores
+alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
+alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
 # hoogle
 alias hoogle='hoogle --color --count=100'
