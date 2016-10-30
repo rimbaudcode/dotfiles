@@ -3,6 +3,7 @@
 :def doc \x -> return $ ":!hoogle --color --count=40 --info \"" ++ x ++ "\""
 :def google \x -> return $ ":!googler " ++ x ++ ""
 :def git-branch \_ -> return $ ":! git branch"
+:def git-log-tree \_ -> return $ ":! git logtree"
 :def git-status \_ -> return $ ":! git status"
 :def hoogle \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
