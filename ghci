@@ -5,6 +5,7 @@
 :def git-branch \_ -> return $ ":! git branch"
 :def git-log-tree \_ -> return $ ":! git logtree"
 :def git-status \_ -> return $ ":! git status"
+:def git-visual \_ -> return $ ":! git visual"
 :def hoogle \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
 :def pointful \str -> return $ ":! pointful \"" ++ str ++ "\""
