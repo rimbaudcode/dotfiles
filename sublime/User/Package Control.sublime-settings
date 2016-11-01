@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"LaTeXTools"
 	],
 	"installed_packages":
 	[
@@ -35,6 +34,7 @@
 		"Lucario Color Scheme",
 		"Monokai - Spacegray",
 		"Monokai Extended",
+		"orgmode",
 		"Package Control",
 		"Prolog",
 		"SideBarEnhancements",
