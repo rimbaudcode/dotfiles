@@ -139,6 +139,11 @@
 ;;(global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-r") 'mc/mark-all-like-this)
 ;;
+;; scrolling
+;; NOTE: scrolling has the opposite direction of cursors!
+(global-set-key (kbd "ESC <up>") 'scroll-down-command)
+(global-set-key (kbd "ESC <down>") 'scroll-up-command)
+;;
 (load-file "~/github/dotfiles/emacs.d/rmbd/haskell/rmbd-haskell.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/utils/rmbd-utils.el")
 ;;
