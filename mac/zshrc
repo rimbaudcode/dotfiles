@@ -166,15 +166,6 @@ function mkdata () {
   ln -s $HOME/github/data `pwd`/
 }
 #
-# function mkswift
-# create a swift package
-function mkswift () {
-  local package=$1
-  mkdir $package && cd $package
-  swift package init --type executable
-  git flow init -d
-}
-#
 # function pdfmerge
 # merge pdfs
 function pdfmerge () {
