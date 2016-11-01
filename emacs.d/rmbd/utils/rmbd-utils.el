@@ -1,4 +1,4 @@
-;;; rmbd-utils.el --- functions to run `cli' utils
+;;; rmbd-utils.el --- utility functions
 
 ;;; commentary:
 
@@ -63,6 +63,13 @@
   "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end)
+  )
+
+(defun transparency (value)
+  "Set the transparency of the frame window.  VALUE: transparent/opaque: 0/100."
+  (interactive "nTransparency: transparent-opaque: 0 - 100:")
+  (set-frame-parameter (selected-frame) 'alpha value)
+  (set-background-color "ARGBBB000000")
   )
 
 (defun wiki-search-region (start end)
