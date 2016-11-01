@@ -4,6 +4,12 @@
 
 ;;; code:
 
+(defun gen-hasktags ()
+  "Generate Emacs `tags' in the current dir for `Haskell' projects using `hasktags'."
+  (interactive)
+  (shell-command (format "hasktags -e . > TAGS"))
+  )
+
 (defun shell-region (start end)
   "Execute a `shell-command' against region from START to END in an inferior shell."
   (interactive "r")
