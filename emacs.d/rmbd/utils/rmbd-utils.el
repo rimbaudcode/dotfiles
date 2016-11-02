@@ -10,6 +10,12 @@
   (shell-command (format "hasktags -e . > TAGS"))
   )
 
+(defun git-visual ()
+  "Launch `git-visual' from within Emacs."
+  (interactive)
+  (shell-command (format "git visual"))
+  )
+
 (defun shell-region (start end)
   "Execute a `shell-command' against region from START to END in an inferior shell."
   (interactive "r")
