@@ -40,6 +40,14 @@
     )
   )
 
+(defun runhaskell ()
+  "`runhaskell' the current file."
+  (interactive)
+  (shell-command
+   (format "runhaskell %s" (shell-quote-argument (buffer-file-name))))
+  (revert-buffer t t t)
+  )
+
 (defun stylish-haskell ()
   "`stylish-haskell' on the current file."
   (interactive)
