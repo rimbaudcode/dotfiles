@@ -1,4 +1,4 @@
-;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' src files
+;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' files.
 
 ;;; commentary:
 
