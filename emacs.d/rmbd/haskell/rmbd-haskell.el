@@ -1,4 +1,4 @@
-;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' src files
+;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' files.
 
 ;;; commentary:
 
@@ -38,6 +38,14 @@
     ;; show error buffer?
     t
     )
+  )
+
+(defun runhaskell ()
+  "`runhaskell' the current file."
+  (interactive)
+  (shell-command
+   (format "runhaskell %s" (shell-quote-argument (buffer-file-name))))
+  (revert-buffer t t t)
   )
 
 (defun stylish-haskell ()
