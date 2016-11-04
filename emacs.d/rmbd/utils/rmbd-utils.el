@@ -79,7 +79,7 @@
 
 (defun transparency (value)
   "Set the transparency of the frame window.  VALUE: transparent/opaque: 0/100."
-  (interactive "nTransparency: transparent-opaque: 0 - 100:")
+  (interactive "nTransparency: transparent-opaque: 0 - 100: ")
   (set-frame-parameter (selected-frame) 'alpha value)
   (set-background-color "ARGBBB000000")
   )
