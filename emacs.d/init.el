@@ -145,9 +145,9 @@
 (global-set-key (kbd "ESC <up>") 'scroll-down-command)
 (global-set-key (kbd "ESC <down>") 'scroll-up-command)
 ;;
-(load-file "~/github/dotfiles/emacs.d/rmbd/haskell/rmbd-haskell.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/haskell/rmbd-stack.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/utils/rmbd-utils.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
 ;;
 (transparency 100)
 ;;
