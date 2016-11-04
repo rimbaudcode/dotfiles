@@ -10,7 +10,7 @@
   "Show the help text."
   (interactive)
   (shell-command
-   (format "stack --help %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack --help"))
   (revert-buffer t t t)
   )
 
@@ -18,7 +18,7 @@
   "Show only version number."
   (interactive)
   (shell-command
-   (format "stack --numeric-version %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack --numeric-version"))
   (revert-buffer t t t)
   )
 
@@ -26,7 +26,7 @@
   "Show version."
   (interactive)
   (shell-command
-   (format "stack --version %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack --version"))
   (revert-buffer t t t)
   )
 
@@ -34,7 +34,7 @@
   "Shortcut for 'build --bench'."
   (interactive)
   (shell-command
-   (format "stack bench %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack bench"))
   (revert-buffer t t t)
   )
 
@@ -42,7 +42,7 @@
   "Build the package(s) in this directory/configuration."
   (interactive)
   (shell-command
-   (format "stack build %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack build"))
   (revert-buffer t t t)
   )
 
@@ -50,7 +50,7 @@
   "Clean the local packages."
   (interactive)
   (shell-command
-   (format "stack clean %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack clean"))
   (revert-buffer t t t)
   )
 
@@ -58,7 +58,7 @@
   "Visualize your project's dependency graph using Graphviz dot."
   (interactive)
   (shell-command
-   (format "stack dot %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack dot"))
   (revert-buffer t t t)
   )
 
@@ -66,7 +66,7 @@
   "Execute a command."
   (interactive)
   (shell-command
-   (format "stack exec %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack exec"))
   (revert-buffer t t t)
   )
 
@@ -74,7 +74,7 @@
   "Run hoogle in the context of the current Stack config."
   (interactive)
   (shell-command
-   (format "stack hoogle %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack hoogle"))
   (revert-buffer t t t)
   )
 
@@ -82,7 +82,7 @@
   "Shortcut for 'build --haddock'."
   (interactive)
   (shell-command
-   (format "stack haddock %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack haddock"))
   (revert-buffer t t t)
   )
 
@@ -90,7 +90,7 @@
   "Create stack project config from cabal or hpack package specifications."
   (interactive)
   (shell-command
-   (format "stack init %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack init"))
   (revert-buffer t t t)
   )
 
@@ -98,7 +98,7 @@
   "Shortcut for 'build --copy-bins'."
   (interactive)
   (shell-command
-   (format "stack install %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack install"))
   (revert-buffer t t t)
   )
 
@@ -106,7 +106,7 @@
   "List the dependencies."
   (interactive)
   (shell-command
-   (format "stack list-dependencies %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack list-dependencies"))
   (revert-buffer t t t)
   )
 
@@ -114,7 +114,7 @@
   "Create a new project from a template.  Run `stack templates' to see available templates."
   (interactive)
   (shell-command
-   (format "stack new %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack new"))
   (revert-buffer t t t)
   )
 
@@ -122,7 +122,7 @@
   "Print out handy path information."
   (interactive)
   (shell-command
-   (format "stack path %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack path"))
   (revert-buffer t t t)
   )
 
@@ -130,7 +130,7 @@
   "Run runghc (alias for 'runghc')."
   (interactive)
   (shell-command
-   (format "stack runhaskell %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack runhaskell"))
   (revert-buffer t t t)
   )
 
@@ -138,7 +138,7 @@
   "Create source distribution tarballs."
   (interactive)
   (shell-command
-   (format "stack sdist %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack sdist"))
   (revert-buffer t t t)
   )
 
@@ -146,7 +146,7 @@
   "Get the appropriate GHC for your project."
   (interactive)
   (shell-command
-   (format "stack setup %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack setup"))
   (revert-buffer t t t)
   )
 
@@ -154,7 +154,7 @@
   "Add missing extra-deps to stack project config."
   (interactive)
   (shell-command
-   (format "stack solver %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack solver"))
   (revert-buffer t t t)
   )
 
@@ -162,7 +162,7 @@
   "Shortcut for 'build --test'."
   (interactive)
   (shell-command
-   (format "stack test %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack test"))
   (revert-buffer t t t)
   )
 
@@ -170,7 +170,7 @@
   "List the templates available for `stack new'."
   (interactive)
   (shell-command
-   (format "stack templates %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack templates"))
   (revert-buffer t t t)
   )
 
@@ -178,7 +178,7 @@
   "Unpack one or more packages locally."
   (interactive)
   (shell-command
-   (format "stack unpack %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack unpack"))
   (revert-buffer t t t)
   )
 
@@ -186,7 +186,7 @@
   "Update the package index."
   (interactive)
   (shell-command
-   (format "stack update %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack update"))
   (revert-buffer t t t)
   )
 
@@ -194,7 +194,7 @@
   "Upload a package to Hackage."
   (interactive)
   (shell-command
-   (format "stack upload %s" (shell-quote-argument (buffer-file-name))))
+   (format "stack upload"))
   (revert-buffer t t t)
   )
 
