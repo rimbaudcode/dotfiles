@@ -62,22 +62,6 @@
   (revert-buffer t t t)
   )
 
-(defun stack-exec ()
-  "Execute a command."
-  (interactive)
-  (shell-command
-   (format "stack exec"))
-  (revert-buffer t t t)
-  )
-
-(defun stack-hoogle ()
-  "Run hoogle in the context of the current Stack config."
-  (interactive)
-  (shell-command
-   (format "stack hoogle"))
-  (revert-buffer t t t)
-  )
-
 (defun stack-haddock ()
   "Shortcut for 'build --haddock'."
   (interactive)
@@ -107,14 +91,6 @@
   (interactive)
   (shell-command
    (format "stack list-dependencies"))
-  (revert-buffer t t t)
-  )
-
-(defun stack-new ()
-  "Create a new project from a template.  Run `stack templates' to see available templates."
-  (interactive)
-  (shell-command
-   (format "stack new"))
   (revert-buffer t t t)
   )
 
@@ -195,6 +171,30 @@
   (interactive)
   (shell-command
    (format "stack upload"))
+  (revert-buffer t t t)
+  )
+
+(defun stack-exec (tool)
+  "Execute TOOL."
+  (interactive "sName of executable: ")
+  (shell-command
+   (format "stack exec %s" (shell-quote-argument tool)))
+  (revert-buffer t t t)
+  )
+
+(defun stack-hoogle (term)
+  "Run hoogle on TERM in the context of the current Stack config."
+  (interactive "sTerm to be searched with hoogle: ")
+  (shell-command
+   (format "stack hoogle %s" (shell-quote-argument term)))
+  (revert-buffer t t t)
+  )
+
+(defun stack-new (template)
+  "Create a new project from a TEMPLATE.  Run `stack templates' to see available templates."
+  (interactive "sStack template: ")
+  (shell-command
+   (format "stack new %s" (shell-quote-argument template)))
   (revert-buffer t t t)
   )
 
