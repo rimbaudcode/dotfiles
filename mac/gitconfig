@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/dfhe/.gitignore_global
-	editor = micro
+	editor = emacs
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -54,6 +54,6 @@
 [color]
 	ui = auto
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+	required = true

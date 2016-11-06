@@ -24,6 +24,7 @@
  '(custom-safe-themes
    (quote
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "08851585c86abcf44bb1232bced2ae13bc9f6323aeda71adfa3791d6e7fea2b6" default)))
+ '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(fci-rule-color "#343d46")
  '(fci-rule-column nil)
@@ -59,7 +60,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet swift3-mode markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
  '(show-paren-mode t)
@@ -139,17 +140,14 @@
 ;;(global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-r") 'mc/mark-all-like-this)
 ;;
-(load-file "~/github/dotfiles/emacs.d/rmbd/haskell/rmbd-haskell.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/utils/rmbd-utils.el")
+;; scrolling
+;; NOTE: scrolling has the opposite direction of cursors!
+(global-set-key (kbd "ESC <up>") 'scroll-down-command)
+(global-set-key (kbd "ESC <down>") 'scroll-up-command)
 ;;
-;; transparent frame
-;;
-(defun transparency (value)
-  "Set the transparency of the frame window.  VALUE 0 = transparent/100 = opaque."
-  (interactive "nTransparency Value 0 - 100 opaque:")
-  (set-frame-parameter (selected-frame) 'alpha value)
-  (set-background-color "ARGBBB000000")
-  )
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
 ;;
 (transparency 100)
 ;;

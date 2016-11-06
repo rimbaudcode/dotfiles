@@ -2,7 +2,7 @@
 #
 # name:          zshrc
 # version:       see VERSION.md
-# synopsis:      configuration file for `macOS` zsh
+# synopsis:      configuration file for zsh on `macOS`
 # license:       BSD3
 # license-file:  LICENSE.md
 # author:        art rimbaud
@@ -28,61 +28,54 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=0
 
-### Paths
+### Export paths
 #
 local MICRO_EDITOR_PATH=`which micro`
 export EDITOR=$MICRO_EDITOR_PATH
 export VISUAL=$MICRO_EDITOR_PATH
-
+#
 # brew install `lesspipe`
-LESSOPEN="|lesspipe.sh %s"
+local LESSOPEN="|lesspipe.sh %s"
 export LESSOPEN
 #
-HASKELL_STACK_PATH=$HOME/.local/bin
+local HASKELL_STACK_PATH=$HOME/.local/bin
 export PATH=$HASKELL_STACK_PATH:$PATH
 #
-SCRIPTS_PATH=$HOME/github/scripts
-export PATH=$SCRIPTS_PATH:$PATH
-#
-SHARED_DIR_PATH=/media/sf_Shared
-export PATH=$SHARED_DIR_PATH:$PATH
-#
-RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
 export PATH=$RBENV_GEMS_PATH:$PATH
 #
-TMPDIR_PATH=/tmp
-export TMPDIR_PATH
-#
-TRASH_PATH=$HOME/.local/share/Trash/files
-export TRASH_PATH
-#
-WORKSPACE_PATH=$HOME/github
-export PATH=$WORKSPACE_PATH:$PATH
-#
-HASKELL_STACK_PATH=$HOME/.local/bin
+local HASKELL_STACK_PATH=$HOME/.local/bin
 export PATH=$HASKELL_STACK_PATH:$PATH
 #
-HOMEBREW_PATH=/usr/local/bin:/usr/local/sbin
+local HOMEBREW_PATH=/usr/local/bin:/usr/local/sbin
 export PATH=$HOMEBREW_PATH:$PATH
 export HOMEBREW_GITHUB_API_TOKEN="d4249153d8dd3f9a19a3a10dc370b44fda51a9ab"
 export HOMEBREW_NO_ANALYTICS=1
 #
-MAC_TEX_LIVE_PATH=/usr/texbin
+local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
-MY_APPS_PATH=$HOME/Documents/OneDrive/Apps
+local MY_APPS_PATH=$HOME/Documents/OneDrive/Apps
 export PATH=$MY_APPS_PATH:$PATH
 export PATH=$MY_APPS_PATH/bin:$PATH
 #
-RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
 export PATH=$RBENV_GEMS_PATH:$PATH
 source /usr/local/opt/chruby/share/chruby/chruby.sh
+#
+local SCRIPTS_PATH=$HOME/github/scripts
+export PATH=$SCRIPTS_PATH:$PATH
+
+### Not Export Paths
+#
+local SHARED_DIR_PATH=/Users/Shared
+local WORKSPACE_PATH=$HOME/github
 
 ### Functions
 #
-# function cow-says
-# `cow says` a message with lolcat
-function cow-says () {
+# function cow-speaks
+# `cow speaks` a message with lolcat
+function cow-speaks () {
   local thought=$1
   cowthink -W80 "$thought" | lolcat
   say-english "$thought"
@@ -164,15 +157,6 @@ function mkcd () {
 # symlink to data
 function mkdata () {
   ln -s $HOME/github/data `pwd`/
-}
-#
-# function mkswift
-# create a swift package
-function mkswift () {
-  local package=$1
-  mkdir $package && cd $package
-  swift package init --type executable
-  git flow init -d
 }
 #
 # function pdfmerge
@@ -269,7 +253,6 @@ alias cmus='media && cmus'
 alias compress='compress -v'
 alias eject='hdiutil detach'
 alias encrypt='gpg -e -r Art'
-alias get-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias ghci='ghci -W'
 alias imgls='imgls -size 25,25'
 alias irb='irb --readline --simple-prompt'
@@ -321,6 +304,10 @@ alias emacs-tex='emacs **/*.tex'
 #
 # folders
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
+#
+# get-gitignores
+alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
+alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
 # hoogle
 alias hoogle='hoogle --color --count=100'
