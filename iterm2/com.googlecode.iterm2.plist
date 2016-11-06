@@ -28713,7 +28713,7 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -28815,13 +28815,17 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1280 800 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>141 231 918 381 0 0 1280 800 </string>
+	<string>141 323 796 473 0 0 1280 800 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 216 592 584 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1280 800 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>152 0 665 800 0 0 1280 800 </string>
+	<key>NeverWarnAboutShortLivedSessions_89B258DB-3EA3-46DB-8887-124164D4598F</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_89B258DB-3EA3-46DB-8887-124164D4598F_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -31255,7 +31259,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-23T10:27:21Z</date>
+	<date>2016-11-04T11:33:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -31315,7 +31319,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.11</string>
+	<string>3.0.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
