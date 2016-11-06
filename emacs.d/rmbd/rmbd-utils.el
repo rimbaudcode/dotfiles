@@ -16,6 +16,12 @@
   (shell-command (format "git visual"))
   )
 
+(defun open-current-folder-in-finder ()
+  "`open' the current folder in `macOS' Finder."
+  (interactive)
+  (shell-command (format "open ."))
+  )
+
 (defun shell-region (start end)
   "Execute a `shell-command' against region from START to END in an inferior shell."
   (interactive "r")
