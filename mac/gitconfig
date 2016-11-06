@@ -50,6 +50,8 @@
         #
         report = log --author=art --pretty=format:\"%h - %ad : %s\" --no-merges
         report-log = !git report > report_`date "+%Y-%m-%d"`.log
+        #
+        gource = !gource .
 
 [color]
 	ui = auto
