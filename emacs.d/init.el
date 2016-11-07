@@ -29,7 +29,7 @@
  '(fci-rule-color "#343d46")
  '(fci-rule-column 78)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
- '(global-auto-complete-mode t)
+ '(global-auto-complete-mode nil)
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
