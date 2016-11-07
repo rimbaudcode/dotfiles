@@ -303,6 +303,7 @@ alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
 alias emacs-tex='emacs **/*.tex'
 #
 # folders
+alias latex-docs="cd ~/Documents/Google\ Drive/latex"
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
