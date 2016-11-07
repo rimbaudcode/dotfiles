@@ -34,7 +34,7 @@
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
  '(global-linum-mode nil)
- '(global-visual-line-mode t)
+ '(global-visual-line-mode nil)
  '(global-whitespace-mode nil)
  '(haskell-indentation-show-indentations t)
  '(haskell-process-auto-import-loaded-modules t)
