@@ -33,7 +33,7 @@
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
- '(global-linum-mode t)
+ '(global-linum-mode nil)
  '(global-visual-line-mode t)
  '(global-whitespace-mode nil)
  '(haskell-indentation-show-indentations t)
