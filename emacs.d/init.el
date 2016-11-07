@@ -27,7 +27,7 @@
  '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(fci-rule-color "#343d46")
- '(fci-rule-column nil)
+ '(fci-rule-column 78)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
@@ -114,17 +114,22 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 ;;
-;; 80-line column indicator
+;; *** MINE ***
+;;
+;; gitflow
+::
+(require 'magit-gitflow)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+;;
+;; fill-column
 ;;
 (require 'fill-column-indicator)
-(set 'fci-rule-column 80)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 ;;
-;; *** MINE ***
+;; darkroom
 ;;
-(require 'magit-gitflow)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+(require 'darkroom)
 ;;
 ;; simpler prompts
 ;;
