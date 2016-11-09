@@ -31,6 +31,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(global-auto-complete-mode nil)
  '(global-auto-revert-mode t)
+ '(global-fci-mode nil)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
  '(global-linum-mode nil)
@@ -124,8 +125,6 @@
 ;; fill-column
 ;;
 (require 'fill-column-indicator)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
 ;;
 ;; darkroom
 ;;
