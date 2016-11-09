@@ -4,7 +4,7 @@
 
 ;; Author: Magnar Sveen <magnars@gmail.com>
 ;; Version: 2.13.0
-;; Package-Version: 20161105.557
+;; Package-Version: 20161108.352
 ;; Keywords: lists
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -579,10 +579,14 @@ Alias: `-any'"
 
 \(fn LIST)")
 
+(gv-define-simple-setter -first-item setcar)
+
 (defun -last-item (list)
   "Return the last item of LIST, or nil on an empty list."
   (declare (pure t) (side-effect-free t))
   (car (last list)))
+
+(gv-define-setter -last-item (val x) `(setcar (last ,x) ,val))
 
 (defun -butlast (list)
   "Return a list of all items in list except for the last."
@@ -1097,7 +1101,7 @@ groupings are equal to the length of the shortest input list.
 If two lists are provided as arguments, return the groupings as a list
 of cons cells. Otherwise, return the groupings as a list of lists.
 
-Please note! This distinction is being removed in an upcoming 2.0
+Please note! This distinction is being removed in an upcoming 3.0
 release of Dash. If you rely on this behavior, use -zip-pair instead."
   (declare (pure t) (side-effect-free t))
   (let (results)
@@ -1119,6 +1123,19 @@ lengths of the returned groupings are equal to the length of the
 longest input list."
   (declare (pure t) (side-effect-free t))
   (apply '-zip (apply '-pad (cons fill-value lists))))
+
+(defun -unzip (lists)
+  "Unzip LISTS.
+
+This works just like `-zip' but takes a list of lists instead of
+a variable number of arguments, such that
+
+  (-unzip (-zip L1 L2 L3 ...))
+
+is identity (given that the lists are the same length).
+
+See also: `-zip'"
+  (apply '-zip lists))
 
 (defun -cycle (list)
   "Return an infinite copy of LIST that will cycle through the
@@ -1191,23 +1208,20 @@ combinations created by taking one element from each list in
 order.  The results are flattened, ignoring the tensor structure
 of the result.  This is equivalent to calling:
 
-  (-flatten-n (1- (length lists)) (-table fn lists))
+  (-flatten-n (1- (length lists)) (apply '-table fn lists))
 
 but the implementation here is much more efficient.
 
 See also: `-flatten-n', `-table'"
-  (when lists                           ;Just in case.
-    (let* ((list1 (pop lists))
-           (restore-lists (copy-sequence lists))
-           (last-list (last lists))
-           re)
-      (while (car last-list)
-        (let ((tail (-map #'car lists)))
-          (dolist (head list1)
-            (push (apply fn head tail) re)))
-        (pop (car lists))
-        (dash--table-carry lists restore-lists))
-      (nreverse re))))
+  (let ((restore-lists (copy-sequence lists))
+        (last-list (last lists))
+        re)
+    (while (car last-list)
+      (let ((item (apply fn (-map 'car lists))))
+        (push item re)
+        (setcar lists (cdar lists)) ;; silence byte compiler
+        (dash--table-carry lists restore-lists)))
+    (nreverse re)))
 
 (defun -partial (fn &rest args)
   "Take a function FN and fewer than the normal arguments to FN,

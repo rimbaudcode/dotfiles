@@ -360,10 +360,7 @@ there."
   ;; ensure result is `t' or `nil' instead of just truthy
   (if (or
        ;; is cursor on whitespace
-       (let ((f (following-char)))
-         (or (= f ?\t)
-             (= f ?\n)
-             (= f ? )))
+       (member (following-char) '(?\t ?\n ?\ ))
        ;; http://emacs.stackexchange.com/questions/14269/how-to-detect-if-the-point-is-within-a-comment-area
        ;; is cursor at begging, inside, or end of comment
        (let ((fontfaces (get-text-property (or pt
@@ -372,8 +369,9 @@ there."
            (setf fontfaces (list fontfaces)))
          (delq nil (mapcar
                     #'(lambda (f)
-                        (or (eq f 'font-lock-comment-face)
-                            (eq f 'font-lock-comment-delimiter-face)))
+                        (member f '(font-lock-comment-face
+                                    font-lock-doc-face
+                                    font-lock-comment-delimiter-face)))
                     fontfaces))))
       t
     nil))
@@ -419,8 +417,7 @@ declaration.  As `haskell-ds-backward-decl' but forward."
       (forward-line -1)
       (while (and (haskell-ds-line-commented-p)
                   ;; prevent infinite loop
-                  (not (= (point)
-                          (point-min))))
+                  (not (bobp)))
         (forward-line -1))
       (forward-line 1)))
   (point))
