@@ -122,11 +122,12 @@
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 ;;
-;; fill-column
+;; fill-column-indicator (fci)
+;; fci mode in minor mode seemed to have fixed the 'Arithmetic error'
 ;;
 (require 'fill-column-indicator)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  (global-fci-mode 1)
+(global-fci-mode 1)
 ;;
 ;; darkroom
 ;;
