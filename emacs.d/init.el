@@ -118,13 +118,15 @@
 ;; *** MINE ***
 ;;
 ;; gitflow
-::
+;;
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 ;;
 ;; fill-column
 ;;
 (require 'fill-column-indicator)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  (global-fci-mode 1)
 ;;
 ;; darkroom
 ;;
