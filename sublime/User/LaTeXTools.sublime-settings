@@ -473,5 +473,12 @@
 	If the string is invalid the default value (30 minutes) will be used.
 	If you use `infinite` the cache will not invalidated automatically.
 	*/
-	"local_cache_life_span": "30 m"
+	"local_cache_life_span": "30 m",
+
+// ------------------------------------------------------------------
+// My config
+// ------------------------------------------------------------------
+
+	// stop ST to display math preview: really annoying!
+	"preview_math_mode": "none"
 }
