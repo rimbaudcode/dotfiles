@@ -4,10 +4,10 @@
 
 ;;; code:
 
-(defun gen-hasktags ()
-  "Generate Emacs `tags' in the current dir for `Haskell' projects using `hasktags'."
+(defun display-gource ()
+  "Run `gource' in the current `git' repo."
   (interactive)
-  (shell-command (format "hasktags -e . > TAGS"))
+  (shell-command (format "git gource"))
   )
 
 (defun git-visual ()
