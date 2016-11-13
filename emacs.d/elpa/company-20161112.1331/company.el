@@ -5,7 +5,7 @@
 ;; Author: Nikolaj Schumacher
 ;; Maintainer: Dmitry Gutov <dgutov@yandex.ru>
 ;; URL: http://company-mode.github.io/
-;; Version: 0.9.0
+;; Version: 0.9.1
 ;; Keywords: abbrev, convenience, matching
 ;; Package-Requires: ((emacs "24.1") (cl-lib "0.5"))
 
@@ -697,6 +697,12 @@ asynchronous call into synchronous.")
       (unless (keywordp b)
         (company-init-backend b))))))
 
+(defun company--maybe-init-backend (backend)
+  (or (not (symbolp backend))
+      (eq t (get backend 'company-init))
+      (unless (get backend 'company-init)
+        (company-init-backend backend))))
+
 (defcustom company-lighter-base "company"
   "Base string to use for the `company-mode' lighter."
   :type 'string
@@ -932,8 +938,8 @@ matches IDLE-BEGIN-AFTER-RE, return it wrapped in a cons."
 
 (defun company--multi-backend-adapter (backends command &rest args)
   (let ((backends (cl-loop for b in backends
-                           when (not (and (symbolp b)
-                                          (eq 'failed (get b 'company-init))))
+                           when (or (keywordp b)
+                                    (company--maybe-init-backend b))
                            collect b))
         (separate (memq :separate backends)))
 
@@ -1442,7 +1448,7 @@ prefix match (same case) will be prioritized."
                (eq company-require-match t))))))
 
 (defun company-auto-complete-p (input)
-  "Return non-nil, if input starts with punctuation or parentheses."
+  "Return non-nil, if INPUT starts with punctuation or parentheses."
   (and (if (functionp company-auto-complete)
            (funcall company-auto-complete)
          company-auto-complete)
@@ -1451,7 +1457,8 @@ prefix match (same case) will be prioritized."
          (if (consp company-auto-complete-chars)
              (memq (char-syntax (string-to-char input))
                    company-auto-complete-chars)
-           (string-match (substring input 0 1) company-auto-complete-chars)))))
+           (string-match (regexp-quote (substring input 0 1))
+                          company-auto-complete-chars)))))
 
 (defun company--incremental-p ()
   (and (> (point) company-point)
@@ -1535,10 +1542,7 @@ prefix match (same case) will be prioritized."
       (setq prefix
             (if (or (symbolp backend)
                     (functionp backend))
-                (when (or (not (symbolp backend))
-                          (eq t (get backend 'company-init))
-                          (unless (get backend 'company-init)
-                            (company-init-backend backend)))
+                (when (company--maybe-init-backend backend)
                   (funcall backend 'prefix))
               (company--multi-backend-adapter backend 'prefix)))
       (when prefix
@@ -2104,6 +2108,9 @@ With ARG, move by that many elements."
   (cond
    ((use-region-p)
     (indent-region (region-beginning) (region-end)))
+   ((memq indent-line-function
+          '(indent-relative indent-relative-maybe))
+    (company-complete-common))
    ((let ((old-point (point))
           (old-tick (buffer-chars-modified-tick))
           (tab-always-indent t))
