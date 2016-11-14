@@ -9,5 +9,3 @@ templates:
     category: System
     copyright: '(c) 2016 rimbaudcode'
     github-username: rimbaudcode
-
-resolver: lts-7.8
