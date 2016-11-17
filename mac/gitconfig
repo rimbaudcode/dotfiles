@@ -3,7 +3,7 @@
 	editor = emacs
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -24,6 +24,7 @@
 	dump = cat-file -p
 	history = log --pretty=format:\"%h - %an, %ad : %s\"
 	last = log -1 HEAD
+        list-tracked-files = ls-tree --full-tree -r --name-only HEAD
 	#
 	# listing commands
 	# ld: relative dates
