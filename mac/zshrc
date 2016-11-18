@@ -302,6 +302,7 @@ alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xa
 #
 # emacs
 alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
+alias emacs-swift='emacs **/*.swift TODO.org'
 alias emacs-tex='emacs **/*.sty **/*.tex TODO.org'
 #
 # folders
