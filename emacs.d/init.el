@@ -27,7 +27,7 @@
  '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
- '(global-auto-complete-mode nil)
+ '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
