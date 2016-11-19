@@ -106,7 +106,7 @@
   "Run runghc (alias for 'runghc')."
   (interactive)
   (shell-command
-   (format "stack runhaskell"))
+   (format "stack runhaskell %s" (shell-quote-argument (buffer-file-name))))
   (revert-buffer t t t)
   )
 
