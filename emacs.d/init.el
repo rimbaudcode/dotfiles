@@ -147,16 +147,8 @@
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
 ;;
-;;(transparency 100)
-;;
-;; Emacs and Swift (Xcode)
-;;
-(load-file "~/github/company-sourcekit/sourcekit.el")
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-(setq exec-path (append exec-path '("/usr/local/bin")))
-;;
-(require 'company-sourcekit)
-(add-to-list 'company-backends 'company-sourcekit)
+;; delete-white-space on saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;
 (provide 'emacs)
 ;;; init.el ends here
