@@ -303,6 +303,10 @@ alias brew-update='brew update && brew upgrade && brew cleanup && brew prune && 
 alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
+# date
+alias date-iso-utc='date -u +"%Y-%m-%d %H-%M-%SZ"'
+alias date-iso-local='date +"%Y-%m-%d %H-%M-%SZ"'
+#
 # emacs
 alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
 alias emacs-swift='emacs **/*.swift *.md *.org'
