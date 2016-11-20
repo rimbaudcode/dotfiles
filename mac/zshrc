@@ -296,6 +296,9 @@ alias workspace="cd $WORKSPACE_PATH"
 #
 ### Sub-menus
 #
+# brew
+alias brew-update='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+#
 # cleaners
 alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
