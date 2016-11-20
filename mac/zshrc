@@ -304,8 +304,8 @@ alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
 # date
-alias date-iso-utc='date -u +"%Y-%m-%d %H-%M-%SZ"'
-alias date-iso-local='date +"%Y-%m-%d %H-%M-%SZ"'
+alias date-utc='gdate -u --iso-8601=ns'
+alias date-local='gdate --iso-8601=ns'
 #
 # emacs
 alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
