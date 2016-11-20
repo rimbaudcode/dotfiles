@@ -40,6 +40,7 @@
  '(haskell-process-suggest-remove-import-lines t)
  '(haskell-process-type (quote cabal-repl))
  '(haskell-tags-on-save t)
+ '(ido-auto-merge-work-directories-length -1)
  '(ido-enable-flex-matching t)
  '(ido-enable-last-directory-history nil)
  '(ido-grid-mode t)
