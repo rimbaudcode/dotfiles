@@ -150,11 +150,12 @@
 ;;
 ;; Emacs and Swift (Xcode)
 ;;
-(require 'company-sourcekit)
-(add-to-list 'company-backends 'company-sourcekit)
-;;
+(load-file "~/github/company-sourcekit/sourcekit.el")
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
+;;
+(require 'company-sourcekit)
+(add-to-list 'company-backends 'company-sourcekit)
 ;;
 (provide 'emacs)
 ;;; init.el ends here
