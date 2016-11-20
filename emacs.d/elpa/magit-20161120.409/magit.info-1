@@ -4602,14 +4602,14 @@ File: magit.info,  Node: Editing rebase sequences,  Next: Information about in-p
      Show the commit on the current line in another buffer and select
      that buffer.
 
-‘SPC’     (‘magit-diff-show-or-scroll-up’)
+‘SPC’     (‘git-rebase-show-or-scroll-up’)
 
      Show the commit on the current line in another buffer without
      selecting that buffer.  If the revision buffer is already visible
      in another window of the current frame, then instead scroll that
      window up.
 
-‘DEL’     (‘magit-diff-show-or-scroll-down’)
+‘DEL’     (‘git-rebase-show-or-scroll-down’)
 
      Show the commit on the current line in another buffer without
      selecting that buffer.  If the revision buffer is already visible

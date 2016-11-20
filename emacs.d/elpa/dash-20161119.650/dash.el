@@ -4,7 +4,7 @@
 
 ;; Author: Magnar Sveen <magnars@gmail.com>
 ;; Version: 2.13.0
-;; Package-Version: 20161116.920
+;; Package-Version: 20161119.650
 ;; Keywords: lists
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -579,14 +579,26 @@ Alias: `-any'"
 
 \(fn LIST)")
 
-(gv-define-simple-setter -first-item setcar)
+;; TODO: emacs23 support, when dropped remove the condition
+(eval-when-compile
+  (require 'cl)
+  (if (fboundp 'gv-define-simple-setter)
+      (gv-define-simple-setter -first-item setcar)
+    (require 'cl)
+    (with-no-warnings
+      (defsetf -first-item (x) (val) `(setcar ,x ,val)))))
 
 (defun -last-item (list)
   "Return the last item of LIST, or nil on an empty list."
   (declare (pure t) (side-effect-free t))
   (car (last list)))
 
-(gv-define-setter -last-item (val x) `(setcar (last ,x) ,val))
+;; TODO: emacs23 support, when dropped remove the condition
+(eval-when-compile
+  (if (fboundp 'gv-define-setter)
+      (gv-define-setter -last-item (val x) `(setcar (last ,x) ,val))
+    (with-no-warnings
+      (defsetf -last-item (x) (val) `(setcar (last ,x) ,val)))))
 
 (defun -butlast (list)
   "Return a list of all items in list except for the last."
@@ -1343,7 +1355,7 @@ last item in second form, etc."
 signified by the token `it' in the first form. If there are more
 forms, insert the first form at the position signified by `it' in
 in second form, etc."
-  (declare (debug ->))
+  (declare (debug (form &rest [&or symbolp (sexp &rest [&or "it" form])])))
   (if (null more)
       (if (listp form)
           (--map-when (eq it 'it) x form)

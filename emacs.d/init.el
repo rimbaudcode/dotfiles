@@ -58,7 +58,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
  '(show-paren-mode t)
@@ -146,7 +146,15 @@
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
 ;;
-(transparency 100)
+;;(transparency 100)
+;;
+;; Emacs and Swift (Xcode)
+;;
+(require 'company-sourcekit)
+(add-to-list 'company-backends 'company-sourcekit)
+;;
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 ;;
 (provide 'emacs)
 ;;; init.el ends here
