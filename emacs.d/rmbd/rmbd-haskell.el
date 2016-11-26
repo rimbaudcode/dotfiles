@@ -9,8 +9,7 @@
   (interactive)
   (shell-command
    (format "hlint %s" (shell-quote-argument (buffer-file-name))))
-  (revert-buffer t t t)
-  )
+  (revert-buffer t t t))
 
 (defun pointfree ()
   "Run `pointfree' against the current selected region."
@@ -36,17 +35,14 @@
     ;; name of the error buffer
     "*Pointfree Error Buffer*"
     ;; show error buffer?
-    t
-    )
-  )
+    t))
 
 (defun stylish-haskell ()
   "`stylish-haskell' on the current file."
   (interactive)
   (shell-command
    (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
-  (revert-buffer t t t)
-  )
+  (revert-buffer t t t))
 
 (provide 'rmbd-haskell.el)
 ;;; rmbd-haskell.el ends here
