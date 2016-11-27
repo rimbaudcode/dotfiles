@@ -98,7 +98,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Source Code Pro"))))
  '(whitespace-space ((t nil))))
 ;;
 ;; haskell indentation (choose one of the following three)
@@ -156,6 +156,14 @@
 ;;
 ;; use tab to indent or complete
 (setq tab-always-indent 'complete)
+;;
+;; key bindings
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-command-modifier 'control)  ; make cmd key do Control
+  (setq mac-option-modifier 'meta)      ; make opt key do Meta
+  (setq mac-control-modifier 'super)    ; make Control key do Super
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  )
 ;;
 (provide 'emacs)
 ;;; init.el ends here
