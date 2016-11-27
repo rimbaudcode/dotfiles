@@ -139,10 +139,6 @@
 ;;
 (require 'darkroom)
 ;;
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
-;;
 ;; delete-white-space on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;
@@ -194,6 +190,11 @@
 ;; horizontally and vertically split last opened buffer
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
+;;
+;; load files with custom code
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
 ;;
 (provide 'emacs)
 ;;; init.el ends here
