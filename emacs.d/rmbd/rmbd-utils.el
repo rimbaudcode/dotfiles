@@ -80,6 +80,7 @@
 
 (defun reload-emacs-init ()
   "Reloads Emacs .init (config file)."
+  (interactive)
   (load-file "~/.emacs.d/init.el"))
 
 (defun rename-file-and-buffer ()
@@ -94,6 +95,11 @@
          (t
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
+
+(defun save-buffer-as (filename)
+  "Save the current buffer as a FILENAME provided interactively."
+  (interactive "FSave as...: ")
+  (write-region (point-min) (point-max) filename))
 
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
