@@ -171,6 +171,9 @@
 ;;
 (setq TeX-PDF-mode t)
 ;;
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+;;
 (provide 'emacs)
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)
