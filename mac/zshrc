@@ -318,6 +318,9 @@ alias emacs-haskell='emacsclient -t *.md **/*.hs *.cabal *.org'
 alias emacs-latex='emacsclient -t **/*.sty **/*.tex TODO.org'
 alias emacs-swift='emacsclient -t **/*.swift *.md *.org'
 #
+alias emacs-gui='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias emacs-gui-open='open -a /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
+#
 # folders
 alias latex-docs="cd ~/Documents/Google\ Drive/latex"
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
