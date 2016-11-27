@@ -310,8 +310,9 @@ alias date-local='gdate --iso-8601=ns'
 #
 # emacs
 alias e='emacsclient -t'
-alias emacs-terminal='emacsclient -t'
 alias emacs-daemon='emacs --daemon'
+alias emacs-kill="emacsclient -e '(kill-emacs)'"
+alias emacs-terminal='emacsclient -t'
 #
 alias emacs-haskell='emacsclient -t *.md **/*.hs *.cabal *.org'
 alias emacs-latex='emacsclient -t **/*.sty **/*.tex TODO.org'
