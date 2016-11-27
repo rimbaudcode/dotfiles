@@ -60,7 +60,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (auctex helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
  '(show-paren-mode t)
@@ -156,6 +156,20 @@
 ;;
 ;; use tab to indent or complete
 (setq tab-always-indent 'complete)
+;;
+;; auctex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+;;
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;;
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+;;
+(setq TeX-PDF-mode t)
 ;;
 (provide 'emacs)
 ;;; init.el ends here
