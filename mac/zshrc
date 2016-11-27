@@ -308,9 +308,12 @@ alias date-utc='gdate -u --iso-8601=ns'
 alias date-local='gdate --iso-8601=ns'
 #
 # emacs
-alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
-alias emacs-swift='emacs **/*.swift *.md *.org'
-alias emacs-tex='emacs **/*.sty **/*.tex TODO.org'
+alias emacs-daemon='emacs --daemon'
+alias emacs-terminal='emacsclient -t'
+#
+alias emacs-haskell='emacsclient -t *.md **/*.hs *.cabal *.org'
+alias emacs-swift='emacsclient -t **/*.swift *.md *.org'
+alias emacs-tex='emacsclient -t **/*.sty **/*.tex TODO.org'
 #
 # folders
 alias latex-docs="cd ~/Documents/Google\ Drive/latex"
