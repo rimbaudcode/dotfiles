@@ -183,8 +183,13 @@
 ;;
 ;; scrolling
 ;; NOTE: scrolling has the opposite direction of cursors!
+;; for cli:
 (global-set-key (kbd "ESC <up>") 'scroll-down-command)
 (global-set-key (kbd "ESC <down>") 'scroll-up-command)
+;;
+;; for gui:
+(global-set-key (kbd "M-<up>") 'scroll-down-command)
+(global-set-key (kbd "M-<down>") 'scroll-up-command)
 ;;
 ;; horizontally and vertically split last opened buffer
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
