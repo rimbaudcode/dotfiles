@@ -33,6 +33,7 @@ SAVEHIST=0
 ### Export paths
 #
 local EMACS_CLIENT_PATH=`which emacsclient`
+export ALTERNATE_EDITOR=""
 export EDITOR=$EMACS_CLIENT_PATH
 export VISUAL=$EMACS_CLIENT_PATH
 #
