@@ -27,6 +27,7 @@
  '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
+ '(global-aggressive-indent-mode t)
  '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
@@ -59,7 +60,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(server-mode nil)
  '(show-paren-mode t)
@@ -149,6 +150,12 @@
 ;;
 ;; delete-white-space on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;;
+;; tell dired to use GNU ls (gls) instead of BSD ls
+(setq insert-directory-program (executable-find "gls"))
+;;
+;; use tab to indent or complete
+(setq tab-always-indent 'complete)
 ;;
 (provide 'emacs)
 ;;; init.el ends here
