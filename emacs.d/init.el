@@ -150,6 +150,9 @@
 ;; delete-white-space on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;
+;; tell dired to use GNU ls (gls) instead of BSD ls
+(setq insert-directory-program (executable-find "gls"))
+;;
 (provide 'emacs)
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)
