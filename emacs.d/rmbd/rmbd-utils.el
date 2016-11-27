@@ -38,6 +38,11 @@
   (interactive)
   (shell-command (format "open .")))
 
+(defun open-current-buffer-file-externally ()
+  "`open' the current buffer file with the default `macOS' app."
+  (interactive)
+  (shell-command (format "open %s" (buffer-file-name))))
+
 (defun shell-region (start end)
   "Execute a `shell-command' against region from START to END in an inferior shell."
   (interactive "r")
