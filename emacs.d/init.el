@@ -1,6 +1,14 @@
 ;;; init.el --- Emacs config file
 ;;; Commentary:
+
 ;;; Code:
+
+(when window-system
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tooltip-mode -1))
+
 (package-initialize)
 ;;
 (auto-package-update-maybe)
@@ -17,9 +25,13 @@
  '(ansi-color-names-vector
    (vector "#ffffff" "#bf616a" "#B4EB89" "#ebcb8b" "#89AAEB" "#C189EB" "#89EBCA" "#232830"))
  '(auto-save-interval 0)
+ '(blink-cursor-blinks 0)
+ '(blink-cursor-mode nil)
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
+ '(cua-normal-cursor-color "light green")
+ '(cursor-type (quote hollow))
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
@@ -62,6 +74,7 @@
    (quote
     (helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
+ '(ring-bell-function (quote ignore))
  '(server-mode nil)
  '(show-paren-mode t)
  '(show-trailing-whitespace t)
@@ -98,7 +111,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Source Code Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Source Code Pro"))))
  '(whitespace-space ((t nil))))
 ;;
 ;; haskell indentation (choose one of the following three)
