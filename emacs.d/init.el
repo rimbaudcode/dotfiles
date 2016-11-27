@@ -30,7 +30,8 @@
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
- '(cua-normal-cursor-color "light green")
+ '(cua-normal-cursor-color "dark gray")
+ '(cua-overwrite-cursor-color "dark gray")
  '(cursor-type (quote hollow))
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
