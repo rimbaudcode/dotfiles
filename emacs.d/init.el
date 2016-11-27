@@ -157,13 +157,9 @@
 ;; use tab to indent or complete
 (setq tab-always-indent 'complete)
 ;;
-;; key bindings
-(when (eq system-type 'darwin) ;; mac specific settings
-  (setq mac-command-modifier 'control)  ; make cmd key do Control
-  (setq mac-option-modifier 'meta)      ; make opt key do Meta
-  (setq mac-control-modifier 'super)    ; make Control key do Super
-  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
-  )
+;; open other windows vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 80)
 ;;
 (provide 'emacs)
 ;;; init.el ends here
