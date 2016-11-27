@@ -27,8 +27,6 @@
   (split-window-horizontally)
   (other-window 1 nil)
   (switch-to-next-buffer))
-;;
-(global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 
 (defun git-visual ()
   "Launch `git-visual' from within Emacs."
@@ -114,8 +112,6 @@
   (split-window-vertically)
   (other-window 1 nil)
   (switch-to-next-buffer))
-;;
-(global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
 
 (defun wiki-search-region (start end)
   "Search the current string from START to END using `wiki'."
