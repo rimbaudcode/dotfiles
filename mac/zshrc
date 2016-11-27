@@ -32,9 +32,9 @@ SAVEHIST=0
 
 ### Export paths
 #
-local MICRO_EDITOR_PATH=`which micro`
-export EDITOR=$MICRO_EDITOR_PATH
-export VISUAL=$MICRO_EDITOR_PATH
+local EMACS_CLIENT_PATH=`which emacsclient`
+export EDITOR=$EMACS_CLIENT_PATH
+export VISUAL=$EMACS_CLIENT_PATH
 #
 # brew install `lesspipe`
 local LESSOPEN="|lesspipe.sh %s"

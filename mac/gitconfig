@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/dfhe/.gitignore_global
-	editor = emacs
+	editor = emacsclient -t
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
