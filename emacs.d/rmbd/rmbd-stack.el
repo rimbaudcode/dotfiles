@@ -37,9 +37,9 @@
 (defun stack-build ()
   "Build the package(s) in this directory/configuration."
   (interactive)
-  (shell-command
-   (format "stack build"))
-  (revert-buffer t t t))
+  (async-shell-command (format "stack build")
+                       (get-buffer-create "*stack build: standard output*")
+                       (get-buffer-create "*stack build: standard error*")))
 
 (defun stack-clean ()
   "Clean the local packages."
@@ -156,9 +156,9 @@
 (defun stack-exec (tool)
   "Execute TOOL."
   (interactive "sName of executable: ")
-  (shell-command
-   (format "stack exec %s" (shell-quote-argument tool)))
-  (revert-buffer t t t))
+  (async-shell-command (format "stack exec %s" (shell-quote-argument tool))
+                       (get-buffer-create "*stack exec: standard output*")
+                       (get-buffer-create "*stack exec: standard error*")))
 
 (defun stack-hoogle (term)
   "Run hoogle on TERM in the context of the current Stack config."
