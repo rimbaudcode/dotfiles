@@ -311,9 +311,8 @@ alias date-local='gdate --iso-8601=ns'
 # emacs
 alias e='emacsclient -t'
 alias emacs-daemon='emacs --daemon'
-alias emacs-gui='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias emacs-gui='emacsclient -c'
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
-alias emacs-open-gui='open -a /Applications/Emacs.app'
 alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-terminal='emacsclient -t'
 #
@@ -322,7 +321,7 @@ alias emacs-latex='emacsclient -t **/*.sty **/*.tex TODO.org'
 alias emacs-swift='emacsclient -t **/*.swift *.md *.org'
 #
 # folders
-alias latex-docs="cd ~/Documents/Google\ Drive/latex"
+alias latex-docs='cd ~/Documents/Google\ Drive/latex'
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
