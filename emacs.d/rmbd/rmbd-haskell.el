@@ -4,44 +4,19 @@
 
 ;;; code:
 
-(defun hlint ()
-  "Run `hlint' against the current buffer."
-  (interactive)
-  (shell-command
-   (format "hlint %s" (shell-quote-argument (buffer-file-name))))
-  (revert-buffer t t t))
-
 (defun pointfree ()
   "Run `pointfree' against the current selected region."
   (interactive)
-  (when (region-active-p)
-    (shell-command-on-region
-     ;; beginning and end of selected region
-     (region-beginning)
-     (region-end)
-     ;; command and parameters
-     "pointfree --stdin"
-     ;; output buffer
-     (message "%s" (let ((string (buffer-substring
-                                  (region-beginning)
-                                  (region-end))))
-                     (with-temp-buffer
-                       (insert string)
-                       (buffer-substring-no-properties
-                        (point-min)
-                        (point-max))))))
-    ;; replace?
-    t
-    ;; name of the error buffer
-    "*Pointfree Error Buffer*"
-    ;; show error buffer?
-    t))
+  (shell-command-on-region (line-beginning-position)
+                           (line-end-position)
+                           "pointfree --stdin"
+                           nil
+                           t))
 
 (defun stylish-haskell ()
   "Run `stylish-haskell' against the current file."
   (interactive)
-  (shell-command
-   (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
+  (shell-command (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
   (revert-buffer t t t))
 
 (provide 'rmbd-haskell.el)
