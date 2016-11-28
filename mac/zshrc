@@ -34,8 +34,8 @@ SAVEHIST=0
 #
 local EMACS_CLIENT_PATH=`which emacsclient`
 export ALTERNATE_EDITOR=""
-export EDITOR=$EMACS_CLIENT_PATH
-export VISUAL=$EMACS_CLIENT_PATH
+export EDITOR="$EMACS_CLIENT_PATH -t"
+export VISUAL="$EMACS_CLIENT_PATH -c -a emacs"
 #
 # brew install `lesspipe`
 local LESSOPEN="|lesspipe.sh %s"
@@ -311,16 +311,15 @@ alias date-local='gdate --iso-8601=ns'
 # emacs
 alias e='emacsclient -t'
 alias emacs-daemon='emacs --daemon'
+alias emacs-gui='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
+alias emacs-open-gui='open -a /Applications/Emacs.app'
 alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-terminal='emacsclient -t'
 #
 alias emacs-haskell='emacsclient -t *.md **/*.hs *.cabal *.org'
 alias emacs-latex='emacsclient -t **/*.sty **/*.tex TODO.org'
 alias emacs-swift='emacsclient -t **/*.swift *.md *.org'
-#
-alias emacs-gui='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias emacs-gui-open='open -a /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 #
 # folders
 alias latex-docs="cd ~/Documents/Google\ Drive/latex"
