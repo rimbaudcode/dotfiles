@@ -5,7 +5,7 @@
 ;;; code:
 
 (defun hlint ()
-  "`hlint' the current file."
+  "Run `hlint' against the current buffer."
   (interactive)
   (shell-command
    (format "hlint %s" (shell-quote-argument (buffer-file-name))))
@@ -38,7 +38,7 @@
     t))
 
 (defun stylish-haskell ()
-  "`stylish-haskell' on the current file."
+  "Run `stylish-haskell' against the current file."
   (interactive)
   (shell-command
    (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
