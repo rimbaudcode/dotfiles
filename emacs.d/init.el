@@ -48,6 +48,8 @@
  '(global-linum-mode nil)
  '(global-visual-line-mode nil)
  '(global-whitespace-mode nil)
+ '(google-translate-default-source-language "en")
+ '(google-translate-default-target-language "es")
  '(haskell-indentation-show-indentations t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
