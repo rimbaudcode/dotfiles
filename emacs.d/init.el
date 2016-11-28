@@ -63,6 +63,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(ispell-personal-dictionary nil)
+ '(keyboard-coding-system (quote utf-8-unix))
  '(linum-format "%d ")
  '(make-backup-files nil)
  '(mc/always-run-for-all t)
