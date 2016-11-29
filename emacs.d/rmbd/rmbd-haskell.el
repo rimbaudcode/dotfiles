@@ -7,7 +7,7 @@
 (require 'thingatpt)
 
 (defun run-shell-command-at-line (cmd)
-  "Insert the result of running the shell command CMD taking the current line as argument."
+  "Insert the result of running the shell command CMD with the current line as argument."
   (move-beginning-of-line nil)
   (insert
    (shell-command-to-string (format "%s %s"
@@ -17,12 +17,12 @@
   (kill-whole-line))
 
 (defun run-pointfree-at-line ()
-  "Run `pointfree' against the current line and replace the line with the `pointfree' output."
+  "Run `pointfree' against the current line replacing it with the `pointfree' output."
   (interactive)
   (run-shell-command-at-line "pointfree"))
 
 (defun run-pointful-at-line ()
-  "Run `pointfree' against the current line and replace the line with the `pointfree' output."
+  "Run `pointfree' against the current line replacing it with the `pointfree' output."
   (interactive)
   (run-shell-command-at-line "pointful"))
 
