@@ -48,11 +48,6 @@
   (interactive "r")
   (shell-command (buffer-substring-no-properties start end)))
 
-(defun replace-current-buffer-file-extension-to (ext)
-  "Replace the extension of the current buffer file to `.EXT'."
-  (interactive)
-  (concat (file-name-base (buffer-file-name)) ext))
-
 (defun reload-buffer ()
   "Revert buffer without confirmation."
   (interactive)
