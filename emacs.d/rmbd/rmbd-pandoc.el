@@ -6,7 +6,6 @@
 
 (defun pandoc-infile-to-outfile (infile outfile)
   "Convert the type of an INFILE into an OUTFILE using `pandoc'."
-  (interactive)
   (async-start
    (shell-command
     (format "pandoc %s -o %s"
