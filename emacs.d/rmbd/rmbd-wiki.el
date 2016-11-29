@@ -19,18 +19,16 @@
    (format "wiki -short '%s'" (buffer-substring-no-properties start end))))
 
 (defun wiki-search-word-at-point ()
-  "Search the current word under the cursor using `wiki'."
+  "Search the current word under the cursor using `wiki' short output."
   (interactive)
-  (shell-command
-   (format "wiki -n '%s'" (substring-no-properties
-                           (thing-at-point 'word)))))
+  (shell-command (format "wiki -n '%s'"
+                         (thing-at-point 'word 'NO-PROPERTIES))))
 
 (defun wiki-search-word-at-point-short ()
   "Search the current word under the cursor using `wiki' short output."
   (interactive)
-  (shell-command
-   (format "wiki -short '%s'" (substring-no-properties
-                               (thing-at-point 'word)))))
+  (shell-command (format "wiki -short '%s'"
+                         (thing-at-point 'word 'NO-PROPERTIES))))
 
 (provide 'rmbd-wiki)
 ;;; rmbd-wiki.el ends here
