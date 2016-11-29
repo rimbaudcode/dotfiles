@@ -7,10 +7,9 @@
 (defun pandoc-infile-to-outfile (infile outfile)
   "Convert the type of an INFILE into an OUTFILE using `pandoc'."
   (async-start
-   (shell-command
-    (format "pandoc %s -o %s"
-            (shell-quote-argument infile)
-            (shell-quote-argument outfile))))
+   (shell-command (format "pandoc %s -o %s"
+                          (shell-quote-argument infile)
+                          (shell-quote-argument outfile))))
   (message "pandoc %s to %s finished" infile outfile))
 
 (defun pandoc-md-to-pdf ()
