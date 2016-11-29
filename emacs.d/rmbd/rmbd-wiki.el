@@ -9,8 +9,7 @@
 (defun wiki-search-current-region (opt start end)
   "Search the current marked region, using `wiki' passing to it an OPT, from START to END."
   (shell-command (format "wiki %s %s" opt
-                         (shell-quote-argument
-                          (buffer-substring-no-properties start end)))))
+                         (shell-quote-argument (buffer-substring-no-properties start end)))))
 
 (defun wiki-search-region (start end)
   "Search the current marked string from START to END  `wiki'."
