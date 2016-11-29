@@ -5,7 +5,7 @@
 ;;; code:
 
 (defun run-pointfree-at-line ()
-  "Run `pointfree' against the current selected region."
+  "Run `pointfree' against the current line."
   (interactive)
   (shell-command-on-region (line-beginning-position)
                            (line-end-position)
