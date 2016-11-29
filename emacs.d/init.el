@@ -28,6 +28,7 @@
  '(blink-cursor-blinks 0)
  '(blink-cursor-mode nil)
  '(c-basic-offset 4)
+ '(clean-buffer-list-delay-general 1)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(cua-normal-cursor-color "dark gray")
