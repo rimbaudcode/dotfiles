@@ -33,16 +33,6 @@
   (interactive)
   (shell-command (format "git visual")))
 
-(defun mark-word-under-cursor ()
-  "Mark the current word under the cursor.  'word' here is considered any alphenumeric sequence with '_' or '-'."
-  (interactive)
-  (let (b1 b2)
-    (skip-chars-backward "-_A-Za-z0-9")
-    (setq b1 (point))
-    (skip-chars-forward "-_A-Za-z0-9")
-    (setq b2 (point))
-    (set-mark b1)))
-
 (defun open-current-folder-in-finder ()
   "`open' the current folder in `macOS' Finder."
   (interactive)
