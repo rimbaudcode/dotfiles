@@ -24,6 +24,7 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    (vector "#ffffff" "#bf616a" "#B4EB89" "#ebcb8b" "#89AAEB" "#C189EB" "#89EBCA" "#232830"))
+ '(async-bytecomp-package-mode t)
  '(auto-save-interval 0)
  '(blink-cursor-blinks 0)
  '(blink-cursor-mode nil)
@@ -38,6 +39,7 @@
  '(custom-safe-themes
    (quote
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "08851585c86abcf44bb1232bced2ae13bc9f6323aeda71adfa3791d6e7fea2b6" default)))
+ '(dired-async-mode t)
  '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
