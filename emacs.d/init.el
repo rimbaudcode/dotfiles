@@ -199,6 +199,7 @@
 ;;
 ;; load files with custom code
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
+(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-latexmk.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-pandoc.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
