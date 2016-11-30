@@ -6,8 +6,8 @@
 
 (require 'thingatpt)
 
-(defun run-shell-command-at-line (cmd)
-  "Insert the result of running the shell command CMD with the current line as argument."
+(defun run-shell-command-with-line (cmd)
+  "Run the command CMD with the current line as argument overriding it then with the result."
   (move-beginning-of-line nil)
   (insert
    (shell-command-to-string (format "%s %s"
@@ -16,15 +16,15 @@
                                      (thing-at-point 'line 'NO-PROPERTIES)))))
   (kill-whole-line))
 
-(defun run-pointfree-at-line ()
+(defun run-pointfree-with-line ()
   "Run `pointfree' against the current line replacing it with the `pointfree' output."
   (interactive)
-  (run-shell-command-at-line "pointfree"))
+  (run-shell-command-with-line "pointfree"))
 
-(defun run-pointful-at-line ()
+(defun run-pointful-with-line ()
   "Run `pointfree' against the current line replacing it with the `pointfree' output."
   (interactive)
-  (run-shell-command-at-line "pointful"))
+  (run-shell-command-with-line "pointful"))
 
 (defun run-stylish-haskell ()
   "Run `stylish-haskell' against the current file."
