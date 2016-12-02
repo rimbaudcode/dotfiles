@@ -217,6 +217,7 @@
 ;;
 (load-library "rmbd-haskell")
 (load-library "rmbd-latexmk")
+(load-library "rmbd-moods")
 (load-library "rmbd-pandoc")
 (load-library "rmbd-stack")
 (load-library "rmbd-utils")
@@ -224,6 +225,7 @@
 ;;
 (require 'rmbd-haskell)
 (require 'rmbd-latexmk)
+(require 'rmbd-moods)
 (require 'rmbd-pandoc)
 (require 'rmbd-stack)
 (require 'rmbd-utils)
