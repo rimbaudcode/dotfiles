@@ -208,6 +208,10 @@
 ;; better buffer management
 (defalias 'list-buffers 'ibuffer-other-window)
 ;;
+;; better window navigation
+;; navigate through windows using SHIFT-(arrow-keys)
+(windmove-default-keybindings)
+
 ;; load files with custom code
 (add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
 ;;
