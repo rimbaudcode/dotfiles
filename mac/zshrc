@@ -317,8 +317,8 @@ alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-terminal='emacsclient -t'
 #
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs *.md'
-alias emacs-latex='emacsclient -t **/*.sty **/*.tex TODO.org'
 alias emacs-swift='emacsclient -t **/*.swift *.md *.org'
+alias emacs-tex='emacsclient -t **/*.tex TODO.org'
 #
 # folders
 alias latex-docs='cd ~/Documents/Google\ Drive/latex'
