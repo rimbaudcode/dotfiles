@@ -4,6 +4,8 @@
 
 ;;; code:
 
+(require 'darkroom)
+
 (defun coding-mode ()
   "Setup Emacs in a coding environment."
   (interactive)
@@ -55,8 +57,11 @@
 (defun reading-mode ()
   "Setup Emacs in a reading environment."
   (interactive)
-  (writing-mode)
-  (read-only-mode 1))
+  (linum-mode 0)
+  (fci-mode 0)
+  (read-only-mode 1)
+  (visual-line-mode 1)
+  (darkroom-tentative-mode 1))
 
 (defun reload-buffer ()
   "Revert buffer without confirmation."
