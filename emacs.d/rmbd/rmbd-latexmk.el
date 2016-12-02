@@ -34,5 +34,5 @@
   (interactive)
   (concat (file-name-base (buffer-file-name)) ext))
 
-(provide 'rmbd-latexmk.el)
+(provide 'rmbd-latexmk)
 ;;; rmbd-latexmk.el ends here

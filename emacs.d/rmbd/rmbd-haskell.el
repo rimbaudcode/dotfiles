@@ -32,5 +32,5 @@
   (shell-command (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
   (revert-buffer t t t))
 
-(provide 'rmbd-haskell.el)
+(provide 'rmbd-haskell)
 ;;; rmbd-haskell.el ends here

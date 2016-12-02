@@ -94,5 +94,5 @@
   (other-window 1 nil)
   (switch-to-next-buffer))
 
-(provide 'rmbd-utils.el)
+(provide 'rmbd-utils)
 ;;; rmbd-utils.el ends here

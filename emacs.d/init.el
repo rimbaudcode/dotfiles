@@ -202,13 +202,22 @@
 (popwin-mode 1)
 ;;
 ;; load files with custom code
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-latexmk.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-pandoc.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-stack.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-utils.el")
-(load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-wiki.el")
+(add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
 ;;
+(load-library "rmbd-haskell")
+(load-library "rmbd-latexmk")
+(load-library "rmbd-pandoc")
+(load-library "rmbd-stack")
+(load-library "rmbd-utils")
+(load-library "rmbd-wiki")
+;;
+(require 'rmbd-haskell)
+(require 'rmbd-latexmk)
+(require 'rmbd-pandoc)
+(require 'rmbd-stack)
+(require 'rmbd-utils)
+(require 'rmbd-wiki)
+
 (provide 'emacs)
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)

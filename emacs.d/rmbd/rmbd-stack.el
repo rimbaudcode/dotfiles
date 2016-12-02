@@ -134,5 +134,5 @@
   (interactive "sStack template: ")
   (shell-command (format "stack new %s" (shell-quote-argument template))))
 
-(provide 'rmbd-stack.el)
+(provide 'rmbd-stack)
 ;;; rmbd-stack.el ends here
