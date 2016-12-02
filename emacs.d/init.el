@@ -79,7 +79,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
  '(server-mode nil)
@@ -196,6 +196,10 @@
 ;; horizontally and vertically split last opened buffer
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
+;;
+;; popwin
+(require 'popwin)
+(popwin-mode 1)
 ;;
 ;; load files with custom code
 (load-file "~/github/dotfiles/emacs.d/rmbd/rmbd-haskell.el")
