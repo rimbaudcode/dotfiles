@@ -205,6 +205,9 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;;
+;; better buffer management
+(defalias 'list-buffers 'ibuffer-other-window)
+;;
 ;; load files with custom code
 (add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
 ;;
