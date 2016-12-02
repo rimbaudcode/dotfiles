@@ -71,6 +71,11 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
+(defun replace-current-buffer-file-extension-to (ext)
+  "Replace the extension of the current buffer file to `.EXT'."
+  (interactive)
+  (concat (file-name-base (buffer-file-name)) ext))
+
 (defun save-buffer-as (filename)
   "Save the current buffer as a FILENAME provided interactively."
   (interactive "FSave as...: ")
