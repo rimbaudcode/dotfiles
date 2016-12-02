@@ -4,6 +4,8 @@
 
 ;;; code:
 
+(require 'rmbd-utils)
+
 (defun pandoc-infile-to-outfile (infile outfile)
   "Convert the type of an INFILE into an OUTFILE using `pandoc'."
   (async-start
@@ -23,11 +25,6 @@
   (interactive)
   (pandoc-infile-to-outfile (buffer-file-name)
                             (replace-current-buffer-file-extension-to ".docx")))
-
-(defun replace-current-buffer-file-extension-to (ext)
-  "Replace the extension of the current buffer file to `.EXT'."
-  (interactive)
-  (concat (file-name-base (buffer-file-name)) ext))
 
 (provide 'rmbd-pandoc)
 ;;; rmbd-pandoc.el ends here
