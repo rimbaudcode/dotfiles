@@ -119,6 +119,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :foundry "nil" :family "Source Code Pro"))))
+ '(aw-leading-char-face ((t (:foreground "red" :height 3.0))))
  '(whitespace-space ((t nil))))
 ;;
 ;; haskell indentation (choose one of the following three)
