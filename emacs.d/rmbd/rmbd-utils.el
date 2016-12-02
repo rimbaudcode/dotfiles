@@ -4,17 +4,6 @@
 
 ;;; code:
 
-(require 'darkroom)
-
-(defun coding-mode ()
-  "Setup Emacs in a coding environment."
-  (interactive)
-  (linum-mode 1)
-  (fci-mode 1)
-  (read-only-mode 0)
-  (visual-line-mode 0)
-  (darkroom-tentative-mode 0))
-
 (defun delete-file-and-buffer ()
   "Kill the current buffer and deletes the file it is visiting."
   (interactive)
@@ -53,15 +42,6 @@
   "`open' the current buffer file with the default `macOS' app."
   (interactive)
   (shell-command (format "open %s" (buffer-file-name))))
-
-(defun reading-mode ()
-  "Setup Emacs in a reading environment."
-  (interactive)
-  (linum-mode 0)
-  (fci-mode 0)
-  (read-only-mode 1)
-  (visual-line-mode 1)
-  (darkroom-tentative-mode 1))
 
 (defun reload-buffer ()
   "Revert buffer without confirmation."
@@ -118,15 +98,6 @@
   (split-window-vertically)
   (other-window 1 nil)
   (switch-to-next-buffer))
-
-(defun writing-mode ()
-  "Setup Emacs in a non-distracting environment."
-  (interactive)
-  (linum-mode 0)
-  (fci-mode 0)
-  (read-only-mode 0)
-  (visual-line-mode 1)
-  (darkroom-tentative-mode 1))
 
 (provide 'rmbd-utils)
 ;;; rmbd-utils.el ends here
