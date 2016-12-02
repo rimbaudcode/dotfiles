@@ -79,7 +79,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
  '(server-mode nil)
@@ -205,12 +205,11 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;;
-;; better buffer management
+;; buffer management
 (defalias 'list-buffers 'ibuffer-other-window)
 ;;
-;; better window navigation
-;; navigate through windows using SHIFT-(arrow-keys)
-(windmove-default-keybindings)
+;; window navigation
+(global-set-key (kbd "M-p") 'ace-window)
 
 ;; load files with custom code
 (add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
