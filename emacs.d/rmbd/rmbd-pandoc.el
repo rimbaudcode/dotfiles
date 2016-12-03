@@ -27,12 +27,14 @@
                             (replace-current-buffer-file-extension-to ".pdf")))
 
 (defun pandoc-md-to-pdf-xelatex ()
-  "Pandoc INFILE (`MD') into OUTFILE (`PDF') using `xelatex'."
-  (async-start
-   (shell-command (format "pandoc %s -o %s --latex-engine=xelatex"
-                          (shell-quote-argument infile)
-                          (shell-quote-argument outfile))))
-  (message "pandoc %s to %s finished" infile outfile))
+  "Pandoc current `MD' buffer file into `PDF' using `xelatex'."
+  (interactive)
+  (let ((infile (buffer-file-name))
+        (outfile (replace-current-buffer-file-extension-to ".pdf")))
+    (shell-command (format "pandoc %s -o %s --latex-engine=xelatex"
+                           (shell-quote-argument infile)
+                           (shell-quote-argument outfile)))
+    (message "pandoc %s to %s finished" infile outfile)))
 
 (provide 'rmbd-pandoc)
 ;;; rmbd-pandoc.el ends here
