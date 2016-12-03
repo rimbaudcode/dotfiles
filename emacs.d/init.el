@@ -159,19 +159,6 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 80)
 ;;
-;; delete-white-space on saving
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-;;
-;; tell dired to use GNU ls (gls) instead of BSD ls
-(setq insert-directory-program (executable-find "gls"))
-;;
-;; use tab to indent or complete
-(setq tab-always-indent 'complete)
-;;
-;; open other windows vertically
-(setq split-height-threshold nil)
-(setq split-width-threshold 80)
-;;
 ;; simpler prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 ;;
