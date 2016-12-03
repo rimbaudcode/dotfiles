@@ -7,7 +7,7 @@
 (require 'thingatpt)
 
 (defun wiki-search-region (start end)
-  "Search the current marked string from START to END  `wiki'."
+  "Search the current marked string from START to END using `wiki'."
   (interactive "r")
   (let ((cmd (format "wiki -n %s"
                      (shell-quote-argument
