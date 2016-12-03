@@ -17,7 +17,9 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(colored-man-pages git-flow stack)
+# brew manages zsh plugin by itself
+#
+plugins=(colored-man-pages git-flow osx stack)
 
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
@@ -30,9 +32,10 @@ SAVEHIST=0
 
 ### Export paths
 #
-local MICRO_EDITOR_PATH=`which micro`
-export EDITOR=$MICRO_EDITOR_PATH
-export VISUAL=$MICRO_EDITOR_PATH
+local EMACS_CLIENT_PATH=`which emacsclient`
+export ALTERNATE_EDITOR=""
+export EDITOR="$EMACS_CLIENT_PATH -t"
+export VISUAL="$EMACS_CLIENT_PATH -c -a emacs"
 #
 # brew install `lesspipe`
 local LESSOPEN="|lesspipe.sh %s"
@@ -260,7 +263,7 @@ alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
-alias nemesis='stack nemesis 2> /dev/null'
+alias nemesis='stack runhaskell Nemesis 2> /dev/null'
 alias oldies='mplayer http://80.237.154.83:8120'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias py='python3 -tt -O -q -b -d'
@@ -294,15 +297,31 @@ alias workspace="cd $WORKSPACE_PATH"
 #
 ### Sub-menus
 #
+# brew
+alias brew-update='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+#
 # cleaners
 alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
+# date
+alias date-utc='gdate -u --iso-8601=ns'
+alias date-local='gdate --iso-8601=ns'
+#
 # emacs
-alias emacs-haskell='emacs *.md **/*.hs *.cabal *.org'
-alias emacs-tex='emacs **/*.tex'
+alias e='emacsclient -t'
+alias emacs-daemon='emacs --daemon'
+alias emacs-gui='emacsclient -c'
+alias emacs-kill="emacsclient -e '(kill-emacs)'"
+alias emacs-reload='emacs-kill && emacs-daemon'
+alias emacs-terminal='emacsclient -t'
+#
+alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs *.md'
+alias emacs-swift='emacsclient -t *.org **/*.swift *.md'
+alias emacs-latex='emacsclient -t TODO.org **/*.tex'
 #
 # folders
+alias latex-docs='cd ~/Documents/Google\ Drive/latex'
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
@@ -338,6 +357,7 @@ alias yt-video='youtube-dl -citk -f mp4'
 
 ### Suffix aliases
 #
+alias -s pdf='open'
 alias -s sublime-project='sublime --project'
 alias -s xcodeproj='open'
 

@@ -1,52 +1,27 @@
-;;; rmbd-haskell.el --- functions to run `Haskell' utils on `Haskell' files.
+;;; rmbd-haskell.el --- `Haskell' utils on `Haskell' files.
 
 ;;; commentary:
 
 ;;; code:
 
-(defun hlint ()
-  "`hlint' the current file."
-  (interactive)
-  (shell-command
-   (format "hlint %s" (shell-quote-argument (buffer-file-name))))
-  (revert-buffer t t t)
-  )
+(require 'rmbd-utils)
+(require 'thingatpt)
 
-(defun pointfree ()
-  "Run `pointfree' against the current selected region."
+(defun run-pointfree-with-line ()
+  "Run `pointfree' against the current line replacing it then with the `pointfree' output."
   (interactive)
-  (when (region-active-p)
-    (shell-command-on-region
-     ;; beginning and end of selected region
-     (region-beginning)
-     (region-end)
-     ;; command and parameters
-     "pointfree --stdin"
-     ;; output buffer
-     (message "%s" (let ((string (buffer-substring
-                                  (region-beginning)
-                                  (region-end))))
-                     (with-temp-buffer
-                       (insert string)
-                       (buffer-substring-no-properties
-                        (point-min)
-                        (point-max))))))
-    ;; replace?
-    t
-    ;; name of the error buffer
-    "*Pointfree Error Buffer*"
-    ;; show error buffer?
-    t
-    )
-  )
+  (run-shell-command-with-line "pointfree"))
 
-(defun stylish-haskell ()
-  "`stylish-haskell' on the current file."
+(defun run-pointful-with-line ()
+  "Run `pointfree' against the current line replacing it then with the `pointfree' output."
   (interactive)
-  (shell-command
-   (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
-  (revert-buffer t t t)
-  )
+  (run-shell-command-with-line "pointful"))
 
-(provide 'rmbd-haskell.el)
+(defun run-stylish-haskell ()
+  "Run `stylish-haskell' against the current file."
+  (interactive)
+  (shell-command (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
+  (revert-buffer t t t))
+
+(provide 'rmbd-haskell)
 ;;; rmbd-haskell.el ends here

@@ -46,7 +46,7 @@
 	"command_completion": "prefixed",
 
 	// valid texfile extensions
-	"tex_file_exts": [".tex"],
+	"tex_file_exts": [".tex", ".sty"],
 
 	// controls whether or not syntax is automatically set to LaTeX for
 	// files that match one of the configured `tex_file_exts`
@@ -76,7 +76,7 @@
 	"temp_files_exts": [
 		".blg",".bbl",".aux",".log",".brf",".nlo",".out",".dvi",".ps",
 		".lof",".toc",".fls",".fdb_latexmk",".pdfsync",".synctex.gz",
-		".ind",".ilg",".idx"
+		".ind",".ilg",".idx", ".thm", "*Notes.bib"
 	],
 	// Folders that are not traversed when deleting temp files
 	"temp_files_ignored_folders": [
@@ -473,5 +473,12 @@
 	If the string is invalid the default value (30 minutes) will be used.
 	If you use `infinite` the cache will not invalidated automatically.
 	*/
-	"local_cache_life_span": "30 m"
+	"local_cache_life_span": "30 m",
+
+// ------------------------------------------------------------------
+// My config
+// ------------------------------------------------------------------
+
+	// stop ST to display math preview: really annoying!
+	"preview_math_mode": "none"
 }
