@@ -14,17 +14,25 @@
                           (shell-quote-argument outfile))))
   (message "pandoc %s to %s finished" infile outfile))
 
+(defun pandoc-md-to-docx ()
+  "Convert the current `MD' buffer file into `docx' using `pandoc'."
+  (interactive)
+  (pandoc-infile-to-outfile (buffer-file-name)
+                            (replace-current-buffer-file-extension-to ".docx")))
+
 (defun pandoc-md-to-pdf ()
   "Convert the current `MD' buffer file into `PDF' using `pandoc'."
   (interactive)
   (pandoc-infile-to-outfile (buffer-file-name)
                             (replace-current-buffer-file-extension-to ".pdf")))
 
-(defun pandoc-md-to-docx ()
-  "Convert the current `MD' buffer file into `docx' using `pandoc'."
-  (interactive)
-  (pandoc-infile-to-outfile (buffer-file-name)
-                            (replace-current-buffer-file-extension-to ".docx")))
+(defun pandoc-md-to-pdf-xelatex ()
+  "Pandoc INFILE (`MD') into OUTFILE (`PDF') using `xelatex'."
+  (async-start
+   (shell-command (format "pandoc %s -o %s --latex-engine=xelatex"
+                          (shell-quote-argument infile)
+                          (shell-quote-argument outfile))))
+  (message "pandoc %s to %s finished" infile outfile))
 
 (provide 'rmbd-pandoc)
 ;;; rmbd-pandoc.el ends here
