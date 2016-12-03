@@ -221,3 +221,4 @@
 (provide 'emacs)
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
