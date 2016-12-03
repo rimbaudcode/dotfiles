@@ -91,6 +91,11 @@
     (whitespace-cleanup)
     (special-mode)))
 
+(defun run-ansiweather ()
+  "Run `ansiweather' from within Emacs."
+  (interactive)
+  (shell-command "ansiweather -l Leoben,AT -u metric -s true -d true"))
+
 (defun run-shell-command-with-line (cmd)
   "Run the command CMD against the current line replacing it then with the CMD output."
   (move-beginning-of-line nil)
