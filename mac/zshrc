@@ -294,6 +294,7 @@ alias movies="cd $HOME/Movies"
 alias pictures="cd $HOME/Pictures"
 alias shared="cd $SHARED_DIR_PATH"
 alias workspace="cd $WORKSPACE_PATH"
+alias thesis="cd '/Users/dfhe/Documents/Google Drive/work/auv/thesis/thesis'"
 #
 ### Sub-menus
 #
