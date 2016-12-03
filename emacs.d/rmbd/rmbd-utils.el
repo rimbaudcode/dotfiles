@@ -21,6 +21,11 @@
   (interactive)
   (shell-command (format "git gource")))
 
+(defun git-visual ()
+  "Launch `git-visual' from within Emacs."
+  (interactive)
+  (shell-command (format "git visual")))
+
 (defun hsplit-last-buffer ()
   "Horizontally split the last buffer after having opened a new buffer."
   (interactive)
@@ -28,20 +33,23 @@
   (other-window 1 nil)
   (switch-to-next-buffer))
 
-(defun git-visual ()
-  "Launch `git-visual' from within Emacs."
+(defun open-current-buffer-file-externally ()
+  "`open' the current buffer file with the default `macOS' app."
   (interactive)
-  (shell-command (format "git visual")))
+  (shell-command (format "open %s" (buffer-file-name))))
 
 (defun open-current-folder-in-finder ()
   "`open' the current folder in `macOS' Finder."
   (interactive)
   (shell-command (format "open .")))
 
-(defun open-current-buffer-file-externally ()
-  "`open' the current buffer file with the default `macOS' app."
+(defun open-pdf-named-as-current-buffer ()
+  "Open a `PDF' named as the current buffer using `macOS' `open' tool."
   (interactive)
-  (shell-command (format "open %s" (buffer-file-name))))
+  (let ((cmd (format "open %s"
+                     (shell-quote-argument
+                      (replace-current-buffer-file-extension-to ".pdf")))))
+    (shell-command cmd)))
 
 (defun reload-buffer ()
   "Revert buffer without confirmation."

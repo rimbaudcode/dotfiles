@@ -19,13 +19,5 @@
   (interactive)
   (shell-command (format "latexmk -c -quiet")))
 
-(defun latexmk-open-pdf ()
-  "Open the `latexmk' generated `PDF' using `macOS' `open' utility."
-  (interactive)
-  (let ((cmd (format "open %s"
-                     (shell-quote-argument
-                      (replace-current-buffer-file-extension-to ".pdf")))))
-    (shell-command cmd)))
-
 (provide 'rmbd-latexmk)
 ;;; rmbd-latexmk.el ends here
