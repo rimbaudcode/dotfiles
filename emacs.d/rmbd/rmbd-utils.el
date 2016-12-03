@@ -79,6 +79,18 @@
   (interactive)
   (concat (file-name-base (buffer-file-name)) ext))
 
+(defun run-istats ()
+  "Run `istats' from within Emacs."
+  (interactive)
+  (let ((cmd "istats --no-graphs")
+        (temp-buffer-name "*istats*"))
+    (get-buffer-create temp-buffer-name)
+    (shell-command cmd temp-buffer-name)
+    (switch-to-buffer-other-window temp-buffer-name)
+    (goto-char (point-max))
+    (whitespace-cleanup)
+    (special-mode)))
+
 (defun save-buffer-as (filename)
   "Save the current buffer as a FILENAME provided interactively."
   (interactive "FSave as...: ")
