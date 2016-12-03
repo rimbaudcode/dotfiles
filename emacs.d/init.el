@@ -68,6 +68,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(ispell-personal-dictionary nil)
+ '(ivy-display-style nil)
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(keyboard-coding-system (quote utf-8-unix))
