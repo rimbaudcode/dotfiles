@@ -68,6 +68,8 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(ispell-personal-dictionary nil)
+ '(ivy-mode t)
+ '(ivy-use-virtual-buffers t)
  '(keyboard-coding-system (quote utf-8-unix))
  '(linum-format "%d ")
  '(make-backup-files nil)
@@ -79,7 +81,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
  '(server-mode nil)
@@ -198,6 +200,14 @@
 ;;
 ;; window navigation
 (global-set-key (kbd "M-p") 'ace-window)
+;;
+;; swiper
+(global-set-key "\C-s" 'swiper)
+(global-set-key "\C-r" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 
 ;; load files with custom code
 (add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
