@@ -18,7 +18,8 @@
     (switch-to-buffer-other-window temp-buffer-name)
     (goto-char (point-min))
     (whitespace-cleanup)
-    (special-mode)))
+    (special-mode)
+    (visual-line-mode 1)))
 
 (defun wiki-search-word-at-point ()
   "Search the current word under the cursor using `wiki'."
@@ -32,7 +33,8 @@
     (switch-to-buffer-other-window temp-buffer-name)
     (goto-char (point-min))
     (whitespace-cleanup)
-    (special-mode)))
+    (special-mode)
+    (visual-line-mode 1)))
 
 (provide 'rmbd-wiki)
 ;;; rmbd-wiki.el ends here
