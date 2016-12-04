@@ -7,7 +7,7 @@
 (require 'rmbd-utils)
 (require 'thingatpt)
 
-(defun run-ghc-with-buffer-file ()
+(defun run-ghc-with-current-buffer-file ()
   "Compile the current buffer file name with `ghc'."
   (interactive)
   (shell-command (format "ghc --make %s" (buffer-file-name)))
