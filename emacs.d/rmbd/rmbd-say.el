@@ -6,12 +6,12 @@
 
 (require 'thingatpt)
 
-(defun say-region-english (start end)
-  "Say the current marked string from START to END using `say'."
+(defun say-region-english (beg end)
+  "Say the current marked string from BEG to END using `say'."
   (interactive "r")
   (let ((cmd (format "say -v Samantha %s"
                      (shell-quote-argument
-                      (buffer-substring-no-properties start end)))))
+                      (buffer-substring-no-properties beg end)))))
     (shell-command cmd)))
 
 (defun say-word-english-at-point ()

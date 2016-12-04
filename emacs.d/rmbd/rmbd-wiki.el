@@ -6,12 +6,12 @@
 
 (require 'thingatpt)
 
-(defun wiki-search-region (start end)
-  "Search the current marked string from START to END using `wiki'."
+(defun wiki-search-region (beg end)
+  "Search the current marked string from BEG to END using `wiki'."
   (interactive "r")
   (let ((cmd (format "wiki -n %s"
                      (shell-quote-argument
-                      (buffer-substring-no-properties start end))))
+                      (buffer-substring-no-properties beg end))))
         (temp-buffer-name "*wiki*"))
     (get-buffer-create temp-buffer-name)
     (shell-command cmd temp-buffer-name)

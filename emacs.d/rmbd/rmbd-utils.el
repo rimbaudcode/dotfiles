@@ -111,10 +111,10 @@
   (interactive "FSave as...: ")
   (write-region (point-min) (point-max) filename))
 
-(defun shell-region (start end)
-  "Execute a `shell-command' against region from START to END in an inferior shell."
+(defun shell-region (beg end)
+  "Execute a `shell-command' against region from BEG to END in an inferior shell."
   (interactive "r")
-  (shell-command (buffer-substring-no-properties start end)))
+  (shell-command (buffer-substring-no-properties beg end)))
 
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
