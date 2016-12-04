@@ -7,6 +7,12 @@
 (require 'rmbd-utils)
 (require 'thingatpt)
 
+(defun run-ghc-on-buffer-file ()
+  "Run `ghc' to compile the current buffer file name."
+  (interactive)
+  (shell-command (format "ghc --make %s" (buffer-file-name)))
+  (message "ghc done."))
+
 (defun run-pointfree-with-line ()
   "Run `pointfree' against the current line replacing it then with the `pointfree' output."
   (interactive)
