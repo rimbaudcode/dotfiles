@@ -14,6 +14,7 @@
   (hl-line-mode 0)
   (read-only-mode 0)
   (visual-line-mode 0)
+  (wordsmith-mode 0)
   (darkroom-tentative-mode 0))
 
 (defun reading-mood ()
@@ -24,6 +25,7 @@
   (hl-line-mode 1)
   (read-only-mode 1)
   (visual-line-mode 1)
+  (wordsmith-mode 0)
   (darkroom-tentative-mode 1))
 
 (defun writing-mood ()
@@ -34,6 +36,7 @@
   (hl-line-mode 0)
   (read-only-mode 0)
   (visual-line-mode 1)
+  (wordsmith-mode 1)
   (darkroom-tentative-mode 1))
 
 (provide 'rmbd-moods)
