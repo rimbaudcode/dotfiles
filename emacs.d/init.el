@@ -73,7 +73,7 @@
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(keyboard-coding-system (quote utf-8-unix))
- '(linum-format "%d ")
+ '(linum-format "%3d ")
  '(make-backup-files nil)
  '(mc/always-run-for-all t)
  '(menu-bar-mode nil)
