@@ -315,6 +315,7 @@ alias emacs-daemon='emacs --daemon'
 alias emacs-gui='emacsclient -c'
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
 alias emacs-reload='emacs-kill && emacs-daemon'
+alias emacs-script='emacs --script'
 alias emacs-terminal='emacsclient -t'
 #
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs *.md'
