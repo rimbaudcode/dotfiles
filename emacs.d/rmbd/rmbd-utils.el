@@ -54,11 +54,6 @@
     (insert end-string)
     (forward-line -4)))
 
-(defun open-current-buffer-file-externally ()
-  "`open' the current buffer file with the default `macOS' app."
-  (interactive)
-  (shell-command (format "open %s" (buffer-file-name))))
-
 (defun open-pdf-named-as-current-buffer ()
   "Open a `PDF' named as the current buffer using `macOS' `open' tool."
   (interactive)
