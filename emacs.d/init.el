@@ -80,13 +80,14 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(osx-clipboard-mode nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (flycheck-stack flymake-hlint flymake-shell git-gutter+ haskell-snippets osx-clipboard osx-dictionary osx-lib osx-trash pandoc w3m wiki-summary writeroom-mode wordsmith-mode highlight2clipboard which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
