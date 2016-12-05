@@ -1,4 +1,4 @@
-;;; rmbd-moods.el --- coding, reading, and writing moods
+;;; art-moods.el --- coding, reading, and writing moods
 
 ;;; commentary:
 
@@ -6,7 +6,7 @@
 
 (require 'darkroom)
 
-(defun coding-mood ()
+(defun art-coding-mood ()
   "Setup Emacs in a coding environment."
   (interactive)
   (linum-mode 1)
@@ -18,7 +18,7 @@
   (delete-other-windows)
   (darkroom-tentative-mode 0))
 
-(defun reading-mood ()
+(defun art-reading-mood ()
   "Setup Emacs in a reading environment."
   (interactive)
   (linum-mode 0)
@@ -30,7 +30,7 @@
   (delete-other-windows)
   (darkroom-tentative-mode 1))
 
-(defun writing-mood ()
+(defun art-writing-mood ()
   "Setup Emacs in a non-distracting environment."
   (interactive)
   (linum-mode 0)
@@ -42,5 +42,5 @@
   (delete-other-windows)
   (darkroom-tentative-mode 1))
 
-(provide 'rmbd-moods)
-;;; rmbd-moods.el ends here
+(provide 'art-moods)
+;;; art-moods.el ends here

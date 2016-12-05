@@ -1,12 +1,12 @@
-;;; rmbd-pandoc.el --- interface to `pandoc' tool.
+;;; art-pandoc.el --- interface to `pandoc' tool.
 
 ;;; commentary:
 
 ;;; code:
 
-(require 'rmbd-utils)
+(require 'art-utils)
 
-(defun pandoc-infile-to-outfile (infile outfile)
+(defun art-pandoc-infile-to-outfile (infile outfile)
   "Convert the type of an INFILE into an OUTFILE using `pandoc'."
   (async-start
    (shell-command (format "pandoc %s -o %s"
@@ -14,19 +14,19 @@
                           (shell-quote-argument outfile))))
   (message "pandoc %s to %s finished" infile outfile))
 
-(defun pandoc-md-to-docx ()
+(defun art-pandoc-md-to-docx ()
   "Convert the current `MD' buffer file into `docx' using `pandoc'."
   (interactive)
-  (pandoc-infile-to-outfile (buffer-file-name)
-                            (replace-current-buffer-file-extension-to ".docx")))
+  (art-pandoc-infile-to-outfile (buffer-file-name)
+                                (art-replace-current-buffer-file-extension-to ".docx")))
 
-(defun pandoc-md-to-pdf ()
+(defun art-pandoc-md-to-pdf ()
   "Convert the current `MD' buffer file into `PDF' using `pandoc'."
   (interactive)
-  (pandoc-infile-to-outfile (buffer-file-name)
-                            (replace-current-buffer-file-extension-to ".pdf")))
+  (art-pandoc-infile-to-outfile (buffer-file-name)
+                                (art-replace-current-buffer-file-extension-to ".pdf")))
 
-(defun pandoc-md-to-pdf-xelatex ()
+(defun art-pandoc-md-to-pdf-xelatex ()
   "Pandoc current `MD' buffer file into `PDF' using `xelatex'."
   (interactive)
   (let ((infile (buffer-file-name))
@@ -36,5 +36,5 @@
                            (shell-quote-argument outfile)))
     (message "pandoc %s to %s finished" infile outfile)))
 
-(provide 'rmbd-pandoc)
-;;; rmbd-pandoc.el ends here
+(provide 'art-pandoc)
+;;; art-pandoc.el ends here
