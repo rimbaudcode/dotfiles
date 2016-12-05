@@ -1,4 +1,4 @@
-;;; rmbd-wiki.el --- interface to `macOS''s `wiki' tool.
+;;; art-wiki.el --- interface to `macOS''s `wiki' tool.
 
 ;;; commentary:
 
@@ -6,7 +6,7 @@
 
 (require 'thingatpt)
 
-(defun wiki-search-region (beg end)
+(defun art-wiki-search-region (beg end)
   "Search the current marked string from BEG to END using `wiki'."
   (interactive "r")
   (let ((cmd (format "wiki -n %s"
@@ -21,7 +21,7 @@
     (special-mode)
     (visual-line-mode 1)))
 
-(defun wiki-search-word-at-point ()
+(defun art-wiki-search-word-at-point ()
   "Search the current word under the cursor using `wiki'."
   (interactive)
   (let ((cmd (format "wiki -n %s"
@@ -36,5 +36,5 @@
     (special-mode)
     (visual-line-mode 1)))
 
-(provide 'rmbd-wiki)
-;;; rmbd-wiki.el ends here
+(provide 'art-wiki)
+;;; art-wiki.el ends here
