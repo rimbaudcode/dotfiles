@@ -69,7 +69,7 @@
   (interactive)
   (let ((cmd (format "open %s"
                      (shell-quote-argument
-                      (replace-current-buffer-file-extension-to ".pdf")))))
+                      (art-replace-current-buffer-file-extension-to ".pdf")))))
     (shell-command cmd)))
 
 (defun art-reload-buffer ()
