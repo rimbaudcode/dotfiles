@@ -59,11 +59,6 @@
   (interactive)
   (shell-command (format "open %s" (buffer-file-name))))
 
-(defun open-current-folder-in-finder ()
-  "`open' the current folder in `macOS' Finder."
-  (interactive)
-  (shell-command (format "open .")))
-
 (defun open-pdf-named-as-current-buffer ()
   "Open a `PDF' named as the current buffer using `macOS' `open' tool."
   (interactive)
