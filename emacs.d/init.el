@@ -241,6 +241,9 @@
 (require 'rmbd-stack)
 (require 'rmbd-utils)
 (require 'rmbd-wiki)
+;;
+(load-library "rmbd-osx-dictionary-patch.el")
+(require 'rmbd-osx-dictionary-patch)
 
 (provide 'emacs)
 ;;; init.el ends here
