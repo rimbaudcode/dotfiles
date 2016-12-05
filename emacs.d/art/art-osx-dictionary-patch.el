@@ -1,4 +1,4 @@
-;;; rmbd-osx-dictionary-patch.el -- Summary
+;;; art-osx-dictionary-patch.el -- Summary
 
 ;;; Commentary:
 
@@ -26,5 +26,5 @@
         (setq buffer-read-only t))
     (message "Nothing to look up")))
 
-(provide 'rmbd-osx-dictionary-patch)
-;;; rmbd-osx-dictionary-patch.el ends here
+(provide 'art-osx-dictionary-patch)
+;;; art-osx-dictionary-patch.el ends here
