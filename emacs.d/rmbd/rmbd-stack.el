@@ -2,7 +2,8 @@
 
 ;;; commentary:
 ;;
-;; Running `stack --help' returns a list of "Available commands".  Some of which are implemented herein.
+;; Running `stack --help' returns a list of "Available commands".
+;; Some of which are implemented herein.
 
 ;;; code:
 
@@ -74,7 +75,8 @@
 (defun stack-runhaskell ()
   "Run runghc (alias for 'runghc')."
   (interactive)
-  (shell-command (format "stack runhaskell %s" (shell-quote-argument (buffer-file-name)))))
+  (shell-command (format "stack runhaskell %s"
+                         (shell-quote-argument (buffer-file-name)))))
 
 (defun stack-sdist ()
   "Create source distribution tarballs."
@@ -128,7 +130,8 @@
   (shell-command (format "stack hoogle %s" (shell-quote-argument term))))
 
 (defun stack-new (template)
-  "Create a new project from a TEMPLATE.  Run `stack templates' to see available templates."
+  "Create a new project from a TEMPLATE.
+Run `stack templates' to see available templates."
   (interactive "sStack template: ")
   (shell-command (format "stack new %s" (shell-quote-argument template))))
 
