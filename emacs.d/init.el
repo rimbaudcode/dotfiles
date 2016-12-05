@@ -196,8 +196,8 @@
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
 ;;
 ;; moving-begining/end-of-line
-(global-set-key (kbd "ESC ;") 'move-beginning-of-line)
-(global-set-key (kbd "ESC j") 'move-end-of-line)
+(global-set-key (kbd "ESC a") 'move-beginning-of-line)
+(global-set-key (kbd "ESC e") 'move-end-of-line)
 ;;
 ;; popwin
 (require 'popwin)
