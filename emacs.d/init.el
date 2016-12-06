@@ -34,7 +34,7 @@
  '(cua-mode t nil (cua-base))
  '(cua-normal-cursor-color "dark gray")
  '(cua-overwrite-cursor-color "dark gray")
- '(cursor-type (quote hollow))
+ '(cursor-type (quote box))
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
