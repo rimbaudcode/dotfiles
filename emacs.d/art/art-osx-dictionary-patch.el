@@ -26,5 +26,8 @@
         (setq buffer-read-only t))
     (message "Nothing to look up")))
 
+(defalias 'osx-dictionary-search-word-at-point
+  'osx-dictionary-search-pointer)
+
 (provide 'art-osx-dictionary-patch)
 ;;; art-osx-dictionary-patch.el ends here
