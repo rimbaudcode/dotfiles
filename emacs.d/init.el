@@ -66,7 +66,7 @@
  '(ido-grid-mode t)
  '(ido-ignore-buffers
    (quote
-    ("\\` " "\\*Messages\\*" "^\\*Customize" "\\*Ibuffer\\*" "\\*magit")))
+    ("\\` " "\\*Messages\\*" "^\\*Customize" "\\*Ibuffer\\*" "\\*magit" "\\*scratch\\*")))
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
