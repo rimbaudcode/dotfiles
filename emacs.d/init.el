@@ -64,9 +64,7 @@
  '(ido-enable-flex-matching t)
  '(ido-enable-last-directory-history nil)
  '(ido-grid-mode t)
- '(ido-ignore-buffers
-   (quote
-    ("\\` " "\\*Messages\\*" "^\\*Customize" "\\*Ibuffer\\*" "\\*magit" "\\*scratch\\*" "Spec.hs" "Setup.hs")))
+ '(ido-ignore-buffers (quote ("\\` " "^\\*" "Spec.hs" "Setup.hs")))
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
