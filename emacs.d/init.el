@@ -64,6 +64,9 @@
  '(ido-enable-flex-matching t)
  '(ido-enable-last-directory-history nil)
  '(ido-grid-mode t)
+ '(ido-ignore-buffers
+   (quote
+    ("\\` " "\\*Messages\\*" "^\\*Customize" "\\*Ibuffer\\*")))
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
@@ -243,7 +246,10 @@
 (load-library "art-osx-dictionary-patch")
 (require 'art-osx-dictionary-patch)
 
-(provide 'emacs)
-;;; init.el ends here
+
+;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+;;
+(provide 'emacs)
+;;; init.el ends here
