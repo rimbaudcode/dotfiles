@@ -64,6 +64,14 @@
     (whitespace-cleanup)
     (special-mode)))
 
+(defun art-itunes ()
+  "Launch `iTunes' using `masOS' `open'."
+  (shell-command "open /Applications/iTunes.app/"))
+
+(defun art-safari ()
+  "Launch `iTunes' using `masOS' `open'."
+  (shell-command "open /Applications/Safari.app/"))
+
 (defun art-open-pdf-named-as-current-buffer ()
   "Open a `PDF' named as the current buffer using `macOS' `open' tool."
   (interactive)
