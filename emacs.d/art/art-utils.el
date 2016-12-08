@@ -106,7 +106,8 @@
   (write-region (point-min) (point-max) filename))
 
 (defun art-shell-command-with-line (cmd)
-  "Run the command CMD against the current line replacing it then with the CMD output."
+  "Run the command CMD against the current line.
+Replace it then with the CMD output."
   (move-beginning-of-line nil)
   (insert
    (shell-command-to-string (format "%s %s"
@@ -116,7 +117,10 @@
   (kill-whole-line))
 
 (defun art-sort-words (reverse beg end)
-  "Sort words in region alphabetically, in REVERSE if negative.  Prefixed with negative \\[universal-argument], sort in reverse.  The variable `sort-fold-case' determines whether alphabetic case affects the sort order.  See `sort-regexp-fields'.  BEG.  END."
+  "Sort words in region alphabetically, in REVERSE if negative.
+Prefixed with negative \\[universal-argument], sort in reverse.
+The variable `sort-fold-case' determines whether alphabetic case affects
+the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end))
 
