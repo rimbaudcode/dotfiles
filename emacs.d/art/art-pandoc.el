@@ -17,14 +17,16 @@
 (defun art-pandoc-md-to-docx ()
   "Convert the current `MD' buffer file into `docx' using `pandoc'."
   (interactive)
-  (art-pandoc-infile-to-outfile (buffer-file-name)
-                                (art-replace-current-buffer-file-extension-to ".docx")))
+  (art-pandoc-infile-to-outfile
+   (buffer-file-name)
+   (art-replace-current-buffer-file-extension-to ".docx")))
 
 (defun art-pandoc-md-to-pdf ()
   "Convert the current `MD' buffer file into `PDF' using `pandoc'."
   (interactive)
-  (art-pandoc-infile-to-outfile (buffer-file-name)
-                                (art-replace-current-buffer-file-extension-to ".pdf")))
+  (art-pandoc-infile-to-outfile
+   (buffer-file-name)
+   (art-replace-current-buffer-file-extension-to ".pdf")))
 
 (defun art-pandoc-md-to-pdf-xelatex ()
   "Pandoc current `MD' buffer file into `PDF' using `xelatex'."
