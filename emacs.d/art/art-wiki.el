@@ -19,7 +19,7 @@
     (goto-char (point-min))
     (whitespace-cleanup)
     (special-mode)
-    (visual-line-mode 1)))
+    (visual-line-mode)))
 
 (defun art-wiki-search-word-at-point ()
   "Search the current word under the cursor using `wiki'."
@@ -34,7 +34,7 @@
     (goto-char (point-min))
     (whitespace-cleanup)
     (special-mode)
-    (visual-line-mode 1)))
+    (visual-line-mode)))
 
 (provide 'art-wiki)
 ;;; art-wiki.el ends here
