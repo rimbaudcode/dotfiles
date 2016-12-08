@@ -24,12 +24,12 @@
 (defun art-display-gource ()
   "Run `gource' in the current `git' repo."
   (interactive)
-  (shell-command (format "git gource")))
+  (shell-command "git gource"))
 
 (defun art-git-visual ()
   "Launch `git-visual' from within Emacs."
   (interactive)
-  (shell-command (format "git visual")))
+  (shell-command "git visual"))
 
 (defun art-insert-elisp-script-header ()
   "Insert Emacs Lisp header as recommended by `flycheck'."
