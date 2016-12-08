@@ -66,10 +66,12 @@
 
 (defun art-itunes ()
   "Launch `iTunes' using `masOS' `open'."
+  (interactive)
   (shell-command "open /Applications/iTunes.app/"))
 
 (defun art-safari ()
   "Launch `iTunes' using `masOS' `open'."
+  (interactive)
   (shell-command "open /Applications/Safari.app/"))
 
 (defun art-open-pdf-named-as-current-buffer ()
