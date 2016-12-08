@@ -14,19 +14,22 @@
   (message "ghc done."))
 
 (defun art-pointfree-with-line ()
-  "Run `pointfree' against the current line replacing it then with the `pointfree' output."
+  "Run `pointfree' against the current line.
+Replace it then with the `pointfree' output."
   (interactive)
   (art-shell-command-with-line "pointfree"))
 
 (defun art-pointful-with-line ()
-  "Run `pointfree' against the current line replacing it then with the `pointfree' output."
+  "Run `pointfree' against the current line.
+Replace it with the `pointfree' output."
   (interactive)
   (art-shell-command-with-line "pointful"))
 
 (defun art-stylish-haskell ()
   "Run `stylish-haskell' against the current file."
   (interactive)
-  (shell-command (format "stylish-haskell -i %s" (shell-quote-argument (buffer-file-name))))
+  (shell-command (format "stylish-haskell -i %s"
+                         (shell-quote-argument (buffer-file-name))))
   (revert-buffer t t t))
 
 (provide 'art-haskell)
