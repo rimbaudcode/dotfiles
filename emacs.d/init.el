@@ -240,10 +240,6 @@
 (require 'art-stack)
 (require 'art-utils)
 (require 'art-wiki)
-;;
-(load-library "art-osx-dictionary-patch")
-(require 'art-osx-dictionary-patch)
-
 
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
