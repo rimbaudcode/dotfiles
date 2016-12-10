@@ -74,14 +74,6 @@
   (interactive)
   (shell-command "open /Applications/Safari.app/"))
 
-(defun art-open-pdf-named-as-current-buffer ()
-  "Open a `PDF' named as the current buffer using `macOS' `open' tool."
-  (interactive)
-  (let ((cmd (format "open %s"
-                     (shell-quote-argument
-                      (art-replace-current-buffer-file-extension-to ".pdf")))))
-    (shell-command cmd)))
-
 (defun art-recompile-custom-code-dir ()
   "Recompile directory with custom code: `~/.emacs/art'."
   (interactive)
@@ -110,7 +102,7 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun art-replace-current-buffer-file-extension-to (ext)
+(defun art-replace-buffer-file-extension-to (ext)
   "Replace the extension of the current buffer file to `.EXT'."
   (interactive)
   (concat (file-name-base (buffer-file-name)) ext))
