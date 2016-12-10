@@ -15,8 +15,7 @@
   (read-only-mode 0)
   (visual-line-mode 0)
   (wordsmith-mode 0)
-  (delete-other-windows)
-  (darkroom-tentative-mode 0))
+  (delete-other-windows))
 
 (defun art-reading-mood ()
   "Setup Emacs in a reading environment."
