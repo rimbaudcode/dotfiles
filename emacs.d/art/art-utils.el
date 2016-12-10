@@ -82,6 +82,11 @@
                       (art-replace-current-buffer-file-extension-to ".pdf")))))
     (shell-command cmd)))
 
+(defun art-recompile-custom-code-dir ()
+  "Recompile directory with custom code: `~/.emacs/art'."
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d/art" 0))
+
 (defun art-reload-buffer ()
   "Revert buffer without confirmation."
   (interactive)
