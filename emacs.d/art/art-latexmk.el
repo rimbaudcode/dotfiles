@@ -19,5 +19,11 @@
   (interactive)
   (shell-command (format "latexmk -c -quiet")))
 
+(defun art-open-bib-file-externally ()
+  "Open `.bib' file with its default app using `macOS's `open' tool."
+  (interactive)
+  (let ((bib-file-path "./doc/references.bib"))
+    (shell-command (format "open %s" bib-file-path))))
+
 (provide 'art-latexmk)
 ;;; art-latexmk.el ends here
