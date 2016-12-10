@@ -280,7 +280,6 @@ alias tree='tree -C'
 alias unzip='unzip -qq'
 alias w3m='w3m -N -no-cookie'
 alias wget='wget -c'
-alias wolfram='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias zip='zip -qrT'
 #
 ### Folders
@@ -341,6 +340,10 @@ alias hoogle-info='hoogle --info'
 alias mail-gmail='open https://studmail.unileoben.ac.at'
 alias mail-hotmail='open https://studmail.unileoben.ac.at'
 alias mail-uni='open https://studmail.unileoben.ac.at'
+#
+# mathematica
+alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
+alias math-gui='open /Applications/Mathematica.app'
 #
 # readers
 alias say-english='say -v Samantha'
