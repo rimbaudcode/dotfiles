@@ -7,7 +7,7 @@
 (require 'art-utils)
 (require 'thingatpt)
 
-(defun art-ghc-with-current-buffer-file ()
+(defun art-ghc-against-buffer-file ()
   "Compile the current buffer file name with `ghc'."
   (interactive)
   (shell-command (format "ghc --make %s" (buffer-file-name)))
