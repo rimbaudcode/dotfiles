@@ -9,6 +9,13 @@
   (interactive)
   (shell-command "ansiweather -l Leoben,AT -u metric -s true -d true"))
 
+(defun art-copy-to-osx (beg end)
+  "Copy the selected text, from BEG to END, to `macOS' pasteboard."
+  (interactive "r")
+  (shell-command (format "echo %s | pbcopy"
+                         (shell-quote-argument
+                          (buffer-substring-no-properties beg end)))))
+
 (defun art-delete-file-and-buffer ()
   "Kill the current buffer and deletes the file it is visiting."
   (interactive)
