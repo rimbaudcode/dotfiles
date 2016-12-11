@@ -259,12 +259,14 @@ alias encrypt='gpg -e -r Art'
 alias ghci='ghci -W'
 alias imgls='imgls -size 25,25'
 alias irb='irb --readline --simple-prompt'
+alias itunes='open /Applications/iTunes.app'
 alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
 alias nemesis='stack runhaskell Nemesis 2> /dev/null'
 alias oldies='mplayer http://80.237.154.83:8120'
+alias osx-dictionary-cli='~/.emacs.d/elpa/osx-dictionary-20161207.810/osx-dictionary-cli'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
@@ -278,12 +280,12 @@ alias tree='tree -C'
 alias unzip='unzip -qq'
 alias w3m='w3m -N -no-cookie'
 alias wget='wget -c'
-alias wolfram='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias zip='zip -qrT'
 #
 ### Folders
 #
 alias apps="cd $HOME/Documents/OneDrive/Apps/bin"
+alias art="cd $HOME/github/dotfiles/emacs.d/art"
 alias data="cd $HOME/github/data"
 alias desktop="cd $HOME/Desktop"
 alias documents="cd $HOME/Documents"
@@ -294,6 +296,7 @@ alias movies="cd $HOME/Movies"
 alias pictures="cd $HOME/Pictures"
 alias shared="cd $SHARED_DIR_PATH"
 alias workspace="cd $WORKSPACE_PATH"
+alias thesis="cd ~/Documents/Google\ Drive/work/auv/thesis/thesis"
 #
 ### Sub-menus
 #
@@ -314,10 +317,11 @@ alias emacs-daemon='emacs --daemon'
 alias emacs-gui='emacsclient -c'
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
 alias emacs-reload='emacs-kill && emacs-daemon'
+alias emacs-script='emacs --script'
 alias emacs-terminal='emacsclient -t'
 #
-alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs *.md'
-alias emacs-swift='emacsclient -t *.org **/*.swift *.md'
+alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
+alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex'
 #
 # folders
@@ -336,6 +340,10 @@ alias hoogle-info='hoogle --info'
 alias mail-gmail='open https://studmail.unileoben.ac.at'
 alias mail-hotmail='open https://studmail.unileoben.ac.at'
 alias mail-uni='open https://studmail.unileoben.ac.at'
+#
+# mathematica
+alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
+alias math-gui='open /Applications/Mathematica.app'
 #
 # readers
 alias say-english='say -v Samantha'

@@ -34,7 +34,7 @@
  '(cua-mode t nil (cua-base))
  '(cua-normal-cursor-color "dark gray")
  '(cua-overwrite-cursor-color "dark gray")
- '(cursor-type (quote hollow))
+ '(cursor-type (quote box))
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
@@ -64,6 +64,7 @@
  '(ido-enable-flex-matching t)
  '(ido-enable-last-directory-history nil)
  '(ido-grid-mode t)
+ '(ido-ignore-buffers (quote ("\\` " "^\\*" "Spec.hs" "Setup.hs")))
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
@@ -73,20 +74,21 @@
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(keyboard-coding-system (quote utf-8-unix))
- '(linum-format "%d ")
+ '(linum-format "%3d ")
  '(make-backup-files nil)
  '(mc/always-run-for-all t)
  '(menu-bar-mode nil)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(osx-clipboard-mode nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes helm-youtube aggressive-indent crux company-sourcekit json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
@@ -118,6 +120,7 @@
      (360 . "#B4EB89"))))
  '(vc-annotate-very-old-color nil)
  '(vc-follow-symlinks t)
+ '(which-key-mode t)
  '(yas-also-auto-indent-first-line t)
  '(yas-global-mode t)
  '(yas-indent-line (quote nothing)))
@@ -193,6 +196,10 @@
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
 ;;
+;; moving-begining/end-of-line
+(global-set-key (kbd "ESC A") 'move-beginning-of-line)
+(global-set-key (kbd "ESC E") 'move-end-of-line)
+;;
 ;; popwin
 (require 'popwin)
 (popwin-mode 1)
@@ -216,25 +223,27 @@
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 
 ;; load files with custom code
-(add-to-list 'load-path "~/github/dotfiles/emacs.d/rmbd/")
+(add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art"))
 ;;
-(load-library "rmbd-haskell")
-(load-library "rmbd-latexmk")
-(load-library "rmbd-moods")
-(load-library "rmbd-pandoc")
-(load-library "rmbd-stack")
-(load-library "rmbd-utils")
-(load-library "rmbd-wiki")
+(require 'art-haskell)
+(require 'art-latexmk)
+(require 'art-moods)
+(require 'art-pandoc)
+(require 'art-stack)
+(require 'art-utils)
+(require 'art-wiki)
 ;;
-(require 'rmbd-haskell)
-(require 'rmbd-latexmk)
-(require 'rmbd-moods)
-(require 'rmbd-pandoc)
-(require 'rmbd-stack)
-(require 'rmbd-utils)
-(require 'rmbd-wiki)
+(load-library "art-haskell")
+(load-library "art-latexmk")
+(load-library "art-moods")
+(load-library "art-pandoc")
+(load-library "art-stack")
+(load-library "art-utils")
+(load-library "art-wiki")
 
-(provide 'emacs)
-;;; init.el ends here
+;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+;;
+(provide 'emacs)
+;;; init.el ends here
