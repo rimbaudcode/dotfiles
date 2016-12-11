@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20161208.856
+;; Package-Version: 20161210.335
 ;; Version: 0.8.0
 ;; Package-Requires: ((emacs "24.3") (swiper "0.8.0"))
 ;; Keywords: completion, matching
@@ -1683,10 +1683,18 @@ If non-nil, EXTRA-AG-ARGS string is appended to BASE-CMD."
           (regex (counsel-unquote-regex-parens
                   (setq ivy--old-re
                         (ivy--regex string)))))
-      (let ((ag-cmd (format base-cmd
-                            (concat extra-ag-args
-                                    " -- "
-                                    (shell-quote-argument regex)))))
+      (let* ((args-end (string-match " -- " extra-ag-args))
+             (file (if args-end
+                       (substring-no-properties extra-ag-args (+ args-end 3))
+                     ""))
+             (extra-ag-args (if args-end
+                                (substring-no-properties extra-ag-args 0 args-end)
+                              extra-ag-args))
+             (ag-cmd (format counsel-ag-base-command
+                             (concat extra-ag-args
+                                     " -- "
+                                     (shell-quote-argument regex)
+                                     file))))
         (if (file-remote-p default-directory)
             (split-string (shell-command-to-string ag-cmd) "\n" t)
           (counsel--async-command ag-cmd)
@@ -1708,7 +1716,7 @@ If non-nil, EXTRA-AG-ARGS string is appended to BASE-CMD."
                                     " in directory: "))))
     (setq extra-ag-args
           (or extra-ag-args
-              (let* ((pos (position ?  counsel-ag-base-command))
+              (let* ((pos (cl-position ?  counsel-ag-base-command))
                      (command (substring-no-properties counsel-ag-base-command 0 pos))
                      (ag-args (replace-regexp-in-string
                                "%s" "" (substring-no-properties counsel-ag-base-command pos))))
