@@ -69,12 +69,19 @@
   (interactive)
   (shell-command "open /Applications/iTunes.app/"))
 
+(defun art-sublime-buffer-file ()
+  "Open this buffer file with `Sublime'."
+  (interactive)
+  (let ((open "open -a")
+        (sublime-path "'/Applications/Sublime Text.app'"))
+    (shell-command (format "%s %s %s" open sublime-path buffer-file-name))))
+
 (defun art-safari ()
   "Launch `iTunes' using `masOS' `open'."
   (interactive)
   (shell-command "open /Applications/Safari.app/"))
 
-(defun art-recompile-custom-code-dir ()
+(defun art-recompile-custom-code ()
   "Recompile directory with custom code: `~/.emacs/art'."
   (interactive)
   (byte-recompile-directory "~/.emacs.d/art" 0))
