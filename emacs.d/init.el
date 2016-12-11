@@ -223,15 +223,7 @@
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 
 ;; load files with custom code
-(add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art/"))
-;;
-(load-library "art-haskell")
-(load-library "art-latexmk")
-(load-library "art-moods")
-(load-library "art-pandoc")
-(load-library "art-stack")
-(load-library "art-utils")
-(load-library "art-wiki")
+(add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art"))
 ;;
 (require 'art-haskell)
 (require 'art-latexmk)
@@ -240,6 +232,14 @@
 (require 'art-stack)
 (require 'art-utils)
 (require 'art-wiki)
+;;
+(load-library "art-haskell")
+(load-library "art-latexmk")
+(load-library "art-moods")
+(load-library "art-pandoc")
+(load-library "art-stack")
+(load-library "art-utils")
+(load-library "art-wiki")
 
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
