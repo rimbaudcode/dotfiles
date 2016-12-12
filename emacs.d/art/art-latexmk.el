@@ -23,7 +23,7 @@
                     "-xelatex"
                     "-f"
                     "-quiet"
-                    (shell-quote-argument (buffer-file-name)))
+                    (file-name-nondirectory (buffer-file-name)))
      #'output-message-sentinel)))
 ;;;
 (defun output-message-sentinel (process msg)
