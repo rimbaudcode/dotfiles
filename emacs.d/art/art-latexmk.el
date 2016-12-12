@@ -20,7 +20,11 @@
 ;;;
 (defun output-message-sentinel (process msg)
   (when (memq (process-status process) '(exit signal))
-    (message (concat (process-name process) " - " msg))))
+    (message (concat (process-name process) " - " msg)))
+  (switch-to-buffer-other-window "*latexmk*")
+  (goto-char (point-max))
+  (whitespace-cleanup)
+  (special-mode))
 
 (defun art-latexmk-clean-nonessential-files ()
   "Clean nonessential `TeX' files."
