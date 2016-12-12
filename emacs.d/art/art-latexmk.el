@@ -10,13 +10,21 @@
 (defun art-latexmk-build-current-buffer-file ()
   "Build the current (buffer) file using `latexmk'."
   (interactive)
-  (set-process-sentinel
-   (start-process
-    "latexmk"
-    "*latexmk*"
-    "latexmk"
-    "-xelatex" "-f" "-quiet" (shell-quote-argument (buffer-file-name)))
-   #'output-message-sentinel))
+  (let ((name "latexmk")
+        (temp-buffer-name "*latexmk*")
+        (cmd "latexmk"))
+    (if (get-buffer temp-buffer-name)
+        (kill-buffer temp-buffer-name))
+    (get-buffer-create temp-buffer-name)
+    (set-process-sentinel
+     (start-process name
+                    temp-buffer-name
+                    cmd
+                    "-xelatex"
+                    "-f"
+                    "-quiet"
+                    (shell-quote-argument (buffer-file-name)))
+     #'output-message-sentinel)))
 ;;;
 (defun output-message-sentinel (process msg)
   (when (memq (process-status process) '(exit signal))
