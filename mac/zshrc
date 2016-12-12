@@ -35,7 +35,7 @@ SAVEHIST=0
 local EMACS_CLIENT_PATH=`which emacsclient`
 export ALTERNATE_EDITOR=""
 export EDITOR="$EMACS_CLIENT_PATH -t"
-export VISUAL="$EMACS_CLIENT_PATH -c -a emacs"
+export VISUAL="$EMACS_CLIENT_PATH -t"
 #
 # brew install `lesspipe`
 local LESSOPEN="|lesspipe.sh %s"
