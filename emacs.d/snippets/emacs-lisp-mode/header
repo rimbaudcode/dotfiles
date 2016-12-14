@@ -2,7 +2,7 @@
 # name: header
 # key: header
 # --
-;;; `(file-name-nondirectory (buffer-file-name))` -- Summary
+;;; `(file-name-nondirectory (buffer-file-name))` -- ${1:Summary}
 
 ;;; Commentary:
 
