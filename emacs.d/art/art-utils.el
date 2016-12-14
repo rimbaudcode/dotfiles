@@ -38,27 +38,6 @@
   (interactive)
   (shell-command "git visual"))
 
-(defun art-insert-elisp-script-header ()
-  "Insert Emacs Lisp header as recommended by `flycheck'."
-  (interactive)
-  (let ((package-string (format ";;; %s -- Summary\n\n"
-                                (file-name-nondirectory (buffer-file-name))))
-        (commentary-string ";;; Commentary:\n\n")
-        (code-string ";;; Code:\n\n")
-        (code-here-string "\n\n")
-        (provide-string (format "(provide '%s)\n"
-                                (file-name-sans-extension
-                                 (file-name-nondirectory (buffer-file-name)))))
-        (end-string (format ";;; %s ends here\n"
-                            (file-name-nondirectory (buffer-file-name)))))
-    (insert package-string)
-    (insert commentary-string)
-    (insert code-string)
-    (insert code-here-string)
-    (insert provide-string)
-    (insert end-string)
-    (forward-line -4)))
-
 (defun art-istats ()
   "Run `istats' from within Emacs."
   (interactive)
