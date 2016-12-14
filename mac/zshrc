@@ -350,6 +350,10 @@ alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
+# translate
+alias trans-to-spanish='trans -b en:es'
+alias trans-to-english='trans -b es:en'
+#
 # web links
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
