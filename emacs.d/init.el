@@ -70,7 +70,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(ispell-personal-dictionary nil)
- '(ivy-display-style nil)
+ '(ivy-display-style (quote fancy))
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(keyboard-coding-system (quote utf-8-unix))
@@ -88,7 +88,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
