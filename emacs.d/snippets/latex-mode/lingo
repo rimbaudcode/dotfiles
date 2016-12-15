@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: lingo
+# key: lingo
+# --
+\lingo{$1}
