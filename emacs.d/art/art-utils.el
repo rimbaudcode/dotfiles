@@ -4,6 +4,11 @@
 
 ;;; code:
 
+(defun art-activity-monitor ()
+  "Launch `Activity Monitor' using `macOS's `open' tool."
+  (interactive)
+  (shell-command "open '/Applications/Utilities/Activity Monitor.app'"))
+
 (defun art-ansiweather ()
   "Run `ansiweather' from within Emacs."
   (interactive)
