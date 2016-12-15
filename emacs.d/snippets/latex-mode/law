@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: law
+# key: law
+# --
+\begin{law}
+  $1
+\end{law}
+$0
