@@ -60,18 +60,6 @@
   (interactive)
   (shell-command "open /Applications/iTunes.app/"))
 
-(defun art-sublime-buffer-file ()
-  "Open this buffer file with `Sublime'."
-  (interactive)
-  (let ((open "open -a")
-        (sublime-path "'/Applications/Sublime Text.app'"))
-    (shell-command (format "%s %s %s" open sublime-path buffer-file-name))))
-
-(defun art-safari ()
-  "Launch `iTunes' using `masOS' `open'."
-  (interactive)
-  (shell-command "open /Applications/Safari.app/"))
-
 (defun art-recompile-custom-code ()
   "Recompile directory with custom code: `~/.emacs/art'."
   (interactive)
@@ -105,10 +93,34 @@
   (interactive)
   (concat (file-name-base (buffer-file-name)) ext))
 
+(defun art-safari ()
+  "Launch `iTunes' using `masOS' `open'."
+  (interactive)
+  (shell-command "open /Applications/Safari.app/"))
+
 (defun art-save-buffer-as (filename)
   "Save the current buffer as a FILENAME provided interactively."
   (interactive "FSave as...: ")
   (write-region (point-min) (point-max) filename))
+
+(defun art-scatter-csv (x-col y-col)
+  "Draw a scatter plot of the `X-COL' and `Y-COL' of a `CSV' data file."
+  (interactive "nColumn of X-data: \nnColumn of Y-data: ")
+  (let ((csv-buffer-file-name (buffer-file-name))
+        (temp-buffer-name
+         (format "*scatter-csv: %s*" (file-name-base
+                                      (buffer-file-name)))))
+    (if (get-buffer temp-buffer-name)
+        (kill-buffer temp-buffer-name))
+    (get-buffer-create temp-buffer-name)
+    (shell-command (format "scatter-csv %s %s %s"
+                           x-col
+                           y-col
+                           csv-buffer-file-name)
+                   temp-buffer-name)
+    (switch-to-buffer-other-window temp-buffer-name)
+    (whitespace-cleanup)
+    (special-mode)))
 
 (defun art-shell-command-with-line (cmd)
   "Run the command CMD against the current line.
@@ -128,6 +140,13 @@ The variable `sort-fold-case' determines whether alphabetic case affects
 the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+
+(defun art-sublime-buffer-file ()
+  "Open this buffer file with `Sublime'."
+  (interactive)
+  (let ((open "open -a")
+        (sublime-path "'/Applications/Sublime Text.app'"))
+    (shell-command (format "%s %s %s" open sublime-path buffer-file-name))))
 
 (defun art-transparency (value)
   "Set the transparency of the frame window.  VALUE: transparent/opaque: 0/100."

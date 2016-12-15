@@ -44,6 +44,7 @@
  '(electric-pair-mode t)
  '(fci-rule-color "#383838")
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
+ '(flyspell-lazy-mode t)
  '(global-aggressive-indent-mode t)
  '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
