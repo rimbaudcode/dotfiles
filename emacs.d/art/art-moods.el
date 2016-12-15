@@ -15,6 +15,7 @@
   (read-only-mode 0)
   (visual-line-mode 0)
   (wordsmith-mode 0)
+  (flyspell-mode 0)
   (delete-other-windows))
 
 (defun art-reading-mood ()
@@ -26,6 +27,7 @@
   (read-only-mode 1)
   (visual-line-mode 1)
   (wordsmith-mode 0)
+  (flyspell-mode 0)
   (delete-other-windows)
   (darkroom-tentative-mode 1))
 
@@ -38,6 +40,7 @@
   (read-only-mode 0)
   (visual-line-mode 1)
   (wordsmith-mode 1)
+  (flyspell-mode 1)
   (delete-other-windows)
   (darkroom-tentative-mode 1))
 
