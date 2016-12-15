@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: scare
-# key: scare
+# key: sc
 # --
 \scare{$1}
