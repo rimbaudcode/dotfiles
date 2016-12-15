@@ -1545,14 +1545,15 @@ This is useful for recursive `ivy-read'."
     (setq ivy-text "")
     (setq ivy-calling nil)
     (setq ivy-use-ignore ivy-use-ignore-default)
-    (setq ivy--highlight-function
-          (if (and (eq ivy--regex-function 'swiper--re-builder)
-                   (eq (cdr (assoc t ivy-re-builders-alist))
-                       'ivy--regex-fuzzy))
-              #'ivy--highlight-fuzzy
-            (or (cdr (assoc ivy--regex-function
-                            ivy-highlight-functions-alist))
-                #'ivy--highlight-default)))
+    (let (reb)
+      (setq ivy--highlight-function
+            (if (and (eq ivy--regex-function 'swiper--re-builder)
+                     (setq reb (cdr (assoc t ivy-re-builders-alist)))
+                     (setq reb (cdr (assoc reb ivy-highlight-functions-alist))))
+                reb
+              (or (cdr (assoc ivy--regex-function
+                              ivy-highlight-functions-alist))
+                  #'ivy--highlight-default))))
     (let (coll sort-fn)
       (cond ((eq collection 'Info-read-node-name-1)
              (if (equal Info-current-file "dir")
@@ -2456,7 +2457,7 @@ CANDIDATES are assumed to be static."
           (setq ivy--old-cands (ivy--sort name cands))
           (ivy--recompute-index name re-str ivy--old-cands))
         (setq ivy--old-re
-              (if (eq ivy--regex-function 'ivy--regex-ignore-order)
+              (if (eq ivy--highlight-function 'ivy--highlight-ignore-order)
                   re
                 (if ivy--old-cands
                     re-str
@@ -3391,7 +3392,9 @@ When `ivy-calling' isn't nil, call `ivy-occur-press'."
        highlight
        help-echo "mouse-1: call ivy-action")
      str)
-    (insert str "\n")))
+    (insert str "\n"))
+  (goto-char (point-min))
+  (forward-line 4))
 
 (defun ivy-occur ()
   "Stop completion and put the current matches into a new buffer.
