@@ -345,6 +345,10 @@ alias mail-uni='open https://studmail.unileoben.ac.at'
 alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias math-gui='open /Applications/Mathematica.app'
 #
+# PDFs
+alias pdf-preview='open -a /Applications/Preview.app'
+alias pdf-skim='open -a /Applications/Skim.app'
+#
 # readers
 alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
