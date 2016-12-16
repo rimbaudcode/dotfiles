@@ -148,6 +148,11 @@ the sort order.  See `sort-regexp-fields'.  BEG.  END."
         (sublime-path "'/Applications/Sublime Text.app'"))
     (shell-command (format "%s %s %s" open sublime-path buffer-file-name))))
 
+(defun art-start-time-machine-backup ()
+  "Start `macOS's `TimeMachine' backup."
+  (interactive)
+  (shell-command "tmutil startbackup"))
+
 (defun art-transparency (value)
   "Set the transparency of the frame window.  VALUE: transparent/opaque: 0/100."
   (interactive "nTransparency: transparent-opaque: 0 - 100: ")
