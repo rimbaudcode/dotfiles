@@ -122,6 +122,11 @@
     (whitespace-cleanup)
     (special-mode)))
 
+(defun art-set-screen-brigthness (value)
+  "Set the screnn bringhness to VALUE."
+  (interactive "nBrigthness [0.0 - 1.0]: ")
+  (shell-command (format "brightness %s" value)))
+
 (defun art-shell-command-with-line (cmd)
   "Run the command CMD against the current line.
 Replace it then with the CMD output."
