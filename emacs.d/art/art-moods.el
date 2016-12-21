@@ -16,7 +16,8 @@
   (visual-line-mode 0)
   (wordsmith-mode 0)
   (flyspell-mode 0)
-  (delete-other-windows))
+  (delete-other-windows)
+  (writeroom-mode 0))
 
 (defun art-reading-mood ()
   "Setup a non-distracting environment for reading."
@@ -29,7 +30,7 @@
   (wordsmith-mode 0)
   (flyspell-mode 0)
   (delete-other-windows)
-  (darkroom-tentative-mode 1))
+  (writeroom-mode 1))
 
 (defun art-writing-mood ()
   "Setup a non-distracting environment for writing."
@@ -42,7 +43,7 @@
   (wordsmith-mode 1)
   (flyspell-mode 1)
   (delete-other-windows)
-  (darkroom-tentative-mode 1))
+  (writeroom-mode 1))
 
 (provide 'art-moods)
 ;;; art-moods.el ends here
