@@ -125,7 +125,7 @@ function extract () {
 function fixpermissions() {
     find . -type d -exec chmod 755 {} \;
     find . -type f -exec chmod 644 {} \;
-    #xattr -rc .
+    xattr -rc .
 }
 #
 # function image
@@ -325,7 +325,7 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex'
 #
 # folders
-alias latex-docs='cd ~/Documents/OneDrive/latex'
+alias latex-docs='cd ~/Documents/GoogleDrive/latex'
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
