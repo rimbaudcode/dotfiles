@@ -325,7 +325,7 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex'
 #
 # folders
-alias latex-docs='cd ~/Documents/Google\ Drive/latex'
+alias latex-docs='cd ~/Documents/OneDrive/latex'
 alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
