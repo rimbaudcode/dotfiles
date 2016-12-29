@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: experiment
+# key: exp
+# --
+% ------------------------------------------------------------------- Experiment
+%
+\holine\
+%
+\begin{experiment}
+  $0
+\end{experiment}
