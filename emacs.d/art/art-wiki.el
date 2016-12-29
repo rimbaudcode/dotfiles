@@ -6,10 +6,14 @@
 
 (require 'thingatpt)
 
+(defvar art-wiki-tool (shell-quote-argument (executable-find "wiki"))
+  "Find and set `wiki' tool.")
+
 (defun art-wiki-search-region (beg end)
   "Search the current marked string from BEG to END using `wiki'."
   (interactive "r")
-  (let ((cmd (format "wiki -n %s"
+  (let ((cmd (format "%s -n %s"
+                     art-wiki-tool
                      (shell-quote-argument
                       (buffer-substring-no-properties beg end))))
         (temp-buffer-name "*wiki*"))
@@ -24,7 +28,8 @@
 (defun art-wiki-search-word-at-point ()
   "Search the current word under the cursor using `wiki'."
   (interactive)
-  (let ((cmd (format "wiki -n %s"
+  (let ((cmd (format "%s -n %s"
+                     art-wiki-tool
                      (shell-quote-argument
                       (thing-at-point 'word 'NO-PROPERTIES))))
         (temp-buffer-name "*wiki*"))

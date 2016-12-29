@@ -4,6 +4,9 @@
 
 ;;; code:
 
+(defvar art-open-tool (executable-find "open")
+  "Find and set `open' tool.")
+
 (defun art-activity-monitor ()
   "Launch `Activity Monitor' using `macOS's `open' tool."
   (interactive)
