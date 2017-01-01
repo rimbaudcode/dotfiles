@@ -3,4 +3,3 @@
 # key: string
 # --
 typedef const char* string;
-$0
