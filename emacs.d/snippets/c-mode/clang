@@ -3,5 +3,5 @@
 # key: clang
 # --
 /*
-  clang -Wall -Wextra -Weverything -Werror -g -o ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} `(file-name-nondirectory (buffer-file-name))` ./lib/${2:library}.c -Ilib $0
+  clang -Wall -Wextra -Weverything -Werror -g -o ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} `(file-name-nondirectory (buffer-file-name))` $0 ./lib/${2:library}.c -Ilib
 */
