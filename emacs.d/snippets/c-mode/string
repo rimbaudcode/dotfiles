@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: string
+# key: string
+# --
+typedef const char* string;
+$0
