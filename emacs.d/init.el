@@ -183,7 +183,7 @@
 (global-set-key (kbd "C-l") 'mc/edit-lines)
 ;;
 ;; keywords in buffer
-(global-set-key (kbd "C-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-t") 'mc/mark-next-like-this)
 ;;(global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-r") 'mc/mark-all-like-this)
 ;;
@@ -226,14 +226,6 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
-;;
-(add-hook 'c-mode-common-hook (lambda ()
-                                (local-unset-key "C-d")
-                                (global-set-key "C-d" 'mc/mark-all-like-this)))
-;;
-(add-hook 'c-mode-hook (lambda ()
-                         (local-unset-key "C-d")
-                         (global-set-key "C-d" 'mc/mark-all-like-this)))
 
 ;; load files with custom code
 (add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art"))
