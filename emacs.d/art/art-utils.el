@@ -68,6 +68,11 @@
   (interactive)
   (byte-recompile-directory "~/.emacs.d/art" 0))
 
+(defun art-recompile-emacs-code ()
+  "Recompile directory with Emacs code: `~/.emacs/'."
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d/" 0))
+
 (defun art-reload-buffer ()
   "Revert buffer without confirmation."
   (interactive)
@@ -77,6 +82,11 @@
   "Reloads Emacs .init (config file)."
   (interactive)
   (load-file "~/.emacs.d/init.el"))
+
+(defun art-load-art-cmode ()
+  "Load art-cmode."
+  (interactive)
+  (load-file "~/.emacs.d/art/art-cmode.el"))
 
 (defun art-rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
