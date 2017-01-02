@@ -320,6 +320,7 @@ alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-script='emacs --script'
 alias emacs-terminal='emacsclient -t'
 #
+alias emacs-cpp='emacsclient -t **/*.h **/*.cpp'
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex'
