@@ -230,7 +230,6 @@
 ;; load files with custom code
 (add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art"))
 ;;
-;;(require 'art-cmode)
 (require 'art-haskell)
 (require 'art-latexmk)
 (require 'art-moods)
@@ -239,7 +238,6 @@
 (require 'art-utils)
 (require 'art-wiki)
 ;;
-;;(load-library "art-cmode")
 (load-library "art-haskell")
 (load-library "art-latexmk")
 (load-library "art-moods")
@@ -247,6 +245,9 @@
 (load-library "art-stack")
 (load-library "art-utils")
 (load-library "art-wiki")
+;;
+(require 'c++11-mode)
+(load-library "c++11-mode")
 
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
