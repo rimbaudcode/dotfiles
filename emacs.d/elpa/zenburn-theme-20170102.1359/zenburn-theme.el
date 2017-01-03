@@ -4,7 +4,7 @@
 
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://github.com/bbatsov/zenburn-emacs
-;; Package-Version: 20161231.945
+;; Package-Version: 20170102.1359
 ;; Version: 2.4
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -912,7 +912,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mingus-pausing-face ((t (:foreground ,zenburn-magenta))))
    `(mingus-playing-face ((t (:foreground ,zenburn-cyan))))
    `(mingus-playlist-face ((t (:foreground ,zenburn-cyan ))))
+   `(mingus-mark-face ((t (:bold t :foreground ,zenburn-magenta))))
    `(mingus-song-file-face ((t (:foreground ,zenburn-yellow))))
+   `(mingus-artist-face ((t (:foreground ,zenburn-cyan))))
+   `(mingus-album-face ((t (:underline t :foreground ,zenburn-red+1))))
+   `(mingus-album-stale-face ((t (:foreground ,zenburn-red+1))))
    `(mingus-stopped-face ((t (:foreground ,zenburn-red))))
 ;;;;; nav
    `(nav-face-heading ((t (:foreground ,zenburn-yellow))))
