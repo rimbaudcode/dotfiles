@@ -320,7 +320,7 @@ alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-script='emacs --script'
 alias emacs-terminal='emacsclient -t'
 #
-alias emacs-cpp='emacsclient -t **/*.h **/*.cpp'
+alias emacs-cpp='emacsclient -t *.lua **/*.h **/*.cpp'
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex'
@@ -349,6 +349,9 @@ alias math-gui='open /Applications/Mathematica.app'
 # PDFs
 alias pdf-preview='open -a /Applications/Preview.app'
 alias pdf-skim='open -a /Applications/Skim.app'
+#
+# premake5 ('make' for C++ projects)
+alias premake-cpp='premake5 --cc=clang --dc=ldc --fatal --os=macosx gmake && make'
 #
 # readers
 alias say-english='say -v Samantha'
