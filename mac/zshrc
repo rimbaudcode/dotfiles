@@ -351,7 +351,7 @@ alias pdf-preview='open -a /Applications/Preview.app'
 alias pdf-skim='open -a /Applications/Skim.app'
 #
 # premake5 ('make' for C++ projects)
-alias premake-cpp='premake5 --cc=clang --dc=ldc --fatal --os=macosx gmake && make'
+alias premake-cpp='premake5 --cc=clang --dc=ldc --fatal --os=macosx gmake && cd .build && make && cd ..'
 #
 # readers
 alias say-english='say -v Samantha'
