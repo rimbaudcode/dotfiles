@@ -51,10 +51,10 @@
 (defun art-open-bib-file-externally ()
   "Open `.bib' file with its default app using `macOS's `open' tool."
   (interactive)
-  (let ((bib-file-path "./doc/references.bib"))
+  (let ((bib-file-path "doc/references.bib"))
     (shell-command (format "%s %s"
-                           bib-file-path
-                           art-open-tool))))
+                           art-open-tool
+                           bib-file-path))))
 
 (defun art-view-pdf-named-as-buffer-with (viewerpath)
   "Open the `PDF' named as the current buffer using the VIEWERPATH app."
