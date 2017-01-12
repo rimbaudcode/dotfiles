@@ -6,7 +6,7 @@
 
 (require 'art-utils)
 
-(defvar art-pandoc-tool (shell-quote-argument (executable-find "pandoc"))
+(defvar art-pandoc-tool (executable-find "pandoc")
   "Find and set `pandoc' tool.")
 
 (defun art-pandoc-infile-to-outfile (infile outfile)
