@@ -46,6 +46,7 @@
  '(dired-async-mode t)
  '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
+ '(exec-path-from-shell-check-startup-files nil)
  '(fci-rule-color "#383838")
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flyspell-lazy-mode t)
@@ -152,6 +153,8 @@
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 ;;
 ;; *** MINE ***
+;;
+(exec-path-from-shell-initialize)
 ;;
 ;; gitflow
 ;;

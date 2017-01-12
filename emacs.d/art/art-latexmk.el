@@ -7,7 +7,7 @@
 (require 'art-utils)
 (require 'thingatpt)
 
-(defvar art-latexmk-tool "/Library/TeX/texbin/latexmk"
+(defvar art-latexmk-tool (executable-find "latexmk")
   "Find and set `latexmk' tool.")
 
 (defvar art-preview-app "/Applications/Preview.app/"
@@ -27,7 +27,7 @@
     (set-process-sentinel
      (start-process name
                     temp-buffer-name
-                    "/Library/TeX/texbin/latexmk"
+                    art-latexmk-tool
                     "-xelatex"
                     "-f"
                     "-quiet"
