@@ -154,8 +154,6 @@
 ;;
 ;; *** MINE ***
 ;;
-(exec-path-from-shell-initialize)
-;;
 ;; gitflow
 ;;
 (require 'magit-gitflow)
