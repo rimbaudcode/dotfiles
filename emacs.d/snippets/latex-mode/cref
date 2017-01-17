@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: cr
+# key: cr
+# --
+\cref{$1}
