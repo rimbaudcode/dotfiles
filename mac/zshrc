@@ -382,6 +382,7 @@ alias -s log='open'
 alias -s pdf='open'
 alias -s sublime-project='sublime --project'
 alias -s xcodeproj='open'
+alias -s tex='xelatex'
 
 ### Fish syntax highlightning
 #
