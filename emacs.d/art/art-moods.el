@@ -43,7 +43,7 @@
   (wordsmith-mode 1)
   (flyspell-mode 1)
   (delete-other-windows)
-  (writeroom-mode 1))
+  (writeroom-mode 0))
 
 (provide 'art-moods)
 ;;; art-moods.el ends here

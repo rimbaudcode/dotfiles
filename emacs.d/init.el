@@ -94,7 +94,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-youtube helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-youtube helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(proof-splash-enable nil)
  '(ring-bell-function (quote ignore))
@@ -249,6 +249,10 @@
 ;;
 (require 'c++11-mode)
 (load-library "c++11-mode")
+;;
+;; hook to open .tex files
+;;
+(add-hook 'latex-mode-hook 'art-writing-mood)
 
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
