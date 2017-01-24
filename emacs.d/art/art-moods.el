@@ -40,10 +40,10 @@
   (hl-line-mode 0)
   (read-only-mode 0)
   (visual-line-mode 1)
-  (wordsmith-mode 1)
+  (wordsmith-mode 0)
   (flyspell-mode 1)
   (delete-other-windows)
-  (writeroom-mode 0))
+  (writeroom-mode 1))
 
 (provide 'art-moods)
 ;;; art-moods.el ends here
