@@ -1055,16 +1055,16 @@ Use optional arguments ARGS like in `format'."
     (with-current-buffer (get-buffer-create helm-debug-buffer)
       (outline-mode)
       (buffer-disable-undo)
-      (set (make-local-variable 'inhibit-read-only) t)
-      (goto-char (point-max))
-      (insert (let ((tm (current-time)))
-                (format (concat (if (string-match "Start session" format-string)
-                                    "* " "** ")
-                                "%s.%06d (%s)\n %s\n")
-                        (format-time-string "%H:%M:%S" tm)
-                        (nth 2 tm)
-                        (helm-log-get-current-function)
-                        (apply #'format (cons format-string args))))))))
+      (let ((inhibit-read-only t))
+        (goto-char (point-max))
+        (insert (let ((tm (current-time)))
+                  (format (concat (if (string-match "Start session" format-string)
+                                      "* " "** ")
+                                  "%s.%06d (%s)\n %s\n")
+                          (format-time-string "%H:%M:%S" tm)
+                          (nth 2 tm)
+                          (helm-log-get-current-function)
+                          (apply #'format (cons format-string args)))))))))
 
 (defun helm-log-run-hook (hook)
   "Run HOOK like `run-hooks' but write these actions to helm log buffer."
@@ -1887,7 +1887,7 @@ ANY-KEYMAP ANY-DEFAULT ANY-HISTORY See `helm'."
                  (helm--remap-mouse-mode 1)) ; Disable mouse bindings.
                (add-hook 'post-command-hook 'helm--maybe-update-keymap)
                ;; Add also to update hook otherwise keymap is not updated
-               ;; until a key is hitted.
+               ;; until a key is hitted (Issue #1670).
                (add-hook 'helm-after-update-hook 'helm--maybe-update-keymap)
                (add-hook 'post-command-hook 'helm--update-header-line)
                (helm-log "show prompt")
@@ -2353,7 +2353,7 @@ Unuseful when used outside helm, don't use it.")
       (helm-log "kill local variables: %S" (buffer-local-variables))
       (kill-all-local-variables)
       (helm-major-mode)
-      (set (make-local-variable 'inhibit-read-only) t)
+      (set (make-local-variable 'buffer-read-only) nil)
       (buffer-disable-undo)
       (erase-buffer)
       (set (make-local-variable 'helm-map) helm-map)
@@ -2493,7 +2493,8 @@ For ANY-PRESELECT ANY-RESUME ANY-KEYMAP ANY-DEFAULT ANY-HISTORY, See `helm'."
                                     (save-selected-window
                                       (helm-check-minibuffer-input)
                                       (helm-print-error-messages))))))
-                         (helm--update-header-line)) ; minibuffer has already been filled here
+                         ;; minibuffer has already been filled here.
+                         (helm--update-header-line))
                      (read-from-minibuffer (or any-prompt "pattern: ")
                                            any-input helm-map
                                            nil hist tap
@@ -2502,7 +2503,8 @@ For ANY-PRESELECT ANY-RESUME ANY-KEYMAP ANY-DEFAULT ANY-HISTORY, See `helm'."
 
 (defun helm-toggle-suspend-update ()
   "Enable or disable update of display in helm.
-This can be useful for example for quietly writing a complex regexp."
+This can be useful for example for quietly writing a complex regexp
+without helm constantly updating."
   (interactive)
   (with-helm-alive-p
     (when (setq helm-suspend-update-flag (not helm-suspend-update-flag))
@@ -4633,7 +4635,7 @@ use `search', `get-line' and `match-part' attributes."
 
 (defun helm-search-from-candidate-buffer (pattern get-line-fn search-fns
                                           limit start-point match-part-fn source)
-  (let (buffer-read-only)
+  (let ((inhibit-read-only t))
     (helm--search-from-candidate-buffer-1
      (lambda ()
        (cl-loop with hash = (make-hash-table :test 'equal)
@@ -4800,7 +4802,7 @@ global one and is used instead."
                               (cl-ecase create-or-buffer
                                 (global global-bname)
                                 (local  local-bname)))
-          (set (make-local-variable 'inhibit-read-only) t) ; Fix (#1176)
+          (set (make-local-variable 'buffer-read-only) nil) ; Fix (#1176)
           (buffer-disable-undo)
           (erase-buffer)
           (font-lock-mode -1))))
