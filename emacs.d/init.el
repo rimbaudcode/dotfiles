@@ -260,3 +260,4 @@
 ;;
 (provide 'emacs)
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)

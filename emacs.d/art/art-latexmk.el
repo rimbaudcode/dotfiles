@@ -30,7 +30,8 @@
                     art-latexmk-tool
                     "-xelatex"
                     "-f"
-                    "-quiet"
+                    "-interaction=nonstopmode"
+                    ;; "-quiet"
                     (file-name-nondirectory (buffer-file-name)))
      #'output-message-sentinel)))
 ;;;
