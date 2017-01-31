@@ -31,7 +31,7 @@
                     "-xelatex"
                     "-f"
                     "-interaction=nonstopmode"
-                    ;; "-quiet"
+                    "-quiet"
                     (file-name-nondirectory (buffer-file-name)))
      #'output-message-sentinel)))
 ;;;
