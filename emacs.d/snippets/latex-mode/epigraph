@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: epi
+# key: epi
+# --
+\epigraph{$1}{$2}

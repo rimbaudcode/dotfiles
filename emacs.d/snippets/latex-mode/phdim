@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: phdim
+# key: phdim
+# --
+\phdim{$1}
