@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: beqn
+# key: beqn
+# --
+\begin{equation}
+  $1
+\end{equation}
