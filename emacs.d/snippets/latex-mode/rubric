@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rub
+# key: rub
+# --
+\rubric{$1}
