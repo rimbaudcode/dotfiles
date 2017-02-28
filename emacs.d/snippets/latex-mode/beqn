@@ -2,6 +2,6 @@
 # name: beqn
 # key: beqn
 # --
-\begin{equation}
-  $1
+\begin{equation}\label{eqn:$1}
+  $2
 \end{equation}

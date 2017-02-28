@@ -16,6 +16,7 @@
   (visual-line-mode 0)
   (wordsmith-mode 0)
   (flyspell-mode 0)
+  (reftex-mode 0)
   (delete-other-windows)
   (writeroom-mode 0))
 
@@ -29,6 +30,7 @@
   (visual-line-mode 1)
   (wordsmith-mode 0)
   (flyspell-mode 0)
+  (reftex-mode 0)
   (delete-other-windows)
   (writeroom-mode 1))
 
@@ -42,6 +44,7 @@
   (visual-line-mode 1)
   (wordsmith-mode 0)
   (flyspell-mode 1)
+  (reftex-mode 1)
   (delete-other-windows)
   (writeroom-mode 1))
 
