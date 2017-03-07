@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: xright
+# key: xright
+# --
+\xrightarrow[${1:below}]{${2:above}}
