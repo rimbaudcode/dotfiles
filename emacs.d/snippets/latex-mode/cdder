@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: cdder
+# key: cdder
+# --
+\cdder{$1}{$2}
