@@ -287,6 +287,7 @@ alias zip='zip -qrT'
 #
 alias apps="cd $HOME/Documents/OneDrive/Apps/bin"
 alias art="cd $HOME/github/dotfiles/emacs.d/art"
+alias d3s="cd $HOME/Documents/d3s"
 alias data="cd $HOME/github/data"
 alias desktop="cd $HOME/Desktop"
 alias documents="cd $HOME/Documents"
