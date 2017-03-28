@@ -388,3 +388,7 @@ alias -s tex='xelatex'
 ### Fish syntax highlightning
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### rbenv (ruby) stuff
+#
+eval "$(rbenv init -)"
