@@ -4867,13 +4867,14 @@ use `search', `get-line' and `match-part' attributes."
                          and collect cand))))))
 
 (defun helm-search-match-part (candidate pattern)
-  "Match PATTERN only on part of CANDIDATE returned by MATCH-PART-FN.
+  "Match PATTERN only on match-part property value of CANDIDATE.
+
 Because `helm-search-match-part' maybe called even if unspecified
-in source (negation), MATCH-PART-FN default to `identity'
-to match whole candidate.
-When using fuzzy matching and negation (i.e \"!\"),
-this function is always called."
-  (let ((part (get-text-property 0 'match-part candidate))
+in source (negation or fuzzy), the part to match fallback to the whole
+candidate even if match-part haven't been computed by match-part-fn
+and stored in the match-part property."
+  (let ((part (or (get-text-property 0 'match-part candidate)
+                  candidate))
         (fuzzy-regexp (cadr (gethash 'helm-pattern helm--fuzzy-regexp-cache)))
         (matchfn (if helm-migemo-mode
                      'helm-mm-migemo-string-match 'string-match)))

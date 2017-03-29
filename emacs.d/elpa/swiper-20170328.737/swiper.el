@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170323.908
+;; Package-Version: 20170328.737
 ;; Version: 0.8.0
 ;; Package-Requires: ((emacs "24.1") (ivy "0.8.0"))
 ;; Keywords: matching
@@ -140,6 +140,7 @@
 (declare-function avy--process "ext:avy")
 (declare-function avy--overlay-post "ext:avy")
 (declare-function avy-action-goto "ext:avy")
+(declare-function avy-candidate-beg "ext:avy")
 (declare-function avy--done "ext:avy")
 (declare-function avy--make-backgrounds "ext:avy")
 (declare-function avy-window-list "ext:avy")

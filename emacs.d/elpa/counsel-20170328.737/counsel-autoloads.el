@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "counsel" "counsel.el" (22736 56943 0 0))
+;;;### (autoloads nil "counsel" "counsel.el" (22747 28129 0 0))
 ;;; Generated autoloads from counsel.el
 
 (autoload 'counsel-el "counsel" "\
@@ -276,6 +276,11 @@ selected candidate.
 
 (autoload 'counsel-org-agenda-headlines "counsel" "\
 Choose from headers of `org-mode' files in the agenda.
+
+\(fn)" t nil)
+
+(autoload 'counsel-irony "counsel" "\
+Inline C/C++ completion using Irony.
 
 \(fn)" t nil)
 

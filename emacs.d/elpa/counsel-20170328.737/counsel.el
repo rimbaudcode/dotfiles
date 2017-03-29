@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170320.434
+;; Package-Version: 20170328.737
 ;; Version: 0.8.0
 ;; Package-Requires: ((emacs "24.3") (swiper "0.8.0"))
 ;; Keywords: completion, matching
@@ -2810,13 +2810,15 @@ midpoint, then the chosen color is black, otherwise is white.  This
 helps to improve the contrast and readability of a text regardless of
 the background color."
   (let ((rgb (color-name-to-rgb color)))
-    (if (>
-         (+ (* (nth 0 rgb) 0.299)
-            (* (nth 1 rgb) 0.587)
-            (* (nth 2 rgb) 0.114))
-         0.5)
-        "#000000"
-      "#FFFFFF")))
+    (if rgb
+        (if (>
+             (+ (* (nth 0 rgb) 0.299)
+                (* (nth 1 rgb) 0.587)
+                (* (nth 2 rgb) 0.114))
+             0.5)
+            "#000000"
+          "#FFFFFF")
+      color)))
 
 (defun counsel-colors--update-highlight (cand)
   "Update the highlight face for the current candidate CAND.
@@ -3239,7 +3241,40 @@ candidate."
               :history 'counsel-org-agenda-headlines-history
               :caller 'counsel-org-agenda-headlines)))
 
-;** `counsel-mode'
+;;** `counsel-irony'
+;;;###autoload
+(defun counsel-irony ()
+  "Inline C/C++ completion using Irony."
+  (interactive)
+  (irony-completion-candidates-async 'counsel-irony-callback))
+
+(defun counsel-irony-callback ()
+  (interactive)
+  (let ((coll (irony-completion-at-point)))
+    (when coll
+      (setq ivy-completion-beg (nth 0 coll))
+      (setq ivy-completion-end (nth 1 coll))
+      (ivy-read "code: " (mapcar #'counsel-irony-annotate
+                                 (nth 2 coll))
+                :caller 'counsel-irony
+                :action 'ivy-completion-in-region-action))))
+
+(defun counsel-irony-annotate (x)
+  (cons
+   (condition-case nil
+       (concat
+        x " "
+        (irony-completion--at-point-annotate x))
+     (error x))
+   x))
+
+(add-to-list 'ivy-display-functions-alist '(counsel-irony . ivy-display-function-overlay))
+
+(declare-function irony-completion-candidates-async "ext:irony-completion")
+(declare-function irony-completion-at-point "ext:irony-completion")
+(declare-function irony-completion--at-point-annotate "ext:irony-completion")
+
+;;** `counsel-mode'
 (defvar counsel-mode-map
   (let ((map (make-sparse-keymap)))
     (dolist (binding
