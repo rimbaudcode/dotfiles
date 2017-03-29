@@ -19,6 +19,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-show-menu-immediately-on-auto-complete t)
+ '(aggressive-indent-excluded-modes
+   (quote
+    (makefile-mode makefile-gmake-mode text-mode yaml-mode haskell-mode)))
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
