@@ -46,6 +46,16 @@
   (interactive)
   (shell-command "git visual"))
 
+(defun art-ins-date ()
+  "Insert today's date."
+  (interactive)
+  (insert (format-time-string "%d.%m.%Y")))
+
+(defun art-ins-time ()
+  "Insert the current time."
+  (interactive)
+  (insert (format-time-string "%H:%M:%S")))
+
 (defun art-istats ()
   "Run `istats' from within Emacs."
   (interactive)
