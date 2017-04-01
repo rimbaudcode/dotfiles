@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: prod
+# key: prod
+# --
+\href{https://www.d3s.at}{\docTitle}
