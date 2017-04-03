@@ -260,7 +260,7 @@
 ;; hook to open .tex files
 ;;
 (add-hook 'latex-mode-hook 'art-writing-mood)
-
+;;
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

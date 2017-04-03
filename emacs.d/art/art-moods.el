@@ -18,7 +18,8 @@
   (flyspell-mode 0)
   (reftex-mode 0)
   (delete-other-windows)
-  (writeroom-mode 0))
+  (writeroom-mode 0)
+  (split-window-horizontally))
 
 (defun art-reading-mood ()
   "Setup a non-distracting environment for reading."
@@ -46,7 +47,8 @@
   (flyspell-mode 1)
   (reftex-mode 1)
   (delete-other-windows)
-  (writeroom-mode 1))
+  (writeroom-mode 1)
+  (split-window-horizontally))
 
 (provide 'art-moods)
 ;;; art-moods.el ends here
