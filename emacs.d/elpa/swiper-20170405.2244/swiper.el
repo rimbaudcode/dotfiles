@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170328.737
+;; Package-Version: 20170405.2244
 ;; Version: 0.8.0
 ;; Package-Requires: ((emacs "24.1") (ivy "0.8.0"))
 ;; Keywords: matching
@@ -75,6 +75,11 @@
 
 (defcustom swiper-include-line-number-in-search nil
   "Include line number in text of search candidates."
+  :type 'boolean
+  :group 'swiper)
+
+(defcustom swiper-goto-start-of-match nil
+  "When non-nil, go to the start of the match, not its end."
   :type 'boolean
   :group 'swiper)
 
@@ -698,7 +703,8 @@ WND, when specified is the window."
                      #'line-move
                    #'forward-line)
                  ln)
-        (re-search-forward re (line-end-position) t)
+        (when (and (re-search-forward re (line-end-position) t) swiper-goto-start-of-match)
+          (goto-char (match-beginning 0)))
         (swiper--ensure-visible)
         (cond (swiper-action-recenter
                (recenter))
@@ -717,6 +723,7 @@ WND, when specified is the window."
                    (eq evil-search-module 'evil-search))
           (add-to-history 'evil-ex-search-history re)
           (setq evil-ex-search-pattern (list re t t))
+          (setq evil-ex-search-direction 'forward)
           (when evil-ex-search-persistent-highlight
             (evil-ex-search-activate-highlight evil-ex-search-pattern)))))))
 
