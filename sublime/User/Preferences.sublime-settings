@@ -110,7 +110,8 @@
 		"isothermically",
 		"densification",
 		"Styria",
-		"physicothermal"
+		"physicothermal",
+		"online"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_width": 0,
