@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170416.1036
+;; Package-Version: 20170418.118
 ;; Version: 0.9.1
 ;; Package-Requires: ((emacs "24.3") (swiper "0.9.0"))
 ;; Keywords: completion, matching
@@ -526,11 +526,12 @@ X is an item of a radio- or choice-type defcustom."
   (let (y)
     (when (and (listp x)
                (consp (setq y (last x))))
-      (setq x (car y))
-      (cons (prin1-to-string x)
-            (if (symbolp x)
-                (list 'quote x)
-              x)))))
+      (unless (equal y '(function))
+        (setq x (car y))
+        (cons (prin1-to-string x)
+              (if (symbolp x)
+                  (list 'quote x)
+                x))))))
 
 ;;;###autoload
 (defun counsel-set-variable ()
