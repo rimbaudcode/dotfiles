@@ -374,8 +374,8 @@ alias web-wolfram='open http://www.wolframalpha.com'
 alias web-youtube='open https://www.youtube.com'
 #
 # youtube-dl
-alias yt-audio='youtube-dl -citk -f m4a'
-alias yt-video='youtube-dl -citk -f mp4'
+alias yt-audio='youtube-dl -cit -o "%(title)s-%(id)s.%(ext)s" -f m4a'
+alias yt-video='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
 
 ### Suffix aliases
 #
