@@ -171,6 +171,14 @@ function pdfmerge () {
     gs -o $merged -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress $tomerge
 }
 #
+# function playground
+# creates a place to play :)
+function playground () {
+    cd $HOME
+    mkdir -p playground
+    cd playground
+}
+#
 # function sandbox
 # creates a sandbox in the system's temp folder
 function sandbox () {
