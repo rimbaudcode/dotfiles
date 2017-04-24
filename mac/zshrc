@@ -373,6 +373,7 @@ alias trans-to-spanish='trans -b en:es'
 alias trans-to-english='trans -b es:en'
 #
 # web links
+alias duck='web www.duckduckgo.com'
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
 alias web-google='open https://www.google.com'
