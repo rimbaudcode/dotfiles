@@ -236,6 +236,7 @@
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 ;;
 ;; yasnippet
+(setq warning-suppress-types nil)
 (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
 
 ;; load files with custom code
