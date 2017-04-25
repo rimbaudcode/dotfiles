@@ -293,23 +293,23 @@ alias zip='zip -qrT'
 #
 ### Folders
 #
-hash -d apps="~/Documents/OneDrive/Apps/bin"
-hash -d art="~/github/dotfiles/emacs.d/art"
-hash -d d3s="~/Documents/d3s"
-hash -d data="~/github/data"
-hash -d desktop="~/Desktop"
-hash -d documents="~/Documents"
-hash -d downloads="~/Downloads"
-hash -d github="~/github"
-hash -d media="~/Music/iTunes/iTunes\ Media"
-hash -d movies="~/Movies"
-hash -d pictures="~/Pictures"
-hash -d shared="$SHARED_DIR_PATH"
-hash -d thesis="~/Documents/Google\ Drive/work/auv/thesis/thesis"
-hash -d workspace="$WORKSPACE_PATH"
+alias apps="~/Documents/OneDrive/Apps/bin"
+alias art="~/github/dotfiles/emacs.d/art"
+alias d3s="~/Documents/d3s"
+alias data="~/github/data"
+alias desktop="~/Desktop"
+alias documents="~/Documents"
+alias downloads="~/Downloads"
+alias github="~/github"
+alias media="~/Music/iTunes/iTunes\ Media"
+alias movies="~/Movies"
+alias pictures="~/Pictures"
+alias shared="$SHARED_DIR_PATH"
+alias thesis="~/Documents/Google\ Drive/work/auv/thesis/thesis"
+alias workspace="$WORKSPACE_PATH"
 #
-hash -d latex-docs="~/Documents/GoogleDrive/latex"
-hash -d rmbd-emacs-repo="~/github/dotfiles/emacs.d/rmbd"
+alias latex-docs="~/Documents/GoogleDrive/latex"
+alias rmbd-emacs-repo="~/github/dotfiles/emacs.d/rmbd"
 #
 ### Sub-menus
 #
