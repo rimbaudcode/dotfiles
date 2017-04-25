@@ -1,4 +1,3 @@
-
 #!/usr/local/bin/zsh
 #
 # name:          zshrc
@@ -70,7 +69,7 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 local SCRIPTS_PATH=$HOME/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
 
-### Not Export Paths
+### Paths not to be exported
 #
 local SHARED_DIR_PATH=/Users/Shared
 local WORKSPACE_PATH=$HOME/github
@@ -143,6 +142,7 @@ function lc () {
     local file=$1
     src-hilite-lesspipe.sh $file | less
 }
+#
 # function man2pdf
 # print man pages as pdf
 function man2pdf()
@@ -263,6 +263,7 @@ alias cal='cal | grep --color -EC6 "\b"$(date +%e | sed "s/ //g")'
 alias clamscan='clamscan --quiet -rz'
 alias cmus='media && cmus'
 alias compress='compress -v'
+alias dictionary-osx='~/.emacs.d/elpa/osx-dictionary-20161207.810/osx-dictionary-cli'
 alias eject='hdiutil detach'
 alias encrypt='gpg -e -r Art'
 alias ghci='ghci -W'
@@ -275,7 +276,6 @@ alias mkdir='mkdir -p'
 alias mybash='bash -l'
 alias nemesis='stack runhaskell Nemesis'
 alias oldies='mplayer http://80.237.154.83:8120'
-alias osx-dictionary-cli='~/.emacs.d/elpa/osx-dictionary-20161207.810/osx-dictionary-cli'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
@@ -293,20 +293,23 @@ alias zip='zip -qrT'
 #
 ### Folders
 #
-alias apps="cd $HOME/Documents/OneDrive/Apps/bin"
-alias art="cd $HOME/github/dotfiles/emacs.d/art"
-alias d3s="cd $HOME/Documents/d3s"
-alias data="cd $HOME/github/data"
-alias desktop="cd $HOME/Desktop"
-alias documents="cd $HOME/Documents"
-alias downloads="cd $HOME/Downloads"
-alias github="cd $HOME/github"
-alias media="cd $HOME/Music/iTunes/iTunes\ Media"
-alias movies="cd $HOME/Movies"
-alias pictures="cd $HOME/Pictures"
-alias shared="cd $SHARED_DIR_PATH"
-alias workspace="cd $WORKSPACE_PATH"
-alias thesis="cd ~/Documents/Google\ Drive/work/auv/thesis/thesis"
+hash -d apps="~/Documents/OneDrive/Apps/bin"
+hash -d art="~/github/dotfiles/emacs.d/art"
+hash -d d3s="~/Documents/d3s"
+hash -d data="~/github/data"
+hash -d desktop="~/Desktop"
+hash -d documents="~/Documents"
+hash -d downloads="~/Downloads"
+hash -d github="~/github"
+hash -d media="~/Music/iTunes/iTunes\ Media"
+hash -d movies="~/Movies"
+hash -d pictures="~/Pictures"
+hash -d shared="$SHARED_DIR_PATH"
+hash -d thesis="~/Documents/Google\ Drive/work/auv/thesis/thesis"
+hash -d workspace="$WORKSPACE_PATH"
+#
+hash -d latex-docs="~/Documents/GoogleDrive/latex"
+hash -d rmbd-emacs-repo="~/github/dotfiles/emacs.d/rmbd"
 #
 ### Sub-menus
 #
@@ -318,8 +321,8 @@ alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
 # date
-alias date-utc='gdate -u --iso-8601=ns'
 alias date-local='gdate --iso-8601=ns'
+alias date-utc='gdate -u --iso-8601=ns'
 #
 # emacs
 alias e='emacsclient -t'
@@ -334,10 +337,6 @@ alias emacs-cpp='emacsclient -t *.lua **/*.h **/*.cpp'
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex **/*.sty Nemesis.hs'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
-#
-# folders
-alias latex-docs='cd ~/Documents/GoogleDrive/latex'
-alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
@@ -369,11 +368,12 @@ alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
 # translate
-alias trans-to-spanish='trans -b en:es'
 alias trans-to-english='trans -b es:en'
+alias trans-to-spanish='trans -b en:es'
 #
 # web links
 alias duck='web www.duckduckgo.com'
+#
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
 alias web-google='open https://www.google.com'
