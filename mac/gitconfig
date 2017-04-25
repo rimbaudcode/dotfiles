@@ -1,15 +1,24 @@
+# .gitconfig
+# art rimbaud
+# copyright (c) 2017
+
 [core]
 	excludesfile = /Users/dfhe/.gitignore_global
 	editor = emacsclient -t
+
 [merge]
         tool = ediff
+
 [mergetool "emerge"]
 	cmd = emacs -Q $LOCAL $REMOTE $BASE $MERGED
+
 [user]
 	name = art rimbaud
 	email = rimbaudcode@gmail.com
+
 [commit]
           template = ~/.gitmessage
+
 [alias]
 	ac = !git add . && git commit -am
 	alias = config --get-regexp alias
@@ -54,6 +63,7 @@
 
 [color]
 	ui = auto
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
