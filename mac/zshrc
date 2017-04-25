@@ -7,7 +7,7 @@
 # license-file:  LICENSE.md
 # author:        art rimbaud
 # maintainer:    rimbaudcode[at]gmail(DoT)com
-# copyright:     (c) 2016 rimbaudcode
+# copyright:     (c) 2017 rimbaudcode
 # category:      System
 
 export ZSH=~/.oh-my-zsh
@@ -41,38 +41,38 @@ export VISUAL="$EMACS_CLIENT_PATH -t"
 local LESSOPEN="|lesspipe.sh %s"
 export LESSOPEN
 #
-local HASKELL_STACK_PATH=$HOME/.local/bin
+local HASKELL_STACK_PATH=~/.local/bin
 export PATH=$HASKELL_STACK_PATH:$PATH
 #
-local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+local RBENV_GEMS_PATH=~/.rbenv/bin:~/.rbenv/shims
 export PATH=$RBENV_GEMS_PATH:$PATH
 #
-local HASKELL_STACK_PATH=$HOME/.local/bin
+local HASKELL_STACK_PATH=~/.local/bin
 export PATH=$HASKELL_STACK_PATH:$PATH
 #
 local HOMEBREW_PATH=/usr/local/bin:/usr/local/sbin
-export PATH=$HOMEBREW_PATH:$PATH
+export PATH=~$HOMEBREW_PATH:$PATH
 export HOMEBREW_GITHUB_API_TOKEN="d4249153d8dd3f9a19a3a10dc370b44fda51a9ab"
 export HOMEBREW_NO_ANALYTICS=1
 #
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
-local MY_APPS_PATH=$HOME/Documents/OneDrive/Apps
+local MY_APPS_PATH=~/Documents/OneDrive/Apps
 export PATH=$MY_APPS_PATH:$PATH
 export PATH=$MY_APPS_PATH/bin:$PATH
 #
-local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+local RBENV_GEMS_PATH=~/.rbenv/bin:~/.rbenv/shims
 export PATH=$RBENV_GEMS_PATH:$PATH
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 #
-local SCRIPTS_PATH=$HOME/github/scripts
+local SCRIPTS_PATH=~/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
 
 ### Paths not to be exported
 #
 local SHARED_DIR_PATH=/Users/Shared
-local WORKSPACE_PATH=$HOME/github
+local WORKSPACE_PATH=~/github
 
 ### Functions
 #
@@ -160,7 +160,7 @@ function mkcd () {
 # function mkdata
 # symlink to data
 function mkdata () {
-    ln -s $HOME/github/data `pwd`/
+    ln -s ~/github/data `pwd`/
 }
 #
 # function pdfmerge
@@ -174,7 +174,7 @@ function pdfmerge () {
 # function playground
 # creates a place to play :)
 function playground () {
-    cd $HOME
+    cd ~
     mkdir -p playground
     cd playground
 }
