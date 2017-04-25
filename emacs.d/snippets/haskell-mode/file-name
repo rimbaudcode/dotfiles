@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fname
+# key: fname
+# --
+-- `(file-name-nondirectory (buffer-file-name))`

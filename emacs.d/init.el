@@ -234,6 +234,9 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+;;
+;; yasnippet
+(add-to-list 'warning-suppress-types '(yasnippet backquote-change))
 
 ;; load files with custom code
 (add-to-list 'load-path (substitute-in-file-name "$HOME/github/dotfiles/emacs.d/art"))

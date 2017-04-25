@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: header
+# key: header
+# --
+{- |
+Module      :  `(file-name-nondirectory (buffer-file-name))`
+Description :  $1
+Copyright   :  (c) `(insert (shell-command-to-string "echo -n $(date +%Y)"))` rimbaudcode
+License     :  BSD3
+
+Maintainer  :  Art Rimbaud (rimbaud1854[dot]91[at]gmail[Dot]com)
+Stability   :  unstable | experimental | provisional | stable | frozen
+Portability :  portable | non-portable (<reason>)
+
+${2:module description}
+-}
