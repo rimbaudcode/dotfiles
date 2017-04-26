@@ -169,6 +169,17 @@ the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end))
 
+(defun art-align-signature (begin end)
+  "Align Haskell function signatures in a region from BEGIN to END."
+  (interactive "r")
+  (align-regexp begin end "\\(\\s-*\\)[:=]" 1 1))
+
+(defun art-sort-and-align-to-equal (begin end)
+  "Sort and align to equal a region from BEGIN to END."
+  (interactive "r")
+  (sort-lines nil begin end)
+  (align-regexp begin end "\\(\\s-*\\)=" 1 1))
+
 (defun art-sublime-buffer-file ()
   "Open this buffer file with `Sublime'."
   (interactive)
