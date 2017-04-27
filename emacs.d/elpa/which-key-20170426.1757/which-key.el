@@ -4,7 +4,7 @@
 
 ;; Author: Justin Burkett <justin@burkett.cc>
 ;; URL: https://github.com/justbur/emacs-which-key
-;; Package-Version: 20170418.501
+;; Package-Version: 20170426.1757
 ;; Version: 2.0
 ;; Keywords:
 ;; Package-Requires: ((emacs "24.3"))
@@ -457,6 +457,15 @@ in this list. The format of the key sequences is what is produced
 by `key-description'."
   :group 'which-key
   :type '(repeat regexp))
+
+(defcustom which-key-show-transient-maps nil
+  "Show keymaps created by `set-transient-map' when applicable.
+
+More specifically, detect when `overriding-terminal-local-map' is
+set (this is the keymap used by `set-transient-map') and display
+it."
+  :group 'which-key
+  :type 'boolean)
 
 ;; Hooks
 (defvar which-key-init-buffer-hook '()
@@ -2148,13 +2157,15 @@ is selected interactively by mode in `minor-mode-map-alist'."
                (which-key--hide-popup)
                (setq unread-command-events (listify-key-sequence key))))))))
 
-(defun which-key--create-buffer-and-show (&optional prefix-keys)
+(defun which-key--create-buffer-and-show (&optional prefix-keys from-keymap)
   "Fill `which-key--buffer' with key descriptions and reformat.
 Finally, show the buffer."
   (setq which-key--current-prefix prefix-keys
         which-key--last-try-2-loc nil)
   (let ((start-time (when which-key--debug (current-time)))
-        (formatted-keys (which-key--get-formatted-key-bindings))
+        (formatted-keys (which-key--get-formatted-key-bindings
+                         (when from-keymap
+                           (which-key--get-keymap-bindings from-keymap))))
         (prefix-keys (key-description which-key--current-prefix)))
     (cond ((= (length formatted-keys) 0)
            (message "%s-  which-key: There are no keys to show" prefix-keys))
@@ -2234,6 +2245,12 @@ Finally, show the buffer."
              (when (and which-key-idle-secondary-delay
                         (not which-key--secondary-timer-active))
                (which-key--start-timer which-key-idle-secondary-delay t))))
+          ((and which-key-show-transient-maps
+                (keymapp overriding-terminal-local-map)
+                ;; basic test for it being a hydra
+                (not (eq (lookup-key overriding-terminal-local-map "\C-u")
+                         'hydra--universal-argument)))
+           (which-key--create-buffer-and-show nil overriding-terminal-local-map))
           ((and which-key-show-operator-state-maps
                 (bound-and-true-p evil-state)
                 (eq evil-state 'operator)

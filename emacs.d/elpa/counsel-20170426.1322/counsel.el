@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170426.41
+;; Package-Version: 20170426.1322
 ;; Version: 0.9.1
 ;; Package-Requires: ((emacs "24.3") (swiper "0.9.0"))
 ;; Keywords: completion, matching
@@ -2929,7 +2929,6 @@ Any desktop entries that fail to parse are recorded in `counsel-linux-apps-fault
   (unless company-candidates
     (company-complete))
   (when company-point
-    (company-complete-common)
     (when (looking-back company-common (line-beginning-position))
       (setq ivy-completion-beg (match-beginning 0))
       (setq ivy-completion-end (match-end 0)))
