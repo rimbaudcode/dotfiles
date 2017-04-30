@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: stack
+# key: stack
+# --
+#!/usr/bin/env stack
+-- stack --install-ghc --resolver lts-$1 runghc --package $0

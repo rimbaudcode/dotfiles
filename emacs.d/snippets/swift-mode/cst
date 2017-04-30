@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cst
+# key: cst
+# --
+struct $1 {
+    $0
+}

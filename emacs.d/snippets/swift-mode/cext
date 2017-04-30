@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cext
+# key: cext
+# --
+extension $1 {
+    $0
+}
