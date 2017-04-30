@@ -342,6 +342,10 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
+# haskell (stack)
+alias haskell-ghci='stack ghci'
+alias haskell-run='stack runghc'
+#
 # hoogle
 alias hoogle='hoogle --color --count=100'
 alias hoogle-info='hoogle --info'
@@ -388,6 +392,7 @@ alias yt-video='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
 
 ### Suffix aliases
 #
+alias -s hs='stack runghc'
 alias -s log='open'
 alias -s pdf='open'
 alias -s sublime-project='sublime --project'
