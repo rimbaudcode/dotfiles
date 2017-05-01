@@ -68,6 +68,9 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 #
 local SCRIPTS_PATH=~/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
+#
+local RACKET_PATH='/Applications/Racket v6.8/bin'
+export PATH=$RACKET_PATH:$PATH
 
 ### Paths not to be exported
 #

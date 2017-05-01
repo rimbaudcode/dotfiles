@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: copt
+# key: copt
+# --
+{-# OPTIONS_GHC -Wall                            #-}
+{-# OPTIONS_GHC -Werror                          #-}
+{-# OPTIONS_GHC -funbox-strict-fields            #-}
+{-# OPTIONS_GHC -fwarn-implicit-prelude          #-}
+{-# OPTIONS_GHC -fwarn-incomplete-patterns       #-}
+{-# OPTIONS_GHC -fwarn-incomplete-record-updates #-}
+{-# OPTIONS_GHC -fwarn-monomorphism-restriction  #-}
+{-# OPTIONS_GHC -fwarn-tabs                      #-}
+{-# OPTIONS_GHC -fwarn-unused-do-bind            #-}
