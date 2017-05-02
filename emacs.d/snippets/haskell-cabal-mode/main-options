@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: mopt
+# key: mopt
+# --
+  ghc-options:       -fdefer-type-errors
+                     -fforce-recomp
+                     -fobject-code
+                     -funbox-strict-fields
+                     -fwarn-implicit-prelude
+                     -fwarn-incomplete-patterns
+                     -fwarn-incomplete-record-updates
+                     -fwarn-incomplete-uni-patterns
+                     -fwarn-missing-signatures
+                     -fwarn-monomorphism-restriction
+                     -fwarn-name-shadowing
+                     -fwarn-orphans
+                     -fwarn-overlapping-patterns
+                     -fwarn-tabs
+                     -fwarn-unused-do-bind
+                     -fwarn-unused-imports
+                     -Wall
+                     -threaded
+                     -rtsopts
+                     -with-rtsopts=-N
+                     -j4
+                     -O
