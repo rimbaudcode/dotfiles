@@ -163,7 +163,7 @@ function mkcd () {
 # function mkdata
 # symlink to data
 function mkdata () {
-    ln -s ~/github/data `pwd`/
+    ln -s ~/playground/data `pwd`/
 }
 #
 # function pdfmerge
@@ -298,7 +298,7 @@ alias zip='zip -qrT'
 alias apps="~/Documents/OneDrive/Apps/bin"
 alias art="~/github/dotfiles/emacs.d/art"
 alias d3s="~/Documents/d3s"
-alias data="~/github/data"
+alias data="~/playground/data"
 alias desktop="~/Desktop"
 alias documents="~/Documents"
 alias downloads="~/Downloads"
