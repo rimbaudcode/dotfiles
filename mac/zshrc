@@ -345,9 +345,9 @@ alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitig
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
 # stack (haskell)
-alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o dep/'
-alias stack-dep-external='stack dot | dot -Tpng -o dep/'
-alias stack-dep='stack dot | dot -Tpng -o dep/'
+alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o'
+alias stack-dep-external='stack dot | dot -Tpng -o'
+alias stack-dep='stack dot | dot -Tpng -o'
 alias stack-ghci='stack ghci'
 alias stack-run='stack runghc'
 #
