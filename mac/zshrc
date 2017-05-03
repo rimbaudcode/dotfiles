@@ -87,11 +87,12 @@ function cow-speaks () {
     say-english "$thought"
 }
 #
-# function dependencies
+# function stack-dependencies
 # prints out a png of the current Haskell project dependencies
-function dependencies () {
+function stack-dependencies () {
     local png_name=$(basename `pwd`)
-    stack dot --no-include-base --external --depth 1 | dot -Tpng -o "$png_name"_dep.png
+    mkdir -p dep
+    stack dot --no-include-base --external --depth 1 | dot -Tpng -o dep/"$png_name"_dep.png
 }
 #
 # function dictionary
