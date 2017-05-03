@@ -405,6 +405,13 @@ alias -s sublime-project='sublime --project'
 alias -s xcodeproj='open'
 alias -s tex='xelatex'
 
+### stack autocompletion
+# compinit loaded by oh-my-zsh
+#
+#autoload -U +X compinit  && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
+
 ### Fish syntax highlightning
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
