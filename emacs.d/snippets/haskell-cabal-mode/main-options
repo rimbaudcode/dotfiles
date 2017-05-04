@@ -3,8 +3,10 @@
 # key: mopt
 # --
   ghc-options:       -fdefer-type-errors
+                     -Wall
                      -fforce-recomp
                      -fobject-code
+                     -fprof-auto
                      -funbox-strict-fields
                      -fwarn-implicit-prelude
                      -fwarn-incomplete-patterns
@@ -18,9 +20,8 @@
                      -fwarn-tabs
                      -fwarn-unused-do-bind
                      -fwarn-unused-imports
-                     -Wall
-                     -threaded
-                     -rtsopts
-                     -with-rtsopts=-N
                      -j4
+                     -rtsopts
+                     -threaded
+                     -with-rtsopts=-N
                      -O
