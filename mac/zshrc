@@ -395,6 +395,11 @@ alias web-youtube='open https://www.youtube.com'
 # youtube-dl
 alias yt-audio='youtube-dl -cit -o "%(title)s-%(id)s.%(ext)s" -f m4a'
 alias yt-video='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
+#
+### special alias to quickly end a sh session
+#
+alias q='exit'
+
 
 ### Suffix aliases
 #
