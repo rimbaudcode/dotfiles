@@ -54,7 +54,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flyspell-lazy-mode t)
  '(global-aggressive-indent-mode t)
- '(global-auto-complete-mode t)
+ '(global-auto-complete-mode nil)
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
@@ -64,6 +64,7 @@
  '(google-translate-default-source-language "en")
  '(google-translate-default-target-language "es")
  '(haskell-indentation-show-indentations t)
+ '(haskell-mode-hook (quote (turn-on-haskell-indentation intero-mode)))
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
@@ -78,6 +79,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
+ '(intero-global-mode t)
  '(ispell-personal-dictionary nil)
  '(ivy-display-style nil)
  '(ivy-mode t)
@@ -196,8 +198,8 @@
 ;;
 ;; keywords in buffer
 (global-set-key (kbd "C-t") 'mc/mark-next-like-this)
-;;(global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-r") 'mc/mark-all-like-this)
+;; (global-set-key (kbd "C-r") 'mc/mark-previous-like-this)
 ;;
 ;; scrolling
 ;; NOTE: scrolling has the opposite direction of cursors!
@@ -234,10 +236,11 @@
 ;; swiper
 (global-set-key "\C-s" 'swiper)
 (global-set-key "\C-r" 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+;;
+;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 ;;
 ;; yasnippet
 (setq warning-suppress-types nil)
