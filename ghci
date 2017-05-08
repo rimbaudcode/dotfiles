@@ -1,15 +1,11 @@
+:set +s
+:set -fbreak-on-error
+:set -fbreak-on-exception
 :set editor emacs
 :set prompt "\ESC[1;36m%s\n\ESC[0;36m\\> \ESC[m"
-:set +s
 :def doc \x -> return $ ":!hoogle --color --count=40 --info \"" ++ x ++ "\""
 :def google \x -> return $ ":!googler " ++ x ++ ""
-:def git-branch \_ -> return $ ":! git branch"
-:def git-gource \_ -> return $ ":! git gource"
-:def git-log-tree \_ -> return $ ":! git logtree"
-:def git-status \_ -> return $ ":! git status"
-:def git-visual \_ -> return $ ":! git visual"
 :def hoogle \x -> return $ ":!hoogle --color --count=40 \"" ++ x ++ "\""
 :def pointfree \str -> return $ ":! pointfree \"" ++ str ++ "\""
 :def pointful \str -> return $ ":! pointful \"" ++ str ++ "\""
 :def stack-build \x -> return $ ":! stack build" ++ x
-:def stack-exec \x -> return $ ":! stack exec" ++ " " ++ x

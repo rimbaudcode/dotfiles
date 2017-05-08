@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: trace
+# key: trace
+# --
+print $ traceShow (${1:before}) (${2:after})

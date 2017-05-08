@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: debug
+# key: debug
+# --
+import Debug.Trace   (traceShow)
+
+traceShow' :: Show b => b -> b
+traceShow' x = traceShow x x
