@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: fdoc
+# key: fdoc
+# --
+-- | ${1:one-line description}
+--
+-- Examples:
+--
+-- >>> ${2:function call}
+-- ${3:result}
+--

@@ -55,7 +55,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flyspell-lazy-mode t)
  '(global-aggressive-indent-mode t)
- '(global-auto-complete-mode nil)
+ '(global-auto-complete-mode t)
  '(global-auto-revert-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
