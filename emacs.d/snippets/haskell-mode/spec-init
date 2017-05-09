@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: mymainspec
+# key: mymainspec
+# --
+module `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` (main, spec) where
+
+import Test.Hspec
+import Test.QuickCheck
+
+import `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
+import `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.Internal
+
+main :: IO ()
+main = hspec spec

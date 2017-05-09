@@ -167,6 +167,12 @@ function mkdata () {
     ln -s ~/playground/data `pwd`/
 }
 #
+# function mkfile
+# touch a file and create parent dirs if needed
+function mkfile () {
+    mkdir -p $( dirname "$1") && touch "$1"
+}
+#
 # function pdfmerge
 # merge pdfs
 function pdfmerge () {
@@ -424,3 +430,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### rbenv (ruby) stuff
 #
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
