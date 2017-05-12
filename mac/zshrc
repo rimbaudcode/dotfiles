@@ -55,6 +55,9 @@ export PATH=~$HOMEBREW_PATH:$PATH
 export HOMEBREW_GITHUB_API_TOKEN="d4249153d8dd3f9a19a3a10dc370b44fda51a9ab"
 export HOMEBREW_NO_ANALYTICS=1
 #
+# opting-out dotnet's data collection!
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+#
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
@@ -293,6 +296,7 @@ alias reload='source ~/.zshrc'
 alias safari='open /Applications/Safari.app'
 alias soffice='/Applications/LibreOffice.app/Contents/MacOS/soffice'
 alias sq3='sqlite3'
+alias ssaver='mac screensaver'
 alias topdf='soffice --headless --convert-to pdf'
 alias tree='tree -C'
 alias unzip='unzip -qq'
@@ -356,16 +360,15 @@ alias stack-dep-external-no-base='stack dot --no-include-base --external --depth
 alias stack-dep-external='stack dot | dot -Tpng -o'
 alias stack-dep='stack dot | dot -Tpng -o'
 alias stack-ghci='stack ghci'
-alias stack-run='stack runghc'
+alias stack-script='stack runghc --silent'
 #
 # hoogle
 alias hoogle='hoogle --color --count=100'
 alias hoogle-info='hoogle --info'
 #
 # mail
-alias mail-gmail='open https://studmail.unileoben.ac.at'
-alias mail-hotmail='open https://studmail.unileoben.ac.at'
-alias mail-uni='open https://studmail.unileoben.ac.at'
+alias mail-gmail='open https://www.gmail.com'
+alias mail-hotmail='open https://www.hotmail.com'
 #
 # mathematica
 alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
@@ -383,6 +386,9 @@ alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
+# searches
+alias search-string="grep -irn './' -e"
+#
 # translate
 alias trans-to-english='trans -b es:en'
 alias trans-to-spanish='trans -b en:es'
@@ -393,8 +399,6 @@ alias duck='web www.duckduckgo.com'
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
 alias web-google='open https://www.google.com'
-alias web-mul='open http://www.unileoben.ac.at'
-alias web-muonline='open https://online.unileoben.ac.at/mu_online/webnav.ini'
 alias web-wolfram='open http://www.wolframalpha.com'
 alias web-youtube='open https://www.youtube.com'
 #
