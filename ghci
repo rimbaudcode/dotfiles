@@ -1,6 +1,6 @@
 :set +s
-:set -fbreak-on-error
-:set -fbreak-on-exception
+-- :set -fbreak-on-error
+-- :set -fbreak-on-exception
 :set editor emacs
 :set prompt "\ESC[1;36m%s\n\ESC[0;36m\\> \ESC[m"
 :def doc \x -> return $ ":!hoogle --color --count=40 --info \"" ++ x ++ "\""
