@@ -49,6 +49,7 @@
  '(delete-selection-mode t)
  '(dired-async-mode t)
  '(dired-use-ls-dired nil)
+ '(display-time-24hr-format t)
  '(electric-pair-mode t)
  '(exec-path-from-shell-check-startup-files nil)
  '(fci-rule-color "#383838")
@@ -241,8 +242,8 @@
 (global-set-key "\C-r" 'swiper)
 ;;
 ;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 ;; (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 ;;
 ;; yasnippet

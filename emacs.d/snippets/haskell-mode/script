@@ -3,7 +3,6 @@
 # key: script
 # --
 #!/usr/bin/env stack
--- stack runghc `(file-name-nondirectory (buffer-file-name))`
 
 module Main (main) where
 
