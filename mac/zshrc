@@ -100,12 +100,6 @@ function dictionary () {
     dict "$word" | less
 }
 #
-# function duck
-# send a query to duckduckgo
-function duck () {
-    web https://duckduckgo.com/\?q\="$*"\&kp\=-1\&kl\=us-en
-}
-#
 # function extract
 # extract the contents of various compressed files
 function extract () {
@@ -395,7 +389,7 @@ alias trans-to-english='trans -b es:en'
 alias trans-to-spanish='trans -b en:es'
 #
 # web links
-alias duckgo='web www.duckduckgo.com'
+alias duck='web www.duckduckgo.com'
 #
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
