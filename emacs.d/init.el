@@ -28,6 +28,7 @@
    (vector "#ffffff" "#bf616a" "#B4EB89" "#ebcb8b" "#89AAEB" "#C189EB" "#89EBCA" "#232830"))
  '(async-bytecomp-package-mode t)
  '(auto-package-update-delete-old-versions t)
+ '(auto-save-default nil)
  '(auto-save-interval 0)
  '(blink-cursor-blinks 0)
  '(blink-cursor-mode nil)
