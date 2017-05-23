@@ -104,12 +104,12 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers ranger racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-youtube helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir tabbar tabbar-ruler flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper ace-window org-bullets popwin deferred define-word google-this google-translate helm-hoogle helm-itunes aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero iedit hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prog-mode-hook nil)
  '(proof-splash-enable nil)
  '(ranger-override-dired nil)
- '(ranger-override-dired-mode t)
+ '(ranger-override-dired-mode nil)
  '(ranger-parent-depth 1)
  '(ring-bell-function (quote ignore))
  '(server-mode nil)
