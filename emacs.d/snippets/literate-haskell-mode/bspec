@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: bspec
+# key: bspec
+# --
+\begin{spec}
+$0
+\end{spec}

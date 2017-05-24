@@ -128,12 +128,10 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"BracketHighlighter",
 		"Elixir",
 		"ElixirSublime",
 		"GitGutter",
 		"iTunes",
-		"LaTeXTools",
 		"SublimeGit",
 		"Swift",
 		"Trimmer",

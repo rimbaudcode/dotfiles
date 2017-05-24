@@ -2,8 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"BracketHighlighter",
-		"LaTeXTools",
 		"Trimmer"
 	],
 	"installed_packages":
