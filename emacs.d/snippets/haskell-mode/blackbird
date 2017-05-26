@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: black
+# key: black
+# --
+-- blackbird combinator
+-- composition of composition and composition
+-- it's a pipe with two inputs
+(...) :: (b -> c) -> (a1 -> a -> b) -> a1 -> a -> c
+(...) = (.) . (.)
+infixr 9 ...

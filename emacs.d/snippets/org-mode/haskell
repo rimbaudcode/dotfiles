@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: haskell
+# key: has
+# --
+#+BEGIN_SRC haskell :tangle $1.hs
+$0
+#+END_SRC

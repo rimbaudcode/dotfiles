@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: stack
+# key: stack
+# --
+#+BEGIN_SRC sh :exports both :results verbatim
+mkdir -p bin
+stack ghc -- `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.hs -o bin/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` -O
+#+END_SRC

@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: latex
+# key: latex
+# --
+#+STARTUP: showall hidestars
+
+#+LaTeX_CLASS_OPTIONS: [a4paper]
+#+LaTeX_CLASS:         article
+
+#+LaTeX_HEADER: \\usepackage{listings}
+#+LaTeX_HEADER: \\lstloadlanguages{[ANSI]C,Haskell,Ruby,sh}
+#+LaTeX_HEADER: \\lstset{basicstyle={\\footnotesize}}
+
+#+TITLE:   $1
+#+AUTHOR:  Art Rimbaud
+#+EMAIL:   rimbaudcode[At]gmail<DoT>com

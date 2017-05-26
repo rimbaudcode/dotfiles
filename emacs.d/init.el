@@ -69,7 +69,7 @@
  '(haskell-indentation-show-indentations t)
  '(haskell-interactive-prompt "\\> ")
  '(haskell-literate-default (quote tex))
- '(haskell-mode-hook (quote (turn-on-haskell-indentation intero-mode)))
+ '(haskell-mode-hook (quote (turn-on-haskell-indentation intero-mode)) t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
@@ -97,6 +97,41 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-babel-load-languages
+   (quote
+    ((haskell . t)
+     (sh . t)
+     (ruby . t)
+     (C . t)
+     (latex . t)
+     (emacs-lisp . t))))
+ '(org-export-babel-evaluate nil)
+ '(org-latex-minted-langs
+   (quote
+    ((emacs-lisp "common-lisp")
+     (cc "c++")
+     (cperl "perl")
+     (shell-script "bash")
+     (caml "ocaml")
+     (haskell "haskell"))))
+ '(org-latex-pdf-process
+   (quote
+    ("pdflatex -interaction nonstopmode -output-directory %o %f --shell-escape" "pdflatex -interaction nonstopmode -output-directory %o %f --shell-escape" "pdflatex -interaction nonstopmode -output-directory %o %f --shell-escape")))
+ '(org-mode-hook
+   (quote
+    (#[nil "\300\301\302\303\304$\207"
+           [org-add-hook change-major-mode-hook org-show-block-all append local]
+           5]
+     #[nil "\300\301\302\303\304$\207"
+           [org-add-hook change-major-mode-hook org-babel-show-result-all append local]
+           5]
+     org-babel-result-hide-spec org-babel-hide-all-hashes
+     #[nil "\300\301!\207"
+           [org-bullets-mode 1]
+           2]
+     visual-line-mode)) t)
+ '(org-src-preserve-indentation t)
+ '(org-support-shift-select (quote always))
  '(osx-clipboard-mode nil)
  '(package-archives
    (quote
@@ -104,7 +139,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (flycheck csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flycheck-elixir flycheck-stack flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode flycheck-haskell smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prog-mode-hook nil)
  '(proof-splash-enable nil)
