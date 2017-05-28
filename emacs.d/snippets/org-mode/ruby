@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ruby
+# key: ruby
+# --
+#+BEGIN_SRC ruby :exports both :results verbatim :tangle $1.rb
+$0
+#+END_SRC

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: c
+# key: c
+# --
+#+BEGIN_SRC C :exports both :results verbatim :tangle $1.c
+$0
+#+END_SRC
