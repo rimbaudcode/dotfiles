@@ -398,7 +398,7 @@ alias web-wolfram='open http://www.wolframalpha.com'
 alias web-youtube='open https://www.youtube.com'
 #
 # youtube-dl
-alias audio='youtube-dl -cit -o "%(title)s-%(id)s.%(ext)s" -f m4a'
+alias audio='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" -f m4a'
 alias video='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
 #
 ### special alias to quickly end a sh session
