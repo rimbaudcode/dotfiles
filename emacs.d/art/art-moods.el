@@ -47,8 +47,7 @@
   (flyspell-mode 1)
   (reftex-mode 1)
   (delete-other-windows)
-  (writeroom-mode 1)
-  (split-window-horizontally))
+  (writeroom-mode 1))
 
 (provide 'art-moods)
 ;;; art-moods.el ends here
