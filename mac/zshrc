@@ -60,6 +60,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
+# local MATHEMATICA_PATH=/Applications/Mathematica.app/Contents/MacOS
+# export PATH=$MATHEMATICA_PATH:$PATH
+#
 local MY_APPS_PATH=~/Documents/OneDrive/Apps
 export PATH=$MY_APPS_PATH:$PATH
 export PATH=$MY_APPS_PATH/bin:$PATH
@@ -284,7 +287,7 @@ alias mybash='bash -l'
 alias nemesis='stack runhaskell Nemesis --silent'
 alias oldies='mplayer http://80.237.154.83:8120'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
-alias preview='open -a /Applications/Preview.app'
+alias preview='open -a /Applications/Preview.app -g'
 alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
 alias rbprof='ruby -w -r profile'
@@ -349,7 +352,14 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 #
 # get-gitignores
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
+alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
+#
+# get-lamport (pf2.sty)
+alias get-lamport='cp ~/playground/lamport/pf2.sty pf2.sty'
+#
+# markdown files with multiple .mds included
+alias pandoc-md='pandoc --filter pandoc-include'
 #
 # stack (haskell)
 alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o'
@@ -367,8 +377,9 @@ alias mail-gmail='open https://www.gmail.com'
 alias mail-hotmail='open https://www.hotmail.com'
 #
 # mathematica
-alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
+alias math='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias math-gui='open /Applications/Mathematica.app'
+alias wolframscript='/Applications/Mathematica.app/Contents/MacOS/WolframScript -script'
 #
 # PDFs
 alias pdf-preview='open -a /Applications/Preview.app'
