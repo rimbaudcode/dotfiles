@@ -2,15 +2,20 @@
 # name: sder
 # key: sder
 # --
+%
 \\\
 \begin{table}[h]
   \centering\small
   \begin{tabular}{ll}
-    \sdstart{}
+    \sdtask{$0}
     \sdhypo{}
+    \sdjust{}
+    \sdexp{}
     \sdstep{}{}
     \sdexp{}
-    \sdend{}
+    \sdstep{}{}
+    \sdanswer{}
   \end{tabular}
 \end{table}
 \\\
+%

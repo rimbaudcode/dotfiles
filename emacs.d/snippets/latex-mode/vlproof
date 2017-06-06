@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: vlproof
+# key: vlproof
+# --
+%
+\\\
+\begin{table}[h]
+  \centering\small
+  \begin{tabular}{lll}
+    \vlrow{\text{Givens}}{\text{Goal}}
+    \vlrow{$0}{}
+  \end{tabular}
+\end{table}
+\\\
+%
