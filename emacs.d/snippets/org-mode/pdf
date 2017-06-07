@@ -11,5 +11,5 @@ mkdir -p doc
 pandoc -s -o doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.tex --highlight-style kate `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.org
 latexmk -quiet -xelatex -output-directory=doc \
  -interaction=batchmode doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.tex
-open -a /Applications/Preview.app doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
+open -g -a /Applications/Preview.app doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
 #+END_SRC

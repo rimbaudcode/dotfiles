@@ -5,5 +5,5 @@
 #+BEGIN_SRC sh
 trash doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
 pandoc -o doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf --highlight-style kate --latex-engine=xelatex `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.org
-open doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
+open -g doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
 #+END_SRC

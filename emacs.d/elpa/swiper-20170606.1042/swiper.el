@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170515.1409
+;; Package-Version: 20170606.1042
 ;; Version: 0.9.1
 ;; Package-Requires: ((emacs "24.1") (ivy "0.9.0"))
 ;; Keywords: matching
@@ -892,6 +892,7 @@ Run `swiper' for those buffers."
     map)
   "Keymap for `swiper-all'.")
 
+;;;###autoload
 (defun swiper-all ()
   "Run `swiper' for all opened buffers."
   (interactive)

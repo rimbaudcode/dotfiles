@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "fsharp-mode" "fsharp-mode.el" (22805 26798
+;;;### (autoloads nil "fsharp-mode" "fsharp-mode.el" (22839 46162
 ;;;;;;  0 0))
 ;;; Generated autoloads from fsharp-mode.el
 
@@ -16,8 +16,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "inf-fsharp-mode" "inf-fsharp-mode.el" (22805
-;;;;;;  26798 0 0))
+;;;### (autoloads nil "inf-fsharp-mode" "inf-fsharp-mode.el" (22839
+;;;;;;  46162 0 0))
 ;;; Generated autoloads from inf-fsharp-mode.el
 
 (autoload 'run-fsharp "inf-fsharp-mode" "\
@@ -30,7 +30,7 @@ Input and output via buffer `*inferior-fsharp*'.
 
 ;;;### (autoloads nil nil ("flycheck-fsharp.el" "fsharp-doc.el" "fsharp-mode-completion.el"
 ;;;;;;  "fsharp-mode-font.el" "fsharp-mode-indent-smie.el" "fsharp-mode-indent.el"
-;;;;;;  "fsharp-mode-pkg.el" "fsharp-mode-util.el") (22805 26798
+;;;;;;  "fsharp-mode-pkg.el" "fsharp-mode-util.el") (22839 46162
 ;;;;;;  0 0))
 
 ;;;***

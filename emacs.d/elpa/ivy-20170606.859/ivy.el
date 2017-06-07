@@ -1717,8 +1717,11 @@ This is useful for recursive `ivy-read'."
             (t
              (setq coll collection)))
       (when def
-        (unless (member def coll)
-          (push def coll)))
+        (cond ((listp def)
+               (setq coll (cl-union def coll :test 'equal)))
+              ((member def coll))
+              (t
+               (push def coll))))
       (when sort
         (if (and (functionp collection)
                  (setq sort-fn (ivy--sort-function collection)))
@@ -1915,7 +1918,8 @@ The previous string is between `ivy-completion-beg' and `ivy-completion-end'."
         (if (null (cdr comps))
             (if (string= str (car comps))
                 (message "Sole match")
-              (setf (ivy-state-window ivy-last) (selected-window))
+              (unless (minibuffer-window-active-p (selected-window))
+                (setf (ivy-state-window ivy-last) (selected-window)))
               (ivy-completion-in-region-action
                (substring-no-properties
                 (car comps))))
