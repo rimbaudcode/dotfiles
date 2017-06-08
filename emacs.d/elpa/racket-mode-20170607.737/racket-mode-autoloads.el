@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "racket-bug-report" "racket-bug-report.el"
-;;;;;;  (22838 28098 0 0))
+;;;;;;  (22840 27387 0 0))
 ;;; Generated autoloads from racket-bug-report.el
 
 (autoload 'racket-bug-report "racket-bug-report" "\
@@ -14,7 +14,7 @@ Fill a buffer with data to make a racket-mode bug report.
 
 ;;;***
 
-;;;### (autoloads nil "racket-edit" "racket-edit.el" (22838 28098
+;;;### (autoloads nil "racket-edit" "racket-edit.el" (22840 27387
 ;;;;;;  0 0))
 ;;; Generated autoloads from racket-edit.el
 
@@ -22,7 +22,7 @@ Fill a buffer with data to make a racket-mode bug report.
 
 ;;;***
 
-;;;### (autoloads nil "racket-mode" "racket-mode.el" (22838 28098
+;;;### (autoloads nil "racket-mode" "racket-mode.el" (22840 27387
 ;;;;;;  0 0))
 ;;; Generated autoloads from racket-mode.el
 
@@ -40,7 +40,7 @@ Major mode for editing Racket.
 
 ;;;***
 
-;;;### (autoloads nil "racket-repl" "racket-repl.el" (22838 28098
+;;;### (autoloads nil "racket-repl" "racket-repl.el" (22840 27387
 ;;;;;;  0 0))
 ;;; Generated autoloads from racket-repl.el
 
@@ -60,7 +60,7 @@ Commands that don't want the REPL to be displayed can instead use
 ;;;***
 
 ;;;### (autoloads nil "racket-unicode-input-method" "racket-unicode-input-method.el"
-;;;;;;  (22838 28098 0 0))
+;;;;;;  (22840 27387 0 0))
 ;;; Generated autoloads from racket-unicode-input-method.el
 
 (autoload 'racket-unicode-input-method-enable "racket-unicode-input-method" "\
@@ -111,8 +111,8 @@ can turn it off by setting `input-method-highlight-flag' to nil via
 ;;;;;;  "racket-complete.el" "racket-custom.el" "racket-font-lock.el"
 ;;;;;;  "racket-imenu.el" "racket-indent.el" "racket-keywords-and-builtins.el"
 ;;;;;;  "racket-make-doc.el" "racket-mode-pkg.el" "racket-ppss.el"
-;;;;;;  "racket-profile.el" "racket-tests.el" "racket-util.el") (22838
-;;;;;;  28098 0 0))
+;;;;;;  "racket-profile.el" "racket-tests.el" "racket-util.el") (22840
+;;;;;;  27387 0 0))
 
 ;;;***
 
