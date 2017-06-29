@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170623.1112
+;; Package-Version: 20170628.1034
 ;; Version: 0.9.1
 ;; Package-Requires: ((emacs "24.3") (swiper "0.9.0"))
 ;; Keywords: completion, matching
@@ -774,8 +774,8 @@ Optional INITIAL-INPUT is the initial input in the minibuffer."
     (when (require 'smex nil 'noerror)
       (unless smex-initialized-p
         (smex-initialize))
-      (smex-detect-new-commands)
-      (smex-update)
+      (when (smex-detect-new-commands)
+        (smex-update))
       (setq cands smex-ido-cache)
       (setq pred nil)
       (setq sort nil))
@@ -2025,7 +2025,9 @@ RG-PROMPT, if non-nil, is passed as `ivy-read' prompt argument."
                                  " in directory: ")))))
   (counsel-require-program (car (split-string counsel-rg-base-command)))
   (ivy-set-prompt 'counsel-rg counsel-prompt-function)
-  (setq counsel--git-grep-dir (or initial-directory default-directory))
+  (setq counsel--git-grep-dir (or initial-directory
+                                  (locate-dominating-file default-directory ".git")
+                                  default-directory))
   (ivy-read (or rg-prompt (car (split-string counsel-rg-base-command)))
             (lambda (string)
               (counsel-ag-function string counsel-rg-base-command extra-rg-args))
