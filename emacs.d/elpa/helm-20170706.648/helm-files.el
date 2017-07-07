@@ -1070,14 +1070,30 @@ This doesn't replace inside the files, only modify filenames."
                                           (setq target (helm-basename old))))
                                         (t regexp))
                                   (save-match-data
-                                    (cond ((and (string-match-p "\\\\#" rep)
+                                    (cond (;; Handle incremental
+                                           ;; replacement with \# in
+                                           ;; search and replace
+                                           ;; feature in placeholder \@.
+                                           (string-match
+                                            "\\\\@/\\(.*\\)/\\(\\(?99:.*\\)\\\\#\\)"
+                                            rep)
+                                           (replace-regexp-in-string
+                                            (match-string 1 rep)
+                                            (concat (match-string 99 rep)
+                                                    (format "%03d" (1+ count)))
+                                            target))
+                                          ;; Incremental replacement
+                                          ;; before or after \@.
+                                          ((and (string-match-p "\\\\#" rep)
                                                 (string-match "\\\\@" rep))
                                            (replace-regexp-in-string
                                             "\\\\#" (format "%03d" (1+ count))
                                             (replace-match target t t rep)))
+                                          ;; Simple incremental replacement.
                                           ((string-match "\\\\#" rep)
                                            (replace-match
                                             (format "%03d" (1+ count)) t t rep))
+                                          ;; Substring replacement in placeholder.
                                           ((string-match
                                             "\\\\@:\\([0-9]*\\):\\([0-9]*\\)" rep)
                                            (replace-match (substring
@@ -1087,17 +1103,26 @@ This doesn't replace inside the files, only modify filenames."
                                                            (string-to-number
                                                             (match-string 2 rep)))
                                                           t t rep))
+                                          ;; Search and replace in
+                                          ;; placeholder. Doesn't
+                                          ;; handle incremental here.
                                           ((string-match "\\\\@/\\(.*\\)/\\(.*\\)" rep)
                                            (replace-match (replace-regexp-in-string
                                                            (match-string 1 rep)
                                                            (match-string 2 rep)
                                                            target)
                                                           t t rep))
+                                          ;; Simple replacement by placeholder.
                                           ((string-match "\\\\@" rep)
                                            (replace-match target t t rep))
+                                          ;; Replacement with
+                                          ;; upcase, downcase or
+                                          ;; capitalized text.
                                           ((string= rep "%u") #'upcase)
                                           ((string= rep "%d") #'downcase)
                                           ((string= rep "%c") #'capitalize)
+                                          ;; Simple replacement with
+                                          ;; whole replacement regexp.
                                           (t rep)))
                                   (helm-basename old) t))
                ;; If `regexp' is not matched in `old'
@@ -3666,7 +3691,7 @@ Colorize only symlinks, directories and files."
                                (not (and ffap-url-regexp
                                          (string-match ffap-url-regexp i)))
                                (not (string-match helm-ff-url-regexp i)))
-                          (helm-basename i) i)
+                          (helm-basename i) (abbreviate-file-name i))
            for isremote = (or (file-remote-p i)
                               (helm-file-on-mounted-network-p i))
            ;; Call file-attributes only if:
@@ -3969,7 +3994,8 @@ Run all sources defined in `helm-for-files-preferred-list'."
           (helm-make-source "Buffers" 'helm-source-buffers)))
   (helm :sources helm-for-files-preferred-list
         :ff-transformer-show-only-basename nil
-        :buffer "*helm for files*"))
+        :buffer "*helm for files*"
+        :truncate-lines helm-buffers-truncate-lines))
 
 ;;;###autoload
 (defun helm-multi-files ()
@@ -4007,7 +4033,8 @@ found."
     (unwind-protect
          (helm :sources sources
                :ff-transformer-show-only-basename nil
-               :buffer "*helm multi files*")
+               :buffer "*helm multi files*"
+               :truncate-lines helm-buffers-truncate-lines)
       (define-key helm-map (kbd helm-multi-files-toggle-locate-binding)
         old-key))))
 
