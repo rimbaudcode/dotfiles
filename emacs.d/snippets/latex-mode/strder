@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: sder
+# key: sder
+# --
+%
+\\\
+\begin{table}[h]
+  \centering\small
+  \begin{tabular}{ll}
+    \sdtask{$0question}
+    \sdhypo{assumption}
+    \sdexp{\dots}
+    \sddef{declaration}
+    \sdexp{justification}
+    \sdprop{proposition}
+    \sdexp{\dots}
+    \sdconc{conclusion}
+    \sdexp{expression}
+    \sdstep{rel.}{justification}
+    \sdexp{expression}
+    \sdexp{\dots}
+    \sdanswer{answer}
+  \end{tabular}
+\end{table}
+\\\
+%

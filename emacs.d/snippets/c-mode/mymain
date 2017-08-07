@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: mymain
+# key: mymain
+# --
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(${1:int argc, char *argv[]})
+{
+    $0
+
+    return EXIT_SUCCESS;
+}

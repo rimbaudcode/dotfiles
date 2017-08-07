@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ext
+# key: ext
+# --
+extension `(file-name-base (file-name-sans-extension (buffer-file-name)))` {
+    $0
+}

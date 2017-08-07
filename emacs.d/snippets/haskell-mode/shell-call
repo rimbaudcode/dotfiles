@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: shcall
+# key: shcall
+# --
+-- runghc `(file-name-nondirectory (buffer-file-name))` $1

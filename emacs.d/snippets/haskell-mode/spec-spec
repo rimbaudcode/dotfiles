@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: spec
+# key: spec
+# --
+spec :: Spec
+spec = do
+  describe "${1:function/feature}" $ do
+    it "${2:expected behavior}" $ do
+      $3 \`shouldBe\` $4

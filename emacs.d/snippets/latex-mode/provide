@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: provide
+# key: provide
+# --
+\providecommand*{$1}[$2]{$3} %

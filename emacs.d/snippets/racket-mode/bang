@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: bang
+# key: bang
+# --
+#! /usr/bin/env racket
+#lang racket/${1:base}
+
+$0

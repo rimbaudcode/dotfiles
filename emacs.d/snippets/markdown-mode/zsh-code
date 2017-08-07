@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: zsh
+# key: zsh
+# --
+\`\`\`zsh
+$0
+\`\`\`

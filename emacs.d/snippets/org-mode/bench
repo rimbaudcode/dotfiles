@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: bench
+# key: bench
+# --
+#+BEGIN_SRC sh :exports both :results verbatim
+bench "bin/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`"
+#+END_SRC

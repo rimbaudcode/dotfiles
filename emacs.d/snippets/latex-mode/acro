@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: acro
+# key: acro
+# --
+\acro{$1}

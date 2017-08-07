@@ -9,7 +9,14 @@
 
 (defun art-stack-with-opt (opt)
   "Run `stack' with the given OPT."
-  (shell-command (format "stack %s" (shell-quote-argument opt))))
+  (let ((temp-buffer-name "*stack*"))
+    (if (get-buffer temp-buffer-name)
+        (kill-buffer temp-buffer-name))
+    (get-buffer-create temp-buffer-name)
+    (switch-to-buffer-other-window temp-buffer-name)
+    (shell-command (format "stack %s" (shell-quote-argument opt))
+                   temp-buffer-name)
+    (special-mode)))
 
 (defun art-stack-help ()
   "Show the help text."
@@ -73,10 +80,18 @@
   (art-stack-with-opt "path"))
 
 (defun art-stack-runhaskell ()
-  "Run runghc (alias for 'runghc')."
+  "Run `runghc' (alias for `runghc')."
   (interactive)
-  (shell-command (format "stack runhaskell %s"
-                         (shell-quote-argument (buffer-file-name)))))
+  (let ((haskell-file-name (shell-quote-argument buffer-file-name))
+        (temp-buffer-name "*stack*"))
+    (if (get-buffer temp-buffer-name)
+        (kill-buffer temp-buffer-name))
+    (get-buffer-create temp-buffer-name)
+    (switch-to-buffer-other-window temp-buffer-name)
+    (shell-command (format "runhaskell %s" haskell-file-name)
+                   temp-buffer-name)
+    (message (buffer-file-name))
+    (special-mode)))
 
 (defun art-stack-sdist ()
   "Create source distribution tarballs."

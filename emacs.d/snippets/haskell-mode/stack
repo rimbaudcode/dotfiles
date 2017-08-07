@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: stack
+# key: stack
+# --
+-- stack --install-ghc --resolver lts-8.13 runghc --package ${1:package} ${2:Main.hs}

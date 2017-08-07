@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: pdf
+# key: pdf
+# --
+* Export =`(file-name-nondirectory (buffer-file-name))`= to PDF
+
+Export the contents of =`(file-name-nondirectory (buffer-file-name))`=:
+
+#+BEGIN_SRC sh :results silent
+mkdir -p doc
+pandoc -s -o doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.tex --highlight-style kate `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.org
+latexmk -quiet -xelatex -output-directory=doc \
+ -interaction=batchmode doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.tex
+open -g -a /Applications/Preview.app doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
+#+END_SRC

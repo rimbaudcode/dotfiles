@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: desc
+# key: desc
+# --
+-- ${1:one-line description}

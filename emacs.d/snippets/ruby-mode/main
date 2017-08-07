@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# --
+if \$0 == __FILE__
+  $0
+end

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: alias
+# key: alias
+# --
+type $1 = $0

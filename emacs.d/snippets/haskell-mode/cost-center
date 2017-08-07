@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: scc
+# key: scc
+# --
+{-# SCC "${1:name}" #-}

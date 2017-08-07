@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: d3s
+# key: d3s
+# --
+\href{https://www.d3s.at}{d3s.$1}

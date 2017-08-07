@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: exitf
+# key: exitf
+# --
+EXIT_FAILURE

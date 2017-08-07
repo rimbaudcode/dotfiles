@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cal
+# key: cal
+# --
+\\begin{calculation}
+  $0
+\\end{calculation}

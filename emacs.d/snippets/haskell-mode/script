@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: script
+# key: script
+# --
+#!/usr/bin/env stack
+
+module Main (main) where
+
+main :: IO ()
+main = undefined

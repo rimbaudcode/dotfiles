@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tern
+# key: tern
+# --
+(${1:predicate}) ? (${2:true value}) : (${3:false value});

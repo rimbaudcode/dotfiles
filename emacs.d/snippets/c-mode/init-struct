@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: is
+# key: is
+# --
+struct $1 $2 = {.$3 = $0};

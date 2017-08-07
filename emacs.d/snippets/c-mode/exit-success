@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: es
+# key: es
+# --
+return EXIT_SUCCESS;

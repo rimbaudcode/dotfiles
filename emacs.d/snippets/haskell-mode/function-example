@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: fex
+# key: fex
+# --
+--
+-- >>> ${1:function call}
+-- ${2:result}
+--

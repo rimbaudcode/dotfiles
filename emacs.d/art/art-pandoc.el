@@ -6,10 +6,14 @@
 
 (require 'art-utils)
 
+(defvar art-pandoc-tool (executable-find "pandoc")
+  "Find and set `pandoc' tool.")
+
 (defun art-pandoc-infile-to-outfile (infile outfile)
   "Convert the type of an INFILE into an OUTFILE using `pandoc'."
   (async-start
-   (shell-command (format "pandoc %s -o %s"
+   (shell-command (format "%s %s -o %s"
+                          art-pandoc-tool
                           (shell-quote-argument infile)
                           (shell-quote-argument outfile))))
   (message "pandoc %s to %s finished" infile outfile))
@@ -33,7 +37,8 @@
   (interactive)
   (let ((infile (buffer-file-name))
         (outfile (art-replace-buffer-file-extension-to ".pdf")))
-    (shell-command (format "pandoc %s -o %s --latex-engine=xelatex"
+    (shell-command (format "%s %s -o %s --latex-engine=xelatex"
+                           art-pandoc-tool
                            (shell-quote-argument infile)
                            (shell-quote-argument outfile)))
     (message "pandoc %s to %s finished" infile outfile)))

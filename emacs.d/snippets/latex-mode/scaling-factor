@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: sqf
+# key: sqf
+# --
+$1_0$1^*

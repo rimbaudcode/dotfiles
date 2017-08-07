@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: pandoc
+# key: pandoc
+# --
+#+BEGIN_SRC sh
+mkdir -p doc
+trash doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
+pandoc -o doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf --highlight-style kate --latex-engine=xelatex `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.org
+open -g doc/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.pdf
+#+END_SRC

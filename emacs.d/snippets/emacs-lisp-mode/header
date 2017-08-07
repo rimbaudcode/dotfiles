@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: header
+# key: header
+# --
+;;; `(file-name-nondirectory (buffer-file-name))` -- ${1:Summary}
+
+;;; Commentary:
+
+;;; Code:
+
+$0
+
+(provide '`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`)
+;;; `(file-name-nondirectory (buffer-file-name))` ends here

@@ -3,3 +3,14 @@ ls
 ghci Main.hs 
 irb
 exit
+l
+ls
+open test.md 
+man pandoc
+ls
+ls -l
+ll
+ls -l
+ls
+ll
+exit

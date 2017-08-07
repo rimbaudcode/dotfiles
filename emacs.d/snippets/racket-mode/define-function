@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: deff
+# key: deff
+# --
+(define ($1 $2)
+  ($0))

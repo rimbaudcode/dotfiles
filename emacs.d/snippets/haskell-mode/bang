@@ -1,1 +1,5 @@
-#!/usr/bin/env runhaskell
+# -*- mode: snippet -*-
+# name: bang
+# key: bang
+# --
+#!/usr/bin/env stack

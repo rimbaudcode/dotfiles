@@ -7,7 +7,7 @@
 # license-file:  LICENSE.md
 # author:        art rimbaud
 # maintainer:    rimbaudcode[at]gmail(DoT)com
-# copyright:     (c) 2016 rimbaudcode
+# copyright:     (c) 2017 rimbaudcode
 # category:      System
 
 export ZSH=~/.oh-my-zsh
@@ -35,86 +35,91 @@ SAVEHIST=0
 local EMACS_CLIENT_PATH=`which emacsclient`
 export ALTERNATE_EDITOR=""
 export EDITOR="$EMACS_CLIENT_PATH -t"
-export VISUAL="$EMACS_CLIENT_PATH -c -a emacs"
+export VISUAL="$EMACS_CLIENT_PATH -t"
 #
 # brew install `lesspipe`
 local LESSOPEN="|lesspipe.sh %s"
 export LESSOPEN
 #
-local HASKELL_STACK_PATH=$HOME/.local/bin
+local HASKELL_STACK_PATH=~/.local/bin
 export PATH=$HASKELL_STACK_PATH:$PATH
 #
-local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
+#local RBENV_GEMS_PATH=~/.rbenv/bin:~/.rbenv/shims
+local RBENV_GEMS_PATH=~/.rbenv/bin
 export PATH=$RBENV_GEMS_PATH:$PATH
-#
-local HASKELL_STACK_PATH=$HOME/.local/bin
-export PATH=$HASKELL_STACK_PATH:$PATH
+source /usr/local/opt/chruby/share/chruby/chruby.sh
 #
 local HOMEBREW_PATH=/usr/local/bin:/usr/local/sbin
-export PATH=$HOMEBREW_PATH:$PATH
+export PATH=~$HOMEBREW_PATH:$PATH
 export HOMEBREW_GITHUB_API_TOKEN="d4249153d8dd3f9a19a3a10dc370b44fda51a9ab"
 export HOMEBREW_NO_ANALYTICS=1
+#
+# opting-out dotnet's data collection!
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 #
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
-local MY_APPS_PATH=$HOME/Documents/OneDrive/Apps
+# local MATHEMATICA_PATH=/Applications/Mathematica.app/Contents/MacOS
+# export PATH=$MATHEMATICA_PATH:$PATH
+#
+local MY_APPS_PATH=~/Documents/OneDrive/Apps
 export PATH=$MY_APPS_PATH:$PATH
 export PATH=$MY_APPS_PATH/bin:$PATH
 #
-local RBENV_GEMS_PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims
-export PATH=$RBENV_GEMS_PATH:$PATH
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-#
-local SCRIPTS_PATH=$HOME/github/scripts
+local SCRIPTS_PATH=~/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
+#
+local RACKET_PATH='/Applications/Racket v6.8/bin'
+export PATH=$RACKET_PATH:$PATH
 
-### Not Export Paths
+### Paths not to be exported
 #
 local SHARED_DIR_PATH=/Users/Shared
-local WORKSPACE_PATH=$HOME/github
+local WORKSPACE_PATH=~/github
 
 ### Functions
 #
 # function cow-speaks
 # `cow speaks` a message with lolcat
 function cow-speaks () {
-  local thought=$1
-  cowthink -W80 "$thought" | lolcat
-  say-english "$thought"
+    local thought=$1
+    cowthink -W80 "$thought" | lolcat
+    say-english "$thought"
 }
 #
-# function dependencies
+# function stack-dependencies
 # prints out a png of the current Haskell project dependencies
-function dependencies () {
-  local png_name=$(basename `pwd`)
-  stack dot --no-include-base --external --depth 1 | dot -Tpng -o "$png_name"_dep.png
+function stack-dependencies () {
+    local png_name=$(basename `pwd`)
+    mkdir -p dep
+    stack dot --no-include-base --external --depth 1 | dot -Tpng -o dep/"$png_name"_dep.png
 }
 #
 # function dictionary
 # search a word in the dictionary
 function dictionary () {
-  local word=$1
-  dict "$word" | less
+    local word=$1
+    dict "$word" | less
 }
 #
 # function extract
 # extract the contents of various compressed files
 function extract () {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)  tar xjf $1      ;;
-      *.tar.gz)   tar xzf $1      ;;
-      *.bz2)      bunzip2 $1      ;;
-      *.rar)      rar x $1        ;;
-      *.gz)       gunzip $1       ;;
-      *.tar)      tar xf $1       ;;
-      *.tbz2)     tar xjf $1      ;;
-      *.tgz)      tar xzf $1      ;;
-      *.zip)      unzip $1        ;;
-      *.Z)        uncompress $1   ;;
-      *)          echo "'$1' cannot be extracted via extract()" ;;
-    esac
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)  tar xjf $1      ;;
+            *.tar.gz)   tar xzf $1      ;;
+            *.bz2)      bunzip2 $1      ;;
+            *.rar)      rar x $1        ;;
+            *.gz)       gunzip $1       ;;
+            *.tar)      tar xf $1       ;;
+            *.tbz2)     tar xjf $1      ;;
+            *.tgz)      tar xzf $1      ;;
+            *.zip)      unzip $1        ;;
+            *.Z)        uncompress $1   ;;
+            *)          echo "'$1' cannot be extracted via extract()" ;;
+        esac
   else
       echo "'$1' is not a valid file"
   fi
@@ -123,114 +128,129 @@ function extract () {
 # function fixpermissions
 # fix file and dir permissions in pwd!
 function fixpermissions() {
-  find . -type d -exec chmod 755 {} \;
-  find . -type f -exec chmod 644 {} \;
-  #xattr -rc .
+    find . -type d -exec chmod 755 {} \;
+    find . -type f -exec chmod 644 {} \;
+    xattr -rc .
 }
 #
 # function image
 # display image on console
 function image() {
-  local size=$1
-  local filename=$2
-  imgcat -w $1 $2
+    local size=$1
+    local filename=$2
+    imgcat -w $1 $2
 }
 #
 # function lc
 # `less` for source code
 function lc () {
-  local file=$1
-  src-hilite-lesspipe.sh $file | less
+    local file=$1
+    src-hilite-lesspipe.sh $file | less
 }
+#
 # function man2pdf
 # print man pages as pdf
 function man2pdf()
 {
-  local filename=$1
-  man -t "$filename" | ps2pdf -> "$filename".pdf
+    local filename=$1
+    man -t "$filename" | ps2pdf -> "$filename".pdf
 }
 #
 # function mkcd
 # mkdir and cd
 function mkcd () {
-  mkdir -p $1 && cd "$_"
+    mkdir -p $1 && cd "$_"
 }
 #
 # function mkdata
 # symlink to data
 function mkdata () {
-  ln -s $HOME/github/data `pwd`/
+    ln -s ~/playground/data `pwd`/
+}
+#
+# function mkfile
+# touch a file and create parent dirs if needed
+function mkfile () {
+    mkdir -p $( dirname "$1") && touch "$1"
 }
 #
 # function pdfmerge
 # merge pdfs
 function pdfmerge () {
-  local merged=$1
-  local tomerge=$2
-  gs -o $merged -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress $tomerge
+    local merged=$1
+    local tomerge=$2
+    gs -o $merged -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress $tomerge
+}
+#
+# function playground
+# creates a place to play :)
+function playground () {
+    cd ~
+    mkdir -p playground
+    cd playground
 }
 #
 # function sandbox
 # creates a sandbox in the system's temp folder
 function sandbox () {
-  cd $TMPDIR
-  mkdir -p sandbox
-  cd sandbox
+    cd $TMPDIR
+    mkdir -p sandbox
+    cd sandbox
 }
 #
 # function search
 # search for files given a pattern
 function search () {
-  local word=$1
-  find ./ -iname "$word" | more
+    local word=$1
+    find ./ -iname "$word" | more
 }
 #
 # function seek-and-destroy
 # search for files given a pattern and remove them
 # $ files . '.DS_Store'
 function seek-and-destroy () {
-  local dir=$1
-  local pattern=$2
-  find $dir -iname $pattern  -exec rm -ir {} \;
+    local dir=$1
+    local pattern=$2
+    find $dir -iname $pattern  -exec rm -ir {} \;
 }
 #
 # function starwars
 # watch starwars in ASCII
 function starwars () {
-  echo 'exit: CTRL + ] > CTRL + d'
-  sleep 3
-  telnet towel.blinkenlights.nl
+    echo 'exit: CTRL + ] > CTRL + d'
+    sleep 3
+    telnet towel.blinkenlights.nl
 }
 #
 # function vlc
 # open multimedia in VLC
 function vlc () {
-  /Applications/VLC.app/Contents/MacOS/VLC --no-video-deco --fullscreen "$1" 2> /dev/null
+    /Applications/VLC.app/Contents/MacOS/VLC --no-video-deco --fullscreen "$@" 2> /dev/null
 }
 #
 # function vscan
 # scan a dir or file for virus
 function vscan () {
-  local filename=$1
-  freshclam
-  clamscan -r -z "$filename"
+    local filename=$1
+    freshclam
+    clamscan -r -z "$filename"
 }
 #
 # function web
 # web browse with w3m
 function web () {
-  local site=$1
-  w3m -N -no-cookie "$1"
-  command rm -f ~/.w3m/history
+    local site=$1
+    w3m -N -no-cookie "$1"
+    command rm -f ~/.w3m/history
 }
 #
 # function webarchive
 # webarchive webpages
 function webarchive () {
-  local url=$1
-  local filename=$(basename "$1")
-  local fname="${filename%.*}"."webarchive"
-  webarchiver -url $1 -output $fname
+    local url=$1
+    local filename=$(basename "$1")
+    local fname="${filename%.*}"."webarchive"
+    webarchiver -url $1 -output $fname
 }
 
 ### Bindings
@@ -264,10 +284,11 @@ alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
-alias nemesis='stack runhaskell Nemesis 2> /dev/null'
+alias nemesis='stack runhaskell Nemesis --silent'
 alias oldies='mplayer http://80.237.154.83:8120'
-alias osx-dictionary-cli='~/.emacs.d/elpa/osx-dictionary-20161207.810/osx-dictionary-cli'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
+alias preview='open -a /Applications/Preview.app -g'
+alias psafari='open /Applications/Private-Safari.app'
 alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
 alias rbprof='ruby -w -r profile'
@@ -275,6 +296,7 @@ alias reload='source ~/.zshrc'
 alias safari='open /Applications/Safari.app'
 alias soffice='/Applications/LibreOffice.app/Contents/MacOS/soffice'
 alias sq3='sqlite3'
+alias ssaver='mac screensaver'
 alias topdf='soffice --headless --convert-to pdf'
 alias tree='tree -C'
 alias unzip='unzip -qq'
@@ -284,19 +306,23 @@ alias zip='zip -qrT'
 #
 ### Folders
 #
-alias apps="cd $HOME/Documents/OneDrive/Apps/bin"
-alias art="cd $HOME/github/dotfiles/emacs.d/art"
-alias data="cd $HOME/github/data"
-alias desktop="cd $HOME/Desktop"
-alias documents="cd $HOME/Documents"
-alias downloads="cd $HOME/Downloads"
-alias github="cd $HOME/github"
-alias media="cd $HOME/Music/iTunes/iTunes\ Media"
-alias movies="cd $HOME/Movies"
-alias pictures="cd $HOME/Pictures"
-alias shared="cd $SHARED_DIR_PATH"
-alias workspace="cd $WORKSPACE_PATH"
-alias thesis="cd ~/Documents/Google\ Drive/work/auv/thesis/thesis"
+alias apps="~/Documents/OneDrive/Apps/bin"
+alias art="~/github/dotfiles/emacs.d/art"
+alias d3s="~/Documents/d3s"
+alias data="~/playground/data"
+alias desktop="~/Desktop"
+alias documents="~/Documents"
+alias downloads="~/Downloads"
+alias github="~/github"
+alias media="~/Music/iTunes/iTunes\ Media"
+alias movies="~/Movies"
+alias pictures="~/Pictures"
+alias shared="$SHARED_DIR_PATH"
+alias thesis="~/Documents/Google\ Drive/work/auv/thesis/thesis"
+alias workspace="$WORKSPACE_PATH"
+#
+alias latex-docs="~/Documents/GoogleDrive/latex"
+alias rmbd-emacs-repo="~/github/dotfiles/emacs.d/rmbd"
 #
 ### Sub-menus
 #
@@ -308,8 +334,8 @@ alias remove-ds-store='find . -name .DS_Store -delete'
 alias remove-emacs-byte-compiled-mods="cd ~/.emacs.d ; find . -name '*.elc' | xargs rm"
 #
 # date
-alias date-utc='gdate -u --iso-8601=ns'
 alias date-local='gdate --iso-8601=ns'
+alias date-utc='gdate -u --iso-8601=ns'
 #
 # emacs
 alias e='emacsclient -t'
@@ -320,55 +346,101 @@ alias emacs-reload='emacs-kill && emacs-daemon'
 alias emacs-script='emacs --script'
 alias emacs-terminal='emacsclient -t'
 #
+alias emacs-cpp='emacsclient -t *.lua **/*.h **/*.cpp'
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
+alias emacs-latex='emacsclient -t TODO.org **/*.tex **/*.sty Nemesis.hs'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
-alias emacs-latex='emacsclient -t TODO.org **/*.tex'
-#
-# folders
-alias latex-docs='cd ~/Documents/Google\ Drive/latex'
-alias rmbd-emacs-repo='cd ~/github/dotfiles/emacs.d/rmbd'
 #
 # get-gitignores
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
+alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
+#
+# get-lamport (pf2.sty)
+alias get-lamport='cp ~/playground/lamport/pf2.sty pf2.sty'
+#
+# markdown files with multiple .mds included
+alias pandoc-md='pandoc --filter pandoc-include'
+#
+# stack (haskell)
+alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o'
+alias stack-dep-external='stack dot | dot -Tpng -o'
+alias stack-dep='stack dot | dot -Tpng -o'
+alias stack-ghci='stack ghci'
+alias stack-script='stack runghc --silent'
 #
 # hoogle
 alias hoogle='hoogle --color --count=100'
 alias hoogle-info='hoogle --info'
 #
 # mail
-alias mail-gmail='open https://studmail.unileoben.ac.at'
-alias mail-hotmail='open https://studmail.unileoben.ac.at'
-alias mail-uni='open https://studmail.unileoben.ac.at'
+alias mail-gmail='open https://www.gmail.com'
+alias mail-hotmail='open https://www.hotmail.com'
 #
 # mathematica
-alias math-cli='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
+alias math='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias math-gui='open /Applications/Mathematica.app'
+alias wolframscript='/Applications/Mathematica.app/Contents/MacOS/WolframScript -script'
+#
+# PDFs
+alias pdf-preview='open -a /Applications/Preview.app'
+alias pdf-skim='open -a /Applications/Skim.app'
+#
+# premake5 ('make' for C++ projects)
+alias premake-cpp='premake5 --cc=clang --dc=ldc --fatal --os=macosx gmake && cd .build && make && cd ..'
 #
 # readers
 alias say-english='say -v Samantha'
 alias say-german='say -v Anna'
 alias say-spanish='say -v Paulina'
 #
+# searches
+alias search-string="grep -irn './' -e"
+#
+# translate
+alias trans-to-english='trans -b es:en'
+alias trans-to-spanish='trans -b en:es'
+#
 # web links
+alias duck='web www.duckduckgo.com'
+#
 alias web-duck='web www.duckduckgo.com'
 alias web-facebook='open https://www.facebook.com'
 alias web-google='open https://www.google.com'
-alias web-mul='open http://www.unileoben.ac.at'
-alias web-muonline='open https://online.unileoben.ac.at/mu_online/webnav.ini'
 alias web-wolfram='open http://www.wolframalpha.com'
 alias web-youtube='open https://www.youtube.com'
 #
 # youtube-dl
-alias yt-audio='youtube-dl -citk -f m4a'
-alias yt-video='youtube-dl -citk -f mp4'
+alias audio='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" -f m4a'
+alias video='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
+#
+### special alias to quickly end a sh session
+#
+alias q='exit'
+
 
 ### Suffix aliases
 #
+alias -s hs='stack runghc'
+alias -s log='open'
 alias -s pdf='open'
 alias -s sublime-project='sublime --project'
 alias -s xcodeproj='open'
+alias -s tex='xelatex'
+
+### stack autocompletion
+# compinit loaded by oh-my-zsh
+#
+#autoload -U +X compinit  && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
 
 ### Fish syntax highlightning
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### rbenv (ruby) stuff
+#
+eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

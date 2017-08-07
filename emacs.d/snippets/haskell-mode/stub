@@ -1,7 +1,12 @@
--- Design by assumption
+# -*- mode: snippet -*-
+# name: stub
+# key: stub
+# --
 -- | ${1:purpose}
+--
+-- Examples:
+-- >>> $2 $6
+-- $7
+--
 ${2:identifier} :: ${3:ins-types} -> ${4:out-type}
 $2 ${5:args} = undefined
---
--- quickCheck ($2 $6 == $7)
--- quickCheck ($2 $6 /= $8)

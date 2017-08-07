@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: xleft
+# key: xleft
+# --
+\xleftarrow[${1:below}]{${2:above}}
