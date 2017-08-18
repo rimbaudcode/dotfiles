@@ -67,7 +67,7 @@
  '(haskell-indentation-show-indentations t)
  '(haskell-interactive-prompt "\\> ")
  '(haskell-literate-default (quote tex))
- '(haskell-mode-hook (quote (turn-on-haskell-indentation intero-mode)))
+ '(haskell-mode-hook (quote (turn-on-haskell-indentation intero-mode)) t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
@@ -128,7 +128,7 @@
      #[nil "\300\301!\207"
            [org-bullets-mode 1]
            2]
-     visual-line-mode)))
+     visual-line-mode)) t)
  '(org-src-preserve-indentation t)
  '(org-support-shift-select (quote always))
  '(osx-clipboard-mode nil)
@@ -138,7 +138,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (wolfram-mode geiser csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (purescript-mode wolfram-mode geiser csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prog-mode-hook nil)
  '(proof-splash-enable nil)
@@ -316,6 +316,16 @@
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+;;
+;; purescript
+(require 'psc-ide)
+;;
+(add-hook 'purescript-mode-hook
+          (lambda ()
+            (psc-ide-mode)
+            (company-mode)
+            (flycheck-mode)
+            (turn-on-purescript-indentation)))
 ;;
 (provide 'emacs)
 ;;; init.el ends here
