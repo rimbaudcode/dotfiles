@@ -318,7 +318,7 @@
 (put 'narrow-to-region 'disabled nil)
 ;;
 ;; purescript
-(require 'psc-ide)
+;;(require 'psc-ide)
 ;;
 (add-hook 'purescript-mode-hook
           (lambda ()
