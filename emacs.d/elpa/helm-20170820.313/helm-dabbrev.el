@@ -42,7 +42,7 @@ Have no effect when `helm-dabbrev-always-search-all' is non--nil."
   :group 'helm-dabbrev
   :type 'integer)
 
-(defcustom helm-dabbrev-candidates-number-limit 500
+(defcustom helm-dabbrev-candidates-number-limit 600
   "Maximum number of candidates to collect before stopping.
 Higher this number is slower the computation of candidates will be."
   :group 'helm-dabbrev
@@ -101,6 +101,14 @@ but the initial search for all candidates in buffer(s)."
           (const :tag "Respect case" nil)
           (other :tag "Smart" 'smart)))
 
+(defvar helm-dabbrev-separator-regexp "\\s-\\|\t\\|[(\[\{\"'`=<$;,@.#+]\\|\\s\\\\|^"
+  "Regexp matching the start of a dabbrev candidate.")
+(defvaralias 'helm-dabbrev--regexp 'helm-dabbrev-separator-regexp)
+(make-obsolete-variable 'helm-dabbrev--regexp 'helm-dabbrev-separator-regexp "2.8.3")
+
+(defvar helm-dabbrev-cache-candidates nil
+  "When non-nil cache candidates.
+This is experimental and not fully working, you should not use this.")
 
 (defvar helm-dabbrev-map
   (let ((map (make-sparse-keymap)))
@@ -113,7 +121,7 @@ but the initial search for all candidates in buffer(s)."
 (defvar helm-dabbrev--exclude-current-buffer-flag nil)
 (defvar helm-dabbrev--cache nil)
 (defvar helm-dabbrev--data nil)
-(defvar helm-dabbrev--regexp "\\s-\\|\t\\|[(\[\{\"'`=<$;,@.#+]\\|\\s\\\\|^")
+(defvar helm-dabbrev--hash (make-hash-table :test 'equal))
 (cl-defstruct helm-dabbrev-info dabbrev limits iterator)
 
 
@@ -154,21 +162,10 @@ but the initial search for all candidates in buffer(s)."
                             (setq pos-before pos)
                             (search-backward pattern pos t))))
               (let* ((pbeg (match-beginning 0))
-                     (replace-regexp (concat "\\(" helm-dabbrev--regexp
+                     (replace-regexp (concat "\\(" helm-dabbrev-separator-regexp
                                              "\\)\\'"))
-                     (match-word (save-excursion
-                                   (goto-char (1- pbeg))
-                                   (when (re-search-forward
-                                          (concat "\\("
-                                                  helm-dabbrev--regexp
-                                                  "\\)"
-                                                  "\\(?99:\\("
-                                                  (regexp-quote pattern)
-                                                  "\\(\\sw\\|\\s_\\)+\\)\\)")
-                                          (point-at-eol) t)
-                                     (replace-regexp-in-string
-                                      replace-regexp ""
-                                      (match-string-no-properties 99))))))
+                     (match-word (helm--dabbrev--search
+                                  pattern pbeg replace-regexp)))
                 (unless (member match-word result)
                   (push match-word result)))))))
     (cl-loop for buf in (if all (helm-dabbrev--buffer-list)
@@ -197,6 +194,21 @@ but the initial search for all candidates in buffer(s)."
              when (> (length result) limit) return (nreverse result)
              finally return (nreverse result))))
 
+(defun helm--dabbrev--search (pattern beg sep-regexp)
+  (save-excursion
+    (goto-char (1- beg))
+    (when (re-search-forward
+           (concat "\\("
+                   helm-dabbrev-separator-regexp
+                   "\\)"
+                   "\\(?99:\\("
+                   (regexp-quote pattern)
+                   "\\(\\sw\\|\\s_\\)+\\)\\)")
+           (point-at-eol) t)
+      (replace-regexp-in-string
+       sep-regexp ""
+       (match-string-no-properties 99)))))
+
 (defun helm-dabbrev--get-candidates (abbrev)
   (cl-assert abbrev nil "[No Match]")
   (with-current-buffer (current-buffer)
@@ -218,7 +230,7 @@ but the initial search for all candidates in buffer(s)."
 (defun helm-dabbrev-default-action (candidate)
   (with-helm-current-buffer
     (let* ((limits (helm-bounds-of-thing-before-point
-                    helm-dabbrev--regexp))
+                    helm-dabbrev-separator-regexp))
            (beg (car limits))
            (end (point)))
       (run-with-timer
@@ -226,12 +238,39 @@ but the initial search for all candidates in buffer(s)."
        'helm-insert-completion-at-point
        beg end candidate))))
 
+(defun helm-dabbrev--cache-data (dabbrev)
+  (if helm-dabbrev-cache-candidates
+      ;; FIXME: When using caching, if user add new data to some
+      ;; buffer it will not be present in cache so I have to set tick
+      ;; for each buffer and refresh cache if one buffer have been
+      ;; modified, ideally only the data for modified buffers should
+      ;; be updated.
+      (progn
+        (cl-assert dabbrev nil "[No Match]")
+        (unless (string= dabbrev "")
+          (or (cl-loop for count downfrom (length dabbrev) to 1
+                       when (gethash (substring-no-properties dabbrev 0 count)
+                                     helm-dabbrev--hash)
+                       return it)
+              (puthash dabbrev (helm-dabbrev--get-candidates dabbrev)
+                       helm-dabbrev--hash))))
+    (helm-dabbrev--get-candidates dabbrev)))
+
+(defun helm-dabbrev--get-candidates-info (dabbrev)
+  (if helm-dabbrev-cache-candidates
+      ;; Find only the first `helm-dabbrev-cycle-threshold' candidates.
+      ;; FIXME: try to find one half of candidates before and the other
+      ;; half after when there is a lot of data before and after.
+      (let ((helm-dabbrev-candidates-number-limit helm-dabbrev-cycle-threshold))
+        (helm-dabbrev--get-candidates dabbrev))
+    helm-dabbrev--cache))
+
 ;;;###autoload
 (defun helm-dabbrev ()
   "Preconfigured helm for dynamic abbreviations."
   (interactive)
-  (let ((dabbrev (helm-thing-before-point nil helm-dabbrev--regexp))
-        (limits (helm-bounds-of-thing-before-point helm-dabbrev--regexp))
+  (let ((dabbrev (helm-thing-before-point nil helm-dabbrev-separator-regexp))
+        (limits (helm-bounds-of-thing-before-point helm-dabbrev-separator-regexp))
         (enable-recursive-minibuffers t)
         (cycling-disabled-p (or (null helm-dabbrev-cycle-threshold)
                                 (zerop helm-dabbrev-cycle-threshold)))
@@ -249,19 +288,19 @@ but the initial search for all candidates in buffer(s)."
            (not (eq last-command 'helm-dabbrev)))
       (setq helm-dabbrev--data nil))
     (when cycling-disabled-p
-      (setq helm-dabbrev--cache (helm-dabbrev--get-candidates dabbrev)))
+      (setq helm-dabbrev--cache (helm-dabbrev--cache-data dabbrev)))
     (unless (or cycling-disabled-p
                 (helm-dabbrev-info-p helm-dabbrev--data))
-      (setq helm-dabbrev--cache (helm-dabbrev--get-candidates dabbrev))
+      (setq helm-dabbrev--cache (helm-dabbrev--cache-data dabbrev))
       (setq helm-dabbrev--data
             (make-helm-dabbrev-info
              :dabbrev dabbrev
              :limits limits
              :iterator
              (helm-iter-list
-              (cl-loop for i in helm-dabbrev--cache when
-                       (and i (string-match
-                               (concat "^" (regexp-quote dabbrev)) i))
+              (cl-loop for i in (helm-dabbrev--get-candidates-info dabbrev)
+                       when (and i (string-match
+                                    (concat "^" (regexp-quote dabbrev)) i))
                        collect i into selection
                        when (and selection
                                  (= (length selection)

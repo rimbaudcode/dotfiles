@@ -636,9 +636,10 @@ inherit from `helm-source'.")
     :initform nil
     :custom (choice list string)
     :documentation
-    "  A string or a list that will be used to feed the `helm-candidates-buffer'.
+    "  A string, a list or a buffer that will be used to feed the `helm-candidates-buffer'.
   This data will be passed in a function added to the init slot and
-  the buffer will be build with `helm-init-candidates-in-buffer'.
+  the buffer will be build with `helm-init-candidates-in-buffer' or directly
+  with `helm-candidates-buffer' if data is a buffer.
   This is an easy and fast method to build a `candidates-in-buffer' source.")
 
    (migemo
@@ -968,7 +969,10 @@ an eieio class."
                 (lambda ()
                   (helm-init-candidates-in-buffer
                       'global
-                    (if (functionp it) (funcall it) it))))))))
+                    (cond ((functionp it) (funcall it))
+                          ((and (bufferp it) (buffer-live-p it))
+                           (with-current-buffer it (buffer-string)))
+                          (t it)))))))))
   (when (slot-value source 'fuzzy-match)
     (helm-aif (slot-value source 'search)
         (setf (slot-value source 'search)
