@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: mr
-# key: mr
+# name: mrow
+# key: mrow
 # --
 \multirow{$1}{*}{$2}
