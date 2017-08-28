@@ -68,9 +68,22 @@ active when `geiser-mode' is activated in a buffer."
   :type 'boolean)
 
 (geiser-custom--defcustom geiser-mode-eval-to-buffer-prefix " "
-  "When `geiser-mode-eval-last-sexp-to-buffer', the prefix string which will prepend to results"
+  "When `geiser-mode-eval-last-sexp-to-buffer', the prefix string
+which will be prepended to results."
   :group 'geiser-mode
   :type 'string)
+
+(geiser-custom--defcustom geiser-mode-eval-to-buffer-transformer nil
+  "Transformer for results inserted in debug buffer.
+
+When `geiser-mode-eval-last-sexp-to-buffer', the result will be
+transformed using this function default behavior is just prepend
+with `geiser-mode-eval-to-buffer-prefix' takes two arguments:
+`msg' and `is-error?'  `msg' is the result string going to be
+transformed, `is-error?' is a boolean indicating whether the
+result is an error msg."
+  :group 'geiser-mode
+  :type 'function)
 
 
 
@@ -149,6 +162,12 @@ With a prefix, revert the effect of `geiser-mode-eval-last-sexp-to-buffer' "
                                  (setq bosexp (point))
                                  (forward-sexp)
                                  (point)))
+	 (ret-transformer (or geiser-mode-eval-to-buffer-transformer
+			      (lambda (msg is-error?)
+				(format "%s%s%s"
+                                        geiser-mode-eval-to-buffer-prefix
+					(if is-error? "ERROR" "")
+                                        msg))))
          (ret (save-excursion
                 (geiser-eval-region bosexp ;beginning of sexp
                                     eosexp ;end of sexp
@@ -159,14 +178,14 @@ With a prefix, revert the effect of `geiser-mode-eval-last-sexp-to-buffer' "
 	 (will-eval-to-buffer (if print-to-buffer-p
 				  (not geiser-mode-eval-last-sexp-to-buffer)
 				geiser-mode-eval-last-sexp-to-buffer))
-	 (str (geiser-eval--retort-result-str ret (when will-eval-to-buffer ""))))
+	 (str (geiser-eval--retort-result-str ret
+                                              (when will-eval-to-buffer ""))))
     (cond  ((not will-eval-to-buffer) str)
-	   (err (insert (format "%sERROR:%s"
-                                geiser-mode-eval-to-buffer-prefix
-                                (geiser-eval--error-str err))))
+	   (err (insert (funcall ret-transformer
+                                 (geiser-eval--error-str err) t)))
 	   ((string= "" str))
 	   (t (push-mark)
-              (insert (format "%s%s" geiser-mode-eval-to-buffer-prefix str))))))
+              (insert (funcall ret-transformer str nil))))))
 
 (defun geiser-compile-definition (&optional and-go)
   "Compile the current definition in the Geiser REPL.

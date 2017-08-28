@@ -30,11 +30,37 @@
 
   (define (geiser:eval module form . rest)
     rest
-    (let ((result (if module
-                      (eval form (environment module))
-                      (eval form))))
-      (write `((result ,(write-to-string result))
-               (output . "")))
+    (let* ((body (lambda ()
+		   (if module
+		       (eval form (environment module))
+		       (eval form))))
+	   (gen-result (lambda (result-mid is-error?)
+			 (if is-error?
+			     `((result "")
+			       (output . "")
+			       (error . ,(list
+					(cons 'key
+					      (with-output-to-string
+						(lambda ()
+						  (display-condition result-mid)))))))
+			     `((result ,(with-output-to-string
+					  (lambda ()
+					    (pretty-print result-mid))))
+			       (output . "")))))
+	   (result (call/cc
+		    (lambda (k)
+		      (with-exception-handler
+			  (lambda (e)
+			    (k (gen-result e #t)))
+			(lambda ()
+			  (call-with-values
+			      (lambda ()
+				(body))
+			    (lambda (x . y)
+			      (if (null? y)
+				  (k (gen-result x #f))
+				  (k (gen-result (cons x y) #f)))))))))))
+      (write result)
       (newline)))
 
   (define (geiser:module-completions prefix . rest)
