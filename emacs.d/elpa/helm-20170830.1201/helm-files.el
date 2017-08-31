@@ -63,11 +63,18 @@
 
 (defcustom helm-boring-file-regexp-list
   (mapcar (lambda (f)
-            (let ((rx (rx-to-string f t))) 
+            (let ((rgx (regexp-quote f))) 
               (if (string-match-p "[^/]$" f)
-                  (concat rx "$") rx)))
+                  ;; files: e.g .o => \\.o$
+                  (concat rgx "$")
+                ;; directories: e.g .git/ => \\.git/\\|\\.git$
+                (format "%s\\|%s"
+                        rgx
+                        (concat (substring
+                                 rgx 0 (1- (length rgx))) "$")))))
           completion-ignored-extensions)
-  "The regexp list matching boring files.
+  "A list of regexps matching boring files.
+
 This list is build by default on `completion-ignored-extensions'."
   :group 'helm-files
   :type  '(repeat (choice regexp)))
@@ -192,9 +199,12 @@ WARNING: Setting this to nil is unsafe and can cause deletion of a whole tree."
   :type 'boolean)
 
 (defcustom helm-ff-skip-boring-files nil
-  "Non--nil to skip files matching regexps in `helm-boring-file-regexp-list'.
+  "Non--nil to skip files matching regexps in
+`helm-boring-file-regexp-list'.
+
 This take effect in `helm-find-files' and file completion used by `helm-mode'
-i.e `helm-read-file-name'."
+i.e `helm-read-file-name'.
+Note that when non-nil this will slow down slightly `helm-find-files'."
   :group 'helm-files
   :type  'boolean)
 
@@ -585,8 +595,12 @@ Should not be used among other sources.")
                 (helm-set-local-variable 'bookmark-make-record-function
                                          #'helm-ff-make-bookmark-record)))
    (candidates :initform 'helm-find-files-get-candidates)
-   (filtered-candidate-transformer :initform 'helm-ff-sort-candidates)
-   (filter-one-by-one :initform 'helm-ff-filter-candidate-one-by-one)
+   (filtered-candidate-transformer
+    :initform '(helm-ff-sort-candidates
+                (lambda (candidates _source)
+                  (cl-loop for f in candidates
+                           for ff = (helm-ff-filter-candidate-one-by-one f)
+                           when ff collect ff))))
    (persistent-action :initform 'helm-find-files-persistent-action)
    (persistent-help :initform "Hit1 Expand Candidate, Hit2 or (C-u) Find file")
    (help-message :initform 'helm-ff-help-message)
@@ -2511,15 +2525,18 @@ Return candidates prefixed with basename of `helm-input' first."
                                     ((> sc1 sc2))))))))
         (if cand1 (cons cand1 all) all))))
 
+(defsubst helm-ff-boring-file-p (file)
+  (and (not (string-match "\\.$" file))
+       (cl-loop for r in helm-boring-file-regexp-list
+                ;; Prevent user doing silly thing like
+                ;; adding the dotted files to boring regexps (#924).
+                thereis (string-match r file))))
+
 (defun helm-ff-filter-candidate-one-by-one (file)
   "`filter-one-by-one' Transformer function for `helm-source-find-files'."
   ;; Handle boring files
   (unless (and helm-ff-skip-boring-files
-               (cl-loop for r in helm-boring-file-regexp-list
-                        ;; Prevent user doing silly thing like
-                        ;; adding the dotted files to boring regexps (#924).
-                        thereis (and (not (string-match "\\.$" file))
-                                     (string-match r file))))
+               (helm-ff-boring-file-p file))
     ;; Handle tramp files.
     (if (and (or (string-match-p helm-tramp-file-name-regexp helm-pattern)
                  (helm-file-on-mounted-network-p helm-pattern))
