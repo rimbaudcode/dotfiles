@@ -436,12 +436,12 @@ alias -s tex='xelatex'
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script stack)"
 
-### Fish syntax highlightning
-#
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ### rbenv (ruby) stuff
 #
 eval "$(rbenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+### Fish syntax highlightning
+#
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
