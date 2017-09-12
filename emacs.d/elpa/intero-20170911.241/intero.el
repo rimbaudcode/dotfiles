@@ -11,7 +11,7 @@
 ;; Author: Chris Done <chrisdone@fpcomplete.com>
 ;; Maintainer: Chris Done <chrisdone@fpcomplete.com>
 ;; URL: https://github.com/commercialhaskell/intero
-;; Package-Version: 20170909.1116
+;; Package-Version: 20170911.241
 ;; Created: 3rd June 2016
 ;; Version: 0.1.13
 ;; Keywords: haskell, tools
@@ -1111,7 +1111,7 @@ be activated after evaluation.  PROMPT-OPTIONS are passed to
 If PROMPT-OPTIONS is non-nil, prompt with an options list."
   (interactive "P")
   (save-buffer)
-  (let ((file (intero-localize-path (intero-temp-file-name))))
+  (let ((file (intero-localize-path (intero-buffer-file-name))))
     (intero-with-repl-buffer prompt-options
       (comint-simple-send
        (get-buffer-process (current-buffer))
