@@ -745,10 +745,15 @@ This reproduce the behavior of \"cp --backup=numbered from to\"."
   (helm-find-files-do-action 'hardlink))
 
 (defun helm-find-files-other-window (_candidate)
-  "Keep current-buffer and open files in separate windows."
-  (let* ((files (helm-marked-candidates))
-         (buffers (mapcar 'find-file-noselect files)))
-    (helm-switch-to-buffer-other-window (car buffers))
+  "Keep current-buffer and open files in separate windows.
+When a prefix arg is detected files are opened in a vertical windows
+layout."
+  (let* ((files         (helm-marked-candidates))
+         (buffers       (mapcar 'find-file-noselect files))
+         (initial-ow-fn (if (cdr (window-list))
+                           #'switch-to-buffer-other-window
+                         #'helm-switch-to-buffer-other-window)))
+    (funcall initial-ow-fn (car buffers))
     (helm-aif (cdr buffers)
         (save-selected-window
           (cl-loop for buffer in it
@@ -1457,7 +1462,8 @@ Behave differently depending of `helm-selection':
 (put 'helm-ff-run-switch-to-eshell 'helm-only t)
 
 (defun helm-ff-run-switch-other-window ()
-  "Run switch to other window action from `helm-source-find-files'."
+  "Run switch to other window action from `helm-source-find-files'.
+When a prefix arg is provided, split is done vertically."
   (interactive)
   (with-helm-alive-p
     (helm-exit-and-execute-action 'helm-find-files-other-window)))
