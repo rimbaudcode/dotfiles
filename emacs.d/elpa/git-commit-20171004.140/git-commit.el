@@ -12,7 +12,7 @@
 ;; Maintainer: Jonas Bernoulli <jonas@bernoul.li>
 
 ;; Package-Requires: ((emacs "24.4") (dash "20170810") (with-editor "20170817"))
-;; Package-Version: 20171002.743
+;; Package-Version: 20171004.140
 ;; Keywords: git tools vc
 ;; Homepage: https://github.com/magit/magit
 
@@ -279,7 +279,7 @@ already using it, then you probably shouldn't start doing so."
 
 (defface git-commit-pseudo-header
   '((t :inherit font-lock-string-face))
-  "Font used for pseudo headers in commit messages."
+  "Face used for pseudo headers in commit messages."
   :group 'git-commit-faces)
 
 (defface git-commit-known-pseudo-header
@@ -667,7 +667,9 @@ With a numeric prefix ARG, go forward ARG comments."
     "Untracked files:"
     "Changed but not updated:"
     "Changes not staged for commit:"
-    "Unmerged paths:"))
+    "Unmerged paths:"
+    "Author:"
+    "Date:"))
 
 (defun git-commit-summary-regexp ()
   (concat
