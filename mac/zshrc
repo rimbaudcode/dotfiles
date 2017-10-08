@@ -57,6 +57,9 @@ export HOMEBREW_NO_ANALYTICS=1
 # opting-out dotnet's data collection!
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 #
+# anaconda loaded on demand with function load-conda() (see below
+local JUPYTER_PATH=~/anaconda3/bin
+#
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
@@ -146,6 +149,15 @@ function image() {
 function lc () {
     local file=$1
     src-hilite-lesspipe.sh $file | less
+}
+#
+# function load-conda
+# anaconda "confuses" homebrew. so it needs to be loaded
+# on demand
+#
+function load-conda() {
+    export PATH=$JUPYTER_PATH:$PATH
+    source ~/.zshrc
 }
 #
 # function man2pdf
@@ -355,6 +367,7 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 # get-gitignores
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
+alias get-python-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
 # get-lamport (pf2.sty)
