@@ -129,7 +129,7 @@
 	     ((:url . "http://elpa.gnu.org/packages/caps-lock.html")
 	      (:keywords))])
  (captain .
-	  [(1 0 1)
+	  [(1 0 2)
 	   nil "CAPiTalization is Automatic IN emacs" single
 	   ((:url . "http://elpa.gnu.org/packages/captain.html")
 	    (:keywords "editing"))])
