@@ -362,6 +362,7 @@ alias emacs-terminal='emacsclient -t'
 alias emacs-cpp='emacsclient -t *.lua **/*.h **/*.cpp'
 alias emacs-haskell='emacsclient -t *.org *.cabal **/*.hs README.md'
 alias emacs-latex='emacsclient -t TODO.org **/*.tex **/*.sty Nemesis.hs'
+alias emacs-python='emacsclient -t *.org **/*.py README.md'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 #
 # get-gitignores
