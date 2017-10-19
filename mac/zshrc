@@ -234,6 +234,13 @@ function starwars () {
     telnet towel.blinkenlights.nl
 }
 #
+# function tensorflow
+# activate tensorflow environment in conda
+function tensorflow () {
+    load-conda
+    source activate tensorflow
+}
+#
 # function vlc
 # open multimedia in VLC
 function vlc () {

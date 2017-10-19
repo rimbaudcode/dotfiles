@@ -2,6 +2,6 @@
 # name: listing
 # key: listing
 # --
-\begin{lstlisting}
-  $0
+\begin{lstlisting}[mathescape=true]
+$0
 \end{lstlisting}

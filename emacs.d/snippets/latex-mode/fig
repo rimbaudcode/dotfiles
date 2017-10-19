@@ -4,6 +4,7 @@
 # --
 \begin{figure}[bt]
   \capstart\centering
-  \includegraphics[angle=0,width=0.45\textwidth]{graph/$1}
-  \caption{$2}\label{fig:$3}
+  \includegraphics[angle=0,width=0.45\textwidth]
+      {graph/$1}
+  \caption{$2}\label{fig:$1}
 \end{figure}
