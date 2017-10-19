@@ -75,6 +75,10 @@ export PATH=$SCRIPTS_PATH:$PATH
 #
 local RACKET_PATH='/Applications/Racket v6.8/bin'
 export PATH=$RACKET_PATH:$PATH
+#
+# silence tensorflow warnings
+# https://github.com/tensorflow/tensorflow/issues/7778
+export TF_CPP_MIN_LOG_LEVEL=2
 
 ### Paths not to be exported
 #
