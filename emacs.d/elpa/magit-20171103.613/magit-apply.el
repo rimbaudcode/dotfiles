@@ -209,7 +209,7 @@ at point, stage the file but not its content."
         (`(unstaged   hunks) (magit-apply-hunks  it "--cached"))
         (`(unstaged    file) (magit-stage-1 "-u" (list (magit-section-value it))))
         (`(unstaged   files) (magit-stage-1 "-u" (magit-region-values nil t)))
-        (`(unstaged    list) (magit-stage-1 "-u"))
+        (`(unstaged    list) (magit-stage-modified))
         (`(staged        ,_) (user-error "Already staged"))
         (`(committed     ,_) (user-error "Cannot stage committed changes"))
         (`(undefined     ,_) (user-error "Cannot stage this change")))
@@ -240,12 +240,11 @@ requiring confirmation."
 Stage all new content of tracked files and remove tracked files
 that no longer exist in the working tree from the index also.
 With a prefix argument also stage previously untracked (but not
-ignored) files.
-\('git add --update|--all .')."
-  (interactive (progn (unless (or (not (magit-anything-staged-p))
-                                  (magit-confirm 'stage-all-changes))
-                        (user-error "Abort"))
-                      (list current-prefix-arg)))
+ignored) files."
+  (interactive "P")
+  (when (magit-anything-staged-p)
+    (unless (magit-confirm 'stage-all-changes)
+      (user-error "Abort")))
   (magit-with-toplevel
     (magit-stage-1 (if all "--all" "-u"))))
 
@@ -337,12 +336,13 @@ without requiring confirmation."
 (defun magit-unstage-all ()
   "Remove all changes from the staging area."
   (interactive)
-  (when (or (and (not (magit-anything-unstaged-p))
-                 (not (magit-untracked-files)))
-            (magit-confirm 'unstage-all-changes))
-    (magit-wip-commit-before-change nil " before unstage")
-    (magit-run-git "reset" "HEAD" "--")
-    (magit-wip-commit-after-apply nil " after unstage")))
+  (when (or (magit-anything-unstaged-p)
+            (magit-untracked-files))
+    (unless (magit-confirm 'unstage-all-changes)
+      (user-error "Abort")))
+  (magit-wip-commit-before-change nil " before unstage")
+  (magit-run-git "reset" "HEAD" "--")
+  (magit-wip-commit-after-apply nil " after unstage"))
 
 ;;;; Discard
 
