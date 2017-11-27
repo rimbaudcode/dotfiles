@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "counsel" "counsel.el" (23064 42834 641163
-;;;;;;  375000))
+;;;### (autoloads nil "counsel" "counsel.el" (23067 33783 847260
+;;;;;;  94000))
 ;;; Generated autoloads from counsel.el
 
 (autoload 'counsel-el "counsel" "\
@@ -258,6 +258,11 @@ Go to a different location in any org file.
 
 (autoload 'counsel-org-file "counsel" "\
 Browse all attachments for current Org file.
+
+\(fn)" t nil)
+
+(autoload 'counsel-org-capture "counsel" "\
+Capture something.
 
 \(fn)" t nil)
 
