@@ -3,12 +3,12 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org-bullets" "org-bullets.el" (22593 59202
-;;;;;;  0 0))
+;;;### (autoloads nil "org-bullets" "org-bullets.el" (23068 14159
+;;;;;;  417387 518000))
 ;;; Generated autoloads from org-bullets.el
 
 (autoload 'org-bullets-mode "org-bullets" "\
-UTF8 Bullets for org-mode
+Use UTF8 bullets in Org mode headings.
 
 \(fn &optional ARG)" t nil)
 
