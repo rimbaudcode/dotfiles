@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: shade
+# key: shade
+# --
+\shade{$0}

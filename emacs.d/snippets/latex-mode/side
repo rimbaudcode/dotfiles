@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: side
+# key: side
+# --
+\sidenote{$0}
