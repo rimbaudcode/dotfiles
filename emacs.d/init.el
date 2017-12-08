@@ -313,6 +313,9 @@
 ;; associate Mathematica .wls files to wolframmode
 (add-to-list 'auto-mode-alist '("\\.wls\\'" . wolfram-mode))
 ;;
+;; associate Tex .tex files to latex-mode
+(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
+;;
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
