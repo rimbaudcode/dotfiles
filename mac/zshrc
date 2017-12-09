@@ -70,6 +70,13 @@ local MY_APPS_PATH=~/Documents/OneDrive/Apps
 export PATH=$MY_APPS_PATH:$PATH
 export PATH=$MY_APPS_PATH/bin:$PATH
 #
+# g95 path
+local G95_BIN_PATH=~/Documents/OneDrive/Apps/g95-install/bin
+export PATH=$G95_BIN_PATH:$PATH
+#
+local G95_LIB_PATH=~/Documents/OneDrive/Apps/g95-install/lib/gcc-lib/i686-apple-darwin10.3.0/4.1.2
+export PATH=$G95_LIB_PATH:$PATH
+#
 local SCRIPTS_PATH=~/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
 #
