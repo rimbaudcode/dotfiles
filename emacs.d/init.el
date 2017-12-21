@@ -83,6 +83,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(intero-global-mode t nil (intero))
+ '(intero-stack-executable "stack")
  '(ispell-personal-dictionary nil)
  '(ivy-display-style nil)
  '(ivy-mode t)
@@ -319,6 +320,10 @@
 ;; added at the end of file by Emacs customization
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+;;
+;; intero complaining
+(package-install 'intero)
+(add-hook 'haskell-mode-hook 'intero-mode)
 ;;
 ;; purescript
 ;;(require 'psc-ide)
