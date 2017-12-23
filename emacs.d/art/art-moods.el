@@ -19,7 +19,8 @@
   (reftex-mode 0)
   (delete-other-windows)
   (writeroom-mode 0)
-  (split-window-horizontally))
+  ;;(split-window-horizontally)
+  )
 
 (defun art-reading-mood ()
   "Setup a non-distracting environment for reading."
