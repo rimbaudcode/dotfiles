@@ -397,7 +397,7 @@ alias pandoc-md='pandoc --filter pandoc-include'
 #
 # python
 alias py='python3 -tt -O -q -b -d'
-alias py-run-tests='python -m unittest discover'
+alias py-run-tests='python -m unittest'
 #
 # stack (haskell)
 alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o'
