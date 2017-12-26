@@ -321,7 +321,6 @@ alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias ppt2pdf='soffice --headless --invisible --convert-to pdf *.ppt'
 alias preview='open -a /Applications/Preview.app -g'
 alias psafari='open /Applications/Private-Safari.app'
-alias py='python3 -tt -O -q -b -d'
 alias radio='mplayer'
 alias rbprof='ruby -w -r profile'
 alias reload='source ~/.zshrc'
@@ -395,6 +394,10 @@ alias get-lamport='cp ~/playground/lamport/pf2.sty pf2.sty'
 #
 # markdown files with multiple .mds included
 alias pandoc-md='pandoc --filter pandoc-include'
+#
+# python
+alias py='python3 -tt -O -q -b -d'
+alias py-run-tests='python -m unittest discover'
 #
 # stack (haskell)
 alias stack-dep-external-no-base='stack dot --no-include-base --external --depth 1 | dot -Tpng -o'
