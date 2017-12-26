@@ -21,7 +21,7 @@
  '(ac-show-menu-immediately-on-auto-complete t)
  '(aggressive-indent-excluded-modes
    (quote
-    (makefile-mode makefile-gmake-mode text-mode yaml-mode haskell-mode)))
+    (makefile-mode makefile-gmake-mode text-mode yaml-mode haskell-mode python-mode)))
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
