@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20171217.338
+;; Package-Version: 20171225.159
 ;; Version: 0.10.0
 ;; Package-Requires: ((emacs "24.3") (swiper "0.9.0"))
 ;; Keywords: completion, matching
@@ -767,10 +767,17 @@ By default `counsel-bookmark' opens a dired buffer for directories."
                              (bookmark-set x))))
             :caller 'counsel-bookmark))
 
+(defun counsel--apply-bookmark-fn (fn)
+  "Return a function applyinig FN to a bookmark's location."
+  (lambda (bookmark)
+    (funcall fn (bookmark-location bookmark))))
+
 (ivy-set-actions
  'counsel-bookmark
- '(("d" bookmark-delete "delete")
-   ("e" bookmark-rename "edit")))
+ `(("d" bookmark-delete "delete")
+   ("e" bookmark-rename "edit")
+   ("x" ,(counsel--apply-bookmark-fn 'counsel-find-file-extern) "open externally")
+   ("r" ,(counsel--apply-bookmark-fn 'counsel-find-file-as-root) "open as root")))
 
 (defun counsel-M-x-transformer (cmd)
   "Return CMD appended with the corresponding binding in the current window."
@@ -1725,12 +1732,25 @@ When INITIAL-INPUT is non-nil, use it in the minibuffer during completion."
 
 (ivy-set-occur 'counsel-find-file 'counsel-find-file-occur)
 
-(defvar counsel-find-file-occur-cmd "find . -maxdepth 1 | grep -i -E '%s' | xargs -I {} find {} -maxdepth 0 -ls"
+(defvar counsel-find-file-occur-cmd "ls -a | grep -i -E '%s' | tr '\\n' '\\0' | xargs -0 ls -d --group-directories-first"
   "Format string for `counsel-find-file-occur'.")
+
+(defvar counsel-find-file-occur-use-find nil
+  "When non-nil, `counsel-find-file-occur' will use \"find\" as the base cmd.")
 
 (defun counsel--expand-ls (cmd)
   "Expand CMD that ends in \"ls\" with switches."
   (concat cmd " " counsel-dired-listing-switches " | sed -e 's/^/  /'"))
+
+(defun counsel--occur-cmd-find ()
+  (let* ((regex (counsel-unquote-regex-parens ivy--old-re))
+         (cmd (format
+               "find . -maxdepth 1 | grep -i -E '%s' | xargs -I {} find {} -maxdepth 0 -ls"
+               regex)))
+    (concat
+     (counsel--cmd-to-dired-by-type "d" cmd)
+     " && "
+     (counsel--cmd-to-dired-by-type "f" cmd))))
 
 (defun counsel--cmd-to-dired-by-type (type cmd)
   (let ((exclude-dots
@@ -1744,14 +1764,14 @@ When INITIAL-INPUT is non-nil, use it in the minibuffer during completion."
 (defun counsel-find-file-occur ()
   (require 'find-dired)
   (cd ivy--directory)
-  (counsel-cmd-to-dired
-   (let ((cmd (format counsel-find-file-occur-cmd
-                      (counsel-unquote-regex-parens ivy--old-re))))
-     (concat
-      (counsel--cmd-to-dired-by-type "d" cmd)
-      " && "
-      (counsel--cmd-to-dired-by-type "f" cmd)))
-   'find-dired-filter))
+  (if counsel-find-file-occur-use-find
+      (counsel-cmd-to-dired
+       (counsel--occur-cmd-find)
+       'find-dired-filter)
+    (counsel-cmd-to-dired
+     (counsel--expand-ls
+      (format counsel-find-file-occur-cmd
+              (counsel-unquote-regex-parens ivy--old-re))))))
 
 (defun counsel-up-directory ()
   "Go to the parent directory preselecting the current one.
@@ -4405,7 +4425,8 @@ a symbol and how to search for them."
                 (load-theme . counsel-load-theme)
                 (yank-pop . counsel-yank-pop)
                 (info-lookup-symbol . counsel-info-lookup-symbol)
-                (pop-to-mark-command . counsel-mark-ring)))
+                (pop-to-mark-command . counsel-mark-ring)
+                (bookmark-jump . counsel-bookmark)))
       (define-key map (vector 'remap (car binding)) (cdr binding)))
     map)
   "Map for `counsel-mode'.
