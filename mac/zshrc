@@ -295,6 +295,7 @@ alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
 #
+alias add-bom="gsed -i '1s/^/\xef\xbb\xbf/'"
 alias ascii-list='man 7 ascii'
 alias cal='cal | grep --color -EC6 "\b"$(date +%e | sed "s/ //g")'
 alias clamscan='clamscan --quiet -rz'

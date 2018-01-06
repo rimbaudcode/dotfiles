@@ -218,5 +218,14 @@ the sort order.  See `sort-regexp-fields'.  BEG.  END."
   (other-window 1 nil)
   (switch-to-next-buffer))
 
+(defun hilite-todos ()
+  "Highlight todos: FIXME, WRITEME, WRITEME!, TODO, BUG."
+  (interactive)
+  (highlight-lines-matching-regexp "\\<\\(FIXME\\|WRITEME\\|WRITEME!\\|TODO\\|BUG\\):?"
+                                   'hi-green-b)
+  )
+
+(add-hook '$WHATEVER-mode-hook 'hilite-todos)
+
 (provide 'art-utils)
 ;;; art-utils.el ends here
