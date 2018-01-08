@@ -190,15 +190,24 @@ function mkdata () {
 # function mkfile
 # touch a file and create parent dirs if needed
 function mkfile () {
-    mkdir -p $( dirname "$1") && touch "$1"
+    local file=$1
+    mkdir -p $( dirname "$file") && touch "$file"
 }
 #
-# function pdfmerge
+# function pdf-merge
 # merge pdfs
-function pdfmerge () {
+function pdf-merge () {
     local merged=$1
     local tomerge=$2
     gs -o $merged -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress $tomerge
+}
+#
+# function pdf-shrink
+# shrink pdf size
+function pdf-shrink () {
+    local input=$1
+    local output="$input:r"_low.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$output $input
 }
 #
 # function playground
@@ -226,7 +235,7 @@ function search () {
 #
 # function seek-and-destroy
 # search for files given a pattern and remove them
-# $ files . '.DS_Store'
+# $ seek-and-destroy . '.DS_Store'
 function seek-and-destroy () {
     local dir=$1
     local pattern=$2
@@ -311,7 +320,7 @@ alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
-alias nemesis='stack runhaskell Nemesis --silent'
+alias nemesis='stack runhaskell Nemesis --silent --resolver lts-9.0'
 alias octave='/Applications/Octave.app/Contents/Resources/usr/Cellar/octave/4.0.3/bin/octave-cli --quiet --no-history'
 alias oldies='mplayer http://80.237.154.83:8120'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
@@ -345,6 +354,7 @@ alias github="~/github"
 alias media="~/Music/iTunes/iTunes\ Media"
 alias movies="~/Movies"
 alias pictures="~/Pictures"
+alias projects="~/Documents/projects"
 alias shared="$SHARED_DIR_PATH"
 alias thesis="~/Documents/Google\ Drive/work/auv/thesis/thesis"
 alias workspace="$WORKSPACE_PATH"
