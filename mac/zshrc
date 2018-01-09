@@ -143,6 +143,15 @@ function fixpermissions() {
     xattr -rc .
 }
 #
+# function jupyter-notebook
+# launches a jupyter notebook
+function jupyter-notebook() {
+    local JUPYTER_PATH=~/anaconda3/bin
+    export PATH=$JUPYTER_PATH:$PATH
+    jupyter notebook
+    open -a /Applications/FirefoxDeveloperEdition.app http://localhost:8888
+}
+#
 # function image
 # display image on console
 function image() {
@@ -320,7 +329,8 @@ alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
 alias mkdir='mkdir -p'
 alias mybash='bash -l'
-alias nemesis='stack runhaskell Nemesis --silent --resolver lts-9.0'
+alias nemesis='stack runhaskell Nemesis --silent --resolver lts-9.9'
+alias numbers='open -a /Applications/Numbers.app'
 alias octave='/Applications/Octave.app/Contents/Resources/usr/Cellar/octave/4.0.3/bin/octave-cli --quiet --no-history'
 alias oldies='mplayer http://80.237.154.83:8120'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
