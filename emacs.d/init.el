@@ -67,7 +67,7 @@
  '(haskell-indentation-show-indentations t)
  '(haskell-interactive-prompt "\\> ")
  '(haskell-literate-default (quote tex))
- '(haskell-mode-hook (quote (intero-mode turn-on-haskell-indentation)))
+ '(haskell-mode-hook (quote (intero-mode turn-on-haskell-indentation)) t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
@@ -139,7 +139,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (evil flycheck-swift3 yasnippet-snippets spacegray-theme elpy anaconda-mode purescript-mode wolfram-mode geiser csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
+    (helm-gitignore evil flycheck-swift3 yasnippet-snippets spacegray-theme elpy anaconda-mode purescript-mode wolfram-mode geiser csharp-mode skeletor fsharp-mode emacsql-sqlite io-mode json-reformat rainbow-delimiters rainbow-identifiers racket-mode exec-path-from-shell 0blayout lua-mode flyspell-correct-helm flyspell-lazy helm-xcdoc helm-flyspell helm-google elixir-mode elixir-yasnippets flymake-hlint flymake-shell haskell-snippets osx-dictionary osx-lib osx-trash writeroom-mode wordsmith-mode which-key zenburn-theme counsel swiper org-bullets popwin deferred google-this google-translate helm-hoogle aggressive-indent crux json-mode gnuplot-mode swift-mode magit-gitflow darkroom csv-mode smex yaml-mode magit yasnippet markdown-mode auto-package-update multiple-cursors intero hi2 haskell-tab-indent fill-column-indicator diminish auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prog-mode-hook (quote (hilite-todos)))
  '(proof-splash-enable nil)
