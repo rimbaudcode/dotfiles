@@ -7,7 +7,7 @@
 	editor = emacsclient -t
 
 [merge]
-        tool = ediff
+	tool = ediff
 
 [mergetool "emerge"]
 	cmd = emacs -Q $LOCAL $REMOTE $BASE $MERGED
