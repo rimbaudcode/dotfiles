@@ -331,7 +331,6 @@ alias mkdir='mkdir -p'
 alias mybash='bash -l'
 alias nemesis='stack runhaskell Nemesis --silent --resolver lts-9.9'
 alias numbers='open -a /Applications/Numbers.app'
-alias octave='/Applications/Octave.app/Contents/Resources/usr/Cellar/octave/4.0.3/bin/octave-cli --quiet --no-history'
 alias oldies='mplayer http://80.237.154.83:8120'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias ppt2pdf='soffice --headless --invisible --convert-to pdf *.ppt'
@@ -402,6 +401,7 @@ alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 # get-gitignores
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
+alias get-ocaml-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/OCaml.gitignore -O .gitignore'
 alias get-python-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
@@ -500,3 +500,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 ### Fish syntax highlightning
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# opam configuration
+test -r /Users/dfhe/.opam/opam-init/init.zsh && . /Users/dfhe/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
