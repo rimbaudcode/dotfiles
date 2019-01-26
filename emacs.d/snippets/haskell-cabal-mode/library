@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: lib
+# key: lib
+# --
+  other-modules:       $1
+
+library
+  exposed-modules:     ${1:lib-name}
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5

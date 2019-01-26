@@ -399,6 +399,7 @@ alias emacs-python='emacsclient -t *.org **/*.py README.md'
 alias emacs-swift='emacsclient -t *.org **/*.swift README.md'
 #
 # get-gitignores
+alias get-c-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/C.gitignore -O .gitignore'
 alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Haskell.gitignore -O .gitignore'
 alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
 alias get-ocaml-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/OCaml.gitignore -O .gitignore'
