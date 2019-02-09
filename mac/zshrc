@@ -76,7 +76,7 @@ export TOOLCHAINS=swift
 local SCRIPTS_PATH=~/github/scripts
 export PATH=$SCRIPTS_PATH:$PATH
 #
-local RACKET_PATH='/Applications/Racket v6.8/bin'
+local RACKET_PATH='/Applications/Racket v7.2/bin'
 export PATH=$RACKET_PATH:$PATH
 #
 # silence tensorflow warnings
@@ -434,7 +434,6 @@ alias mail-hotmail='open https://www.hotmail.com'
 # mathematica
 alias math='/Applications/Mathematica.app/Contents/MacOS/WolframKernel'
 alias math-gui='open /Applications/Mathematica.app'
-alias wolframscript='/Applications/Mathematica.app/Contents/MacOS/WolframScript -script'
 #
 # PDFs
 alias pdf-preview='open -a /Applications/Preview.app'

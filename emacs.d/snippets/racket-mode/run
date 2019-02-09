@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: run
+# key: run
+# --
+;; $ racket `(buffer-name)`
+;; $ raco exe `(buffer-name)`
