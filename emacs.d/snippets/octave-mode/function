@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: f
+# key: f
+# --
+function ${1:return-vars} = ${2:identifier}(${3:args})
+%
+% '$2' ${4:doc}
+% input : $3: ${5: args description}
+% output: $1: ${6: rets description}
+%
+    $0;
+end

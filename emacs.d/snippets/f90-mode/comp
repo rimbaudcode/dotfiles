@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: comp
+# key: comp
+# --
+! gfortran -o bin/${1:executable} src/main.f90

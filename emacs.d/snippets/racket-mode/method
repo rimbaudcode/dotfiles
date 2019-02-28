@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: method
+# key: method
+# --
+(define/public (${1:name}) (${2:body}))

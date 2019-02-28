@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: new
+# key: new
+# --
+(define ${1:identifier} (new ${2:class}% [${3:init-argument} ${4:value}]))

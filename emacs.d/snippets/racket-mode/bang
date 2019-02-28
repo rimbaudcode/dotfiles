@@ -3,6 +3,4 @@
 # key: bang
 # --
 #! /usr/bin/env racket
-#lang racket/${1:base}
-
-$0
+#lang racket${1:/base}

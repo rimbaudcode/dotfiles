@@ -2,5 +2,5 @@
 # name: run
 # key: run
 # --
-;; $ racket `(buffer-name)`
-;; $ raco exe `(buffer-name)`
+;; $ racket src/`(buffer-name)`
+;; $ raco exe -o bin/${1:executable-name} src/`(buffer-name)`

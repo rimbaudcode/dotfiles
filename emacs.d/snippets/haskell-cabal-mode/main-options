@@ -24,4 +24,6 @@
                      -rtsopts
                      -threaded
                      -with-rtsopts=-N
-                     -O
+                     -O2
+                     -fexcess-precision
+                     -optc-O2

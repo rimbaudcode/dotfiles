@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: class
+# key: class
+# --
+(provide $1%)
+
+(require racket/class)
+
+(define ${1:class-name}%
+  (class ${2:object}%
+
+    (init ${3:init-field})
+
+    (define current-$3 $3)
+
+    (super-new)
+
+    (define/public (${4:method}))))

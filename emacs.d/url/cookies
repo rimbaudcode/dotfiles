@@ -2,12 +2,13 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".google.com"
-  [url-cookie "HttpOnly" nil "03-Nov-2017 09:29:43.00 GMT" "/" ".google.com" nil]
-  [url-cookie "NID" "102=FvsMfbXJ4SuYFFzdBGGLnBWJ54Ea7MbxyOijYhq98Got2uAgRry_5y4oii9odosAK2FsneVtFhijWFhs7x4_cje9W_mh41L7ZbXm5UenVlBRw9zdmY1Em6DSt2WTAsx9" "03-Nov-2017 09:29:43.00 GMT" "/" ".google.com" nil]))
-)
-(setq url-cookie-secure-storage
  'nil)
+(setq url-cookie-secure-storage
+ '((".wikipedia.org"
+  [url-cookie "WMF-Last-Access-Global" "12-Feb-2019" "Sat, 16 Mar 2019 00:00:00 GMT" "/" ".wikipedia.org" t])
+ ("en.wikipedia.org"
+  [url-cookie "WMF-Last-Access" "12-Feb-2019" "Sat, 16 Mar 2019 00:00:00 GMT" "/" "en.wikipedia.org" t]))
+)
 
 ;; Local Variables:
 ;; version-control: never

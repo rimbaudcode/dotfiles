@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: rf
+# key: rf
+# --
+(require racket/file)
+
+(define path "$1")
+
+(file->string path)

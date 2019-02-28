@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: cexp
+# key: cexp
+# --
+[C.exp| ${1:c-type} \{ ${2:c-expression} \} |]

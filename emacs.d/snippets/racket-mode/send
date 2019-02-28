@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: send
+# key: send
+# --
+(send ${1:object} ${2:method} ${3:value})

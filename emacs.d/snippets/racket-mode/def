@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: def
+# key: def
+# --
+(define ${1:(${2:identifier} ${3:argument})} ${4:body})

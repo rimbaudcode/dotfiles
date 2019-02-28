@@ -332,6 +332,7 @@ alias mybash='bash -l'
 alias nemesis='stack runhaskell Nemesis --silent --resolver lts-9.9'
 alias numbers='open -a /Applications/Numbers.app'
 alias oldies='mplayer http://80.237.154.83:8120'
+alias octave='octave -q'
 alias pdf2txt='pdftotext -enc UTF-8 -layout'
 alias ppt2pdf='soffice --headless --invisible --convert-to pdf *.ppt'
 alias preview='open -a /Applications/Preview.app -g'
@@ -404,6 +405,7 @@ alias get-haskell-gitignore='wget https://raw.githubusercontent.com/github/gitig
 alias get-latex-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/TeX.gitignore -O .gitignore'
 alias get-ocaml-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/OCaml.gitignore -O .gitignore'
 alias get-python-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore -O .gitignore'
+alias get-racket-gitignore='wget https://raw.githubusercontent.com/racket/racket/master/.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
 #
 # get-lamport (pf2.sty)

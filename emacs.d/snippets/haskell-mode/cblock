@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: cblock
+# key: cblock
+# --
+[C.block| ${1:c-type} {
+    ${2:c-code}
+    return ${3:value};
+} |]

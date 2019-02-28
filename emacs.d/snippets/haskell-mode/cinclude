@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: cinc
+# key: cinc
+# --
+C.include "<${1:c-lib}>"
