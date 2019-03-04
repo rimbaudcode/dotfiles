@@ -5,7 +5,7 @@
 ;; Author: Justin Burkett <justin@burkett.cc>
 ;; Maintainer: Justin Burkett <justin@burkett.cc>
 ;; URL: https://github.com/justbur/emacs-which-key
-;; Package-Version: 20190225.1910
+;; Package-Version: 20190301.1541
 ;; Version: 3.3.2
 ;; Keywords:
 ;; Package-Requires: ((emacs "24.4"))
@@ -1407,7 +1407,8 @@ local bindings coming first. Within these categories order using
   ;; handled in the selection of alist
   (when (and (consp key-binding) (not (symbolp (car replacement))))
     (let ((key-regexp (caar replacement))
-          (binding-regexp (cdar replacement)))
+          (binding-regexp (cdar replacement))
+          case-fold-search)
       (and (or (null key-regexp)
                (string-match-p key-regexp
                                (car key-binding)))

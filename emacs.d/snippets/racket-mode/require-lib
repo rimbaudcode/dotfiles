@@ -2,4 +2,4 @@
 # name: rq
 # key: rq
 # --
-(require $1)
+(require "$0")

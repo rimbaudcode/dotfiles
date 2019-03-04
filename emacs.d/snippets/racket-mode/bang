@@ -2,5 +2,5 @@
 # name: bang
 # key: bang
 # --
-#! /usr/bin/env racket
+#!/usr/bin/env racket
 #lang racket${1:/base}

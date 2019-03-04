@@ -194,7 +194,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :foundry "default" :family "default"))))
  '(aw-leading-char-face ((t (:foreground "red" :height 3.0))))
  '(whitespace-space ((t nil))))
 ;;
@@ -354,6 +354,11 @@
 ;; intero complaining
 (package-install 'intero)
 (add-hook 'haskell-mode-hook 'intero-mode)
+;;
+;; intero and hlint
+;; do linting on-the-fly
+(with-eval-after-load 'intero
+  (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
 ;;
 ;; purescript
 ;;(require 'psc-ide)
