@@ -1095,48 +1095,55 @@ but unfortunately that does not exist (yet?)."
 
 ;;; Keymaps
 
+(defvar transient-base-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "ESC ESC ESC") 'transient-quit-all)
+    (define-key map (kbd "C-g") 'transient-quit-one)
+    (define-key map (kbd "C-q") 'transient-quit-all)
+    (define-key map (kbd "C-z") 'transient-suspend)
+    (define-key map (kbd "C-v") 'transient-scroll-up)
+    (define-key map (kbd "M-v") 'transient-scroll-down)
+    (define-key map [next]      'transient-scroll-up)
+    (define-key map [prior]     'transient-scroll-down)
+    map)
+  "Parent of other keymaps used by Transient.
+
+This is the parent keymap of all the keymaps that are used in
+all transients: `transient-map' (which in turn is the parent
+of the transient-specific keymaps), `transient-edit-map' and
+`transient-sticky-map'.
+
+If you change a binding here, then you might also have to edit
+`transient-sticky-map' and `transient-common-commands'.  While
+the latter isn't a proper transient prefix command, it can be
+edited using the same functions as used for transients.")
+
 (defvar transient-map
   (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map transient-base-map)
     (define-key map (kbd "C-p") 'universal-argument)
     (define-key map (kbd "C--") 'negative-argument)
-    (define-key map (kbd "C-v") 'transient-show)
+    (define-key map (kbd "C-t") 'transient-show)
     (define-key map (kbd "?")   'transient-help)
     (define-key map (kbd "C-h") 'transient-help)
     (define-key map (kbd "M-p") 'transient-history-prev)
     (define-key map (kbd "M-n") 'transient-history-next)
-    ;; While setting suffix levels `transient-common-commands'
-    ;; isn't used, making this duplication necessary.
-    (define-key map (kbd "C-g") 'transient-quit-one)
-    (define-key map (kbd "C-q") 'transient-quit-all)
-    (define-key map (kbd "C-z") 'transient-suspend)
-    (define-key map (kbd "ESC ESC ESC") 'transient-quit-all)
-    (define-key map [remap scroll-up-command] 'transient-scroll-up)
-    (define-key map [remap scroll-down-command]'transient-scroll-down)
     map)
-  "Base keymap used by all transients.")
+  "Top-level keymap used by all transients.")
 
 (defvar transient-edit-map
   (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map transient-base-map)
     (define-key map (kbd "?")     'transient-help)
     (define-key map (kbd "C-h")   'transient-help)
     (define-key map (kbd "C-x l") 'transient-set-level)
-    (define-key map (kbd "C-g")   'transient-quit-one)
-    (define-key map (kbd "C-q")   'transient-quit-all)
-    (define-key map (kbd "C-z")   'transient-suspend)
-    (define-key map (kbd "ESC ESC ESC") 'transient-quit-all)
-    (define-key map [remap scroll-up-command] 'transient-scroll-up)
-    (define-key map [remap scroll-down-command]'transient-scroll-down)
     map)
   "Keymap that is active while a transient in is in \"edit mode\".")
 
 (defvar transient-sticky-map
   (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map transient-base-map)
     (define-key map (kbd "C-g") 'transient-quit-seq)
-    (define-key map (kbd "C-q") 'transient-quit-all)
-    (define-key map (kbd "C-z") 'transient-suspend)
-    (define-key map (kbd "ESC ESC ESC") 'transient-quit-all)
-    (define-key map [remap scroll-up-command] 'transient-scroll-up)
-    (define-key map [remap scroll-down-command]'transient-scroll-down)
     map)
   "Keymap that is active while an incomplete key sequence is active.")
 
@@ -1146,18 +1153,15 @@ but unfortunately that does not exist (yet?)."
      'transient--layout
      (cl-mapcan
       (lambda (s) (transient--parse-child 'transient-common-commands s))
-      `([:hide (lambda ()
+      '([:hide (lambda ()
                  (and (not (memq (car transient--redisplay-key)
                                  transient--common-command-prefixes))
                       (not transient-show-common-commands)))
          ["Value commands"
           ("C-x s  " "Set"            transient-set)
           ("C-x C-s" "Save"           transient-save)
-          (,(if (featurep 'jkl) "M-i    " "M-p    ")
-           "Previous value" transient-history-prev)
-          (,(if (featurep 'jkl) "M-k    " "M-n    ")
-           "Next value"     transient-history-next)
-          ]
+          ("M-p    " "Previous value" transient-history-prev)
+          ("M-n    " "Next value"     transient-history-next)]
          ["Sticky commands"
           ;; Like `transient-sticky-map' except that
           ;; "C-g" has to be bound to a different command.
@@ -1182,6 +1186,7 @@ but unfortunately that does not exist (yet?)."
     (define-key map [transient-history-next]  'transient--do-stay)
     (define-key map [universal-argument]      'transient--do-stay)
     (define-key map [negative-argument]       'transient--do-stay)
+    (define-key map [digit-argument]          'transient--do-stay)
     (define-key map [transient-quit-all]      'transient--do-quit-all)
     (define-key map [transient-quit-one]      'transient--do-quit-one)
     (define-key map [transient-quit-seq]      'transient--do-stay)
@@ -1870,7 +1875,7 @@ If ARG is nil scroll near full screen.  This is a wrapper
 around `scroll-down-command' (which see)."
   (interactive "^P")
   (with-selected-window transient--window
-    (scroll-up-command arg)))
+    (scroll-down-command arg)))
 
 (defun transient-resume ()
   "Resume a previously suspended stack of transients."
@@ -2727,8 +2732,7 @@ that does that.  Of course \"Q\" may already be bound to something
 else, so that function binds \"M-q\" to that command instead.
 Of course \"M-q\" may already be bound to something else, but
 we stop there."
-  (define-key transient-map        "q" 'transient-quit-one)
-  (define-key transient-edit-map   "q" 'transient-quit-one)
+  (define-key transient-base-map   "q" 'transient-quit-one)
   (define-key transient-sticky-map "q" 'transient-quit-seq)
   (setq transient-substitute-key-function
         'transient-rebind-quit-commands))

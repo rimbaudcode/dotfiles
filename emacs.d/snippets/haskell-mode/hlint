@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hlint
+# key: hlint
+# --
+import "hint" HLint.HLint
+
+ignore "Avoid lambda"
+ignore "Redundant lambda"

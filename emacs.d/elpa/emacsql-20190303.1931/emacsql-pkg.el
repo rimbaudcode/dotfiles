@@ -1,4 +1,4 @@
-(define-package "emacsql" "20190121.2024" "high-level SQL database front-end"
+(define-package "emacsql" "20190303.1931" "high-level SQL database front-end"
   '((emacs "25.1"))
   :authors
   '(("Christopher Wellons" . "wellons@nullprogram.com"))

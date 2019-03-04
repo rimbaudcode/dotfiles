@@ -57,9 +57,6 @@ export HOMEBREW_NO_ANALYTICS=1
 # opting-out dotnet's data collection!
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 #
-# anaconda loaded on demand with function load-conda() (see below
-local JUPYTER_PATH=~/anaconda3/bin
-#
 local MAC_TEX_LIVE_PATH=/usr/texbin
 export PATH=$MAC_TEX_LIVE_PATH:$PATH
 #
@@ -143,15 +140,6 @@ function fixpermissions() {
     xattr -rc .
 }
 #
-# function jupyter-notebook
-# launches a jupyter notebook
-function jupyter-notebook() {
-    local JUPYTER_PATH=~/anaconda3/bin
-    export PATH=$JUPYTER_PATH:$PATH
-    jupyter notebook
-    open -a /Applications/FirefoxDeveloperEdition.app http://localhost:8888
-}
-#
 # function image
 # display image on console
 function image() {
@@ -167,15 +155,6 @@ function lc () {
     src-hilite-lesspipe.sh $file | less
 }
 #
-# function load-conda
-# anaconda "confuses" homebrew. so it needs to be loaded
-# on demand
-#
-function load-conda() {
-    export PATH=$JUPYTER_PATH:$PATH
-    source ~/.zshrc
-}
-#
 # function man2pdf
 # print man pages as pdf
 function man2pdf()
@@ -188,12 +167,6 @@ function man2pdf()
 # mkdir and cd
 function mkcd () {
     mkdir -p $1 && cd "$_"
-}
-#
-# function mkdata
-# symlink to data
-function mkdata () {
-    ln -s ~/playground/data `pwd`/
 }
 #
 # function mkfile
@@ -217,14 +190,6 @@ function pdf-shrink () {
     local input=$1
     local output="$input:r"_low.pdf
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$output $input
-}
-#
-# function playground
-# creates a place to play :)
-function playground () {
-    cd ~
-    mkdir -p playground
-    cd playground
 }
 #
 # function sandbox
@@ -323,7 +288,7 @@ alias eject='hdiutil detach'
 alias encrypt='gpg -e -r Art'
 alias ghci='ghci -W'
 alias imgls='imgls -size 25,25'
-alias irb='irb --readline --simple-prompt'
+alias irb='/usr/local/bin/irb --readline --simple-prompt'
 alias itunes='open /Applications/iTunes.app'
 alias ll='less .'
 alias lynx='lynx -anonymous -cookies -use_mouse -scrollbar -show_cursor'
@@ -354,7 +319,6 @@ alias zip='zip -qrT'
 alias apps="~/Documents/OneDrive/Apps/bin"
 alias art="~/github/dotfiles/emacs.d/art"
 alias d3s="~/Documents/d3s"
-alias data="~/playground/data"
 alias desktop="~/Desktop"
 alias documents="~/Documents"
 alias downloads="~/Downloads"
@@ -407,9 +371,6 @@ alias get-ocaml-gitignore='wget https://raw.githubusercontent.com/github/gitigno
 alias get-python-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore -O .gitignore'
 alias get-racket-gitignore='wget https://raw.githubusercontent.com/racket/racket/master/.gitignore -O .gitignore'
 alias get-swift-gitignore='wget https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore -O .gitignore'
-#
-# get-lamport (pf2.sty)
-alias get-lamport='cp ~/playground/lamport/pf2.sty pf2.sty'
 #
 # markdown files with multiple .mds included
 alias pandoc-md='pandoc --filter pandoc-include'

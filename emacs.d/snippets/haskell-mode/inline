@@ -2,4 +2,4 @@
 # name: inline
 # key: inline
 # --
-{-# INLINE $1 #-}$0
+{-# INLINE $0 #-}
